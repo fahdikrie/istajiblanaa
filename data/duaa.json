@@ -1,7 +1,6 @@
 [
   {
     "id": 1,
-    "slug": "1-mohon-rahmat-ampunan-dan-perlindungan-dari-salah-berdoa",
     "title": {
       "title_id": "Mohon Rahmat, Ampunan, dan Perlindungan dari Salah Berdoa",
       "title_en": "Seeking for Mercy, Forgiveness, and Refuge from Ignorance"
@@ -30,7 +29,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Hud [11]:47",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -39,7 +41,6 @@
   },
   {
     "id": 2,
-    "slug": "2-mohon-rahmat-dan-ampunan",
     "title": {
       "title_id": "Mohon Rahmat dan Ampunan #1",
       "title_en": "Seeking for Mercy and Forgiveness #1"
@@ -58,7 +59,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Mu'minun [23]:109",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -67,7 +71,6 @@
   },
   {
     "id": 3,
-    "slug": "3-mohon-rahmat-dan-ampunan-2",
     "title": {
       "title_id": "Mohon Rahmat dan Ampunan #2",
       "title_en": "Seeking for Mercy and Forgiveness #2"
@@ -86,7 +89,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Mu'minun [23]:118",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -95,7 +101,6 @@
   },
   {
     "id": 4,
-    "slug": "4-mohon-rahmat-dan-perlindungan-dari-azab-neraka",
     "title": {
       "title_id": "Mohon Rahmat dan Perlindungan dari Azab Neraka",
       "title_en": "Seeking for Mercy and Refuge from the Torment of the Fire"
@@ -117,7 +122,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ali Imran [3]:16",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -126,7 +134,6 @@
   },
   {
     "id": 5,
-    "slug": "5-mohon-ampun-atas-kezaliman-diri",
     "title": {
       "title_id": "Mohon Ampun atas Kezaliman Diri",
       "title_en": "Seeking for Forgiveness From One's Own Wrongdoings"
@@ -153,7 +160,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Qashash [28]:16",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -162,7 +172,6 @@
   },
   {
     "id": 6,
-    "slug": "6-mohon-ampunan-atas-dosa-dan-meminta-keselamatan-di-hari-kiamat",
     "title": {
       "title_id": "Mohon Ampunan atas Dosa dan Meminta Keselamatan di Hari Kiamat",
       "title_en": "Seeking for Forgiveness from One's Sins and Seeking Refuge in the Day of Judgment"
@@ -181,7 +190,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ali Imran [3]:193–194",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -190,7 +202,6 @@
   },
   {
     "id": 7,
-    "slug": "7-mohon-ampunan-rahmat-dan-dihindarkan-dari-cobaan-berat",
     "title": {
       "title_id": "Mohon Ampunan, Rahmat, dan Dihindarkan dari Cobaan Berat",
       "title_en": "Seeking for Forgiveness, Mercy, and Strength in Trials"
@@ -217,7 +228,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Baqarah [2]:286",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -226,7 +240,6 @@
   },
   {
     "id": 8,
-    "slug": "8-mohon-ampun-dari-dosa-perbuatan-buatan-melampaui-batas-dan-pertolongan-dari-kaum-kafir",
     "title": {
       "title_id": "Mohon Ampun dari Dosa, Perbuatan Melampaui Batas, dan Pertolongan dari Kaum Kafir",
       "title_en": "Seeking for Forgiveness for Sins, Excessiveness, and Protection from the Disbelievers"
@@ -253,7 +266,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ali Imran [3]:147",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -262,7 +278,6 @@
   },
   {
     "id": 9,
-    "slug": "9-mohon-ampun-dari-kezaliman-diri",
     "title": {
       "title_id": "Mohon Rahmat dan Ampunan dari Kezaliman Diri",
       "title_en": "Seeking for Mercy and Forgiveness for the Sins of Our Wrongdoings"
@@ -291,7 +306,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-A'raf [7]:23",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -300,7 +318,6 @@
   },
   {
     "id": 10,
-    "slug": "10-mohon-agar-dimasukkan-ke-dalam-golongan-orang-saleh",
     "title": {
       "title_id": "Mohon agar Dimasukkan ke dalam Golongan Orang Saleh",
       "title_en": "Seeking to Be Included Among the Righteous"
@@ -327,7 +344,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Asy-Syu'ara [26]:83–85 & 87",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -336,7 +356,6 @@
   },
   {
     "id": 11,
-    "slug": "11-mohon-agar-dicatat-di-antara-para-saksi",
     "title": {
       "title_id": "Mohon agar Dicatat di antara Para Saksi (Orang yang Beriman)",
       "title_en": "Seeking to be Recorded Among the Witnesses (the Believers)"
@@ -355,7 +374,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Maidah [5]:83",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -364,7 +386,6 @@
   },
   {
     "id": 12,
-    "slug": "12-mohon-agar-diterima-amal-dan-taubat",
     "title": {
       "title_id": "Mohon agar Diterima Amal dan Taubat",
       "title_en": "Seeking for the Acceptance of Deeds and Repentance"
@@ -383,7 +404,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Baqarah [2]:127–128",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -392,7 +416,6 @@
   },
   {
     "id": 13,
-    "slug": "13-mohon-keturunan-yang-saleh-salihah-1",
     "title": {
       "title_id": "Mohon Keturunan yang Saleh/Salihah #1",
       "title_en": "Seeking for a Righteous Offspring #1"
@@ -411,7 +434,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Anbiya [21]:89",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -420,7 +446,6 @@
   },
   {
     "id": 14,
-    "slug": "14-mohon-keturunan-yang-saleh-salihah-2",
     "title": {
       "title_id": "Mohon Keturunan yang Saleh/Salihah #2",
       "title_en": "Seeking for a Righteous Offspring #2"
@@ -439,7 +464,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ash-Shaffat [37]:100",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -448,7 +476,6 @@
   },
   {
     "id": 15,
-    "slug": "15-mohon-keturunan-yang-saleh-salihah-3",
     "title": {
       "title_id": "Mohon Keturunan yang Saleh/Salihah #3",
       "title_en": "Seeking for a Righteous Offspring #3"
@@ -467,7 +494,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ali Imran [3]:38",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -476,7 +506,6 @@
   },
   {
     "id": 16,
-    "slug": "16-mohon-pasangan-dan-keturunan-yang-saleh-salihah",
     "title": {
       "title_id": "Mohon Pasangan dan Keturunan yang Saleh/Salihah",
       "title_en": "Seeking for a Righteous Spouse and Offspring"
@@ -498,7 +527,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Furqan [25]:74",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -507,7 +539,6 @@
   },
   {
     "id": 17,
-    "slug": "17-mohon-ketetapan-diri-dan-keturunan-dalam-shalat",
     "title": {
       "title_id": "Mohon Ketetapan Diri dan Keturunan dalam Shalat",
       "title_en": "Seeking for Steadfastness in Salah for Self and Offspring"
@@ -534,7 +565,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ibrahim [14]:40",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -543,7 +577,6 @@
   },
   {
     "id": 18,
-    "slug": "18-mohon-ampun-atas-diri-orang-tua-dan-orang-orang-mukmin-1",
     "title": {
       "title_id": "Mohon Ampun atas Diri, Orang Tua, dan Orang-Orang Mukmin #1",
       "title_en": "Seeking for Forgiveness for Oneself, One’s Parents, and the Believers #1"
@@ -574,7 +607,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ibrahim [14]:41",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -583,7 +619,6 @@
   },
   {
     "id": 19,
-    "slug": "19-mohon-ampun-atas-diri-dan-pendahulu-dari-orang-orang-mukmin",
     "title": {
       "title_id": "Mohon Ampun atas Diri dan Pendahulu dari Orang-Orang Mukmin",
       "title_en": "Seeking for Forgiveness for Oneself and the Predecessors from the Believers"
@@ -602,7 +637,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Hasyr [59]:10",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -611,7 +649,6 @@
   },
   {
     "id": 20,
-    "slug": "20-mohon-ampun-atas-diri-orang-tua-dan-orang-orang-mukmin-2",
     "title": {
       "title_id": "Mohon Ampun atas Diri, Orang Tua, dan Orang-Orang Mukmin #2",
       "title_en": "Seeking for Forgiveness for Oneself, One’s Parents, and the Believers #2"
@@ -640,7 +677,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Nuh [71]:28",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -649,7 +689,6 @@
   },
   {
     "id": 21,
-    "slug": "21-mohon-agar-ditambahkan-ilmu",
     "title": {
       "title_id": "Mohon agar Ditambahkan Ilmu",
       "title_en": "Seeking an Increase in Knowledge"
@@ -668,7 +707,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Thaha [20]:114",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -677,7 +719,6 @@
   },
   {
     "id": 22,
-    "slug": "22-mohon-agar-disempurnakan-cahaya-petunjuk",
     "title": {
       "title_id": "Mohon agar Disempurnakan Cahaya (Petunjuk)",
       "title_en": "Seeking for the Completeness of Light (Guidance)"
@@ -696,7 +737,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. At-Tahrim [66]:8",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -705,7 +749,6 @@
   },
   {
     "id": 23,
-    "slug": "23-mohon-perlindungan-dari-orang-orang-zalim-1",
     "title": {
       "title_id": "Mohon Perlindungan dari Orang-Orang Zalim #1",
       "title_en": "Seeking Refuge from the Wrongdoers #1"
@@ -730,7 +773,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Qashash [28]:21",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -739,7 +785,6 @@
   },
   {
     "id": 24,
-    "slug": "24-mohon-perlindungan-dari-orang-orang-zalim-2",
     "title": {
       "title_id": "Mohon Perlindungan dari Orang-Orang Zalim #2",
       "title_en": "Seeking Refuge from the Wrongdoers #2"
@@ -758,7 +803,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-A'raf [7]:47",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -767,7 +815,6 @@
   },
   {
     "id": 25,
-    "slug": "25-mohon-perlindungan-dari-orang-orang-zalim-3",
     "title": {
       "title_id": "Mohon Perlindungan dari Orang-Orang Zalim #3",
       "title_en": "Seeking Refuge from the Wrongdoers #3"
@@ -792,7 +839,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Ankabut [29]:30",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -801,7 +851,6 @@
   },
   {
     "id": 26,
-    "slug": "26-mohon-perlindungan-dari-orang-orang-zalim-4",
     "title": {
       "title_id": "Mohon Perlindungan dari Orang-Orang Zalim #4",
       "title_en": "Seeking Refuge from the Wrongdoers #4"
@@ -826,7 +875,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Mumtahanah [60]:5",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -835,7 +887,6 @@
   },
   {
     "id": 27,
-    "slug": "27-mohon-perlindungan-dari-orang-orang-zalim-5",
     "title": {
       "title_id": "Mohon Perlindungan dari Orang-Orang Zalim #5",
       "title_en": "Seeking Refuge from the Wrongdoers #5"
@@ -854,7 +905,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Yunus [10]:85–86",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -863,7 +917,6 @@
   },
   {
     "id": 28,
-    "slug": "28-berserah-diri-kepada-allah-1",
     "title": {
       "title_id": "Bertawakkal/Berserah Diri Kepada Allah #1",
       "title_en": "Tawakkal/Reliance upon Allah #1"
@@ -885,7 +938,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Mumtahanah [60]:4",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -894,7 +950,6 @@
   },
   {
     "id": 29,
-    "slug": "29-berserah-diri-kepada-allah-2",
     "title": {
       "title_id": "Bertawakkal/Berserah Diri Kepada Allah #2",
       "title_en": "Tawakkal/Reliance upon Allah #2"
@@ -913,7 +968,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Taubah [9]:129",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -922,7 +980,6 @@
   },
   {
     "id": 30,
-    "slug": "30-berserah-diri-kepada-allah-3",
     "title": {
       "title_id": "Bertawakkal/Berserah Diri Kepada Allah #3",
       "title_en": "Tawakkal/Reliance upon Allah #3"
@@ -941,7 +998,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ali Imran [3]:173",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -950,7 +1010,6 @@
   },
   {
     "id": 31,
-    "slug": "31-mohon-agar-dijadikan-hamba-yang-bersyukur-1",
     "title": {
       "title_id": "Mohon agar Dijadikan Hamba yang Bersyukur #1",
       "title_en": "Seeking to Be Made a Grateful Servant #1"
@@ -969,7 +1028,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. An-Naml [27]:19",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -978,7 +1040,6 @@
   },
   {
     "id": 32,
-    "slug": "32-mohon-agar-dijadikan-hamba-yang-bersyukur-2",
     "title": {
       "title_id": "Mohon agar Dijadikan Hamba yang Bersyukur #2 (Doa Memasuki Usia 40 Tahun)",
       "title_en": "Seeking to Be Made a Grateful Servant #2 (Prayer when Entering 40 Years Old of Age)"
@@ -997,7 +1058,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Ahqaf [46]:15",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1006,7 +1070,6 @@
   },
   {
     "id": 33,
-    "slug": "33-mohon-agar-dilapangkan-hati-dan-dimudahkan-urusan",
     "title": {
       "title_id": "Mohon agar Dilapangkan Hati dan Dimudahkan Urusan",
       "title_en": "Seeking for an Uplifted Heart and Ease in Affairs"
@@ -1033,7 +1096,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Anbiya [21]:87",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1042,7 +1108,6 @@
   },
   {
     "id": 34,
-    "slug": "34-mohon-agar-dilapangkan-hati-dimudahkan-urusan-dan-kelancaran-berbicara",
     "title": {
       "title_id": "Mohon agar Dilapangkan Hati, Dimudahkan Urusan, dan Kelancaran Berbicara",
       "title_en": "Seeking for an Uplifted Heart, Ease in Affairs, and Eloquence in Speech"
@@ -1069,7 +1134,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Thaha [20]:25–28",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1078,7 +1146,6 @@
   },
   {
     "id": 35,
-    "slug": "35-mohon-rahmat-dan-petunjuk-dalam-urusan",
     "title": {
       "title_id": "Mohon Rahmat dan Petunjuk dalam Urusan",
       "title_en": "Seeking for Mercy and Guidance in One's Affairs"
@@ -1105,7 +1172,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Kahfi [18]:10",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1114,7 +1184,6 @@
   },
   {
     "id": 36,
-    "slug": "36-mohon-kebaikan-dunia-dan-akhirat-1",
     "title": {
       "title_id": "Mohon Kebaikan Dunia dan Akhirat",
       "title_en": "Seeking for Goodness in this World and Hereafter"
@@ -1143,7 +1212,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Baqarah [2]:201",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1152,7 +1224,6 @@
   },
   {
     "id": 37,
-    "slug": "37-mohon-rahmat-dan-ketetapan-atas-hidayah",
     "title": {
       "title_id": "Mohon Rahmat dan Ketetapan atas Hidayah",
       "title_en": "Seeking for Mercy and Steadfastness in Guidance"
@@ -1171,7 +1242,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ali Imran [3]:8",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1180,7 +1254,6 @@
   },
   {
     "id": 38,
-    "slug": "38-mohon-atas-keamanan-negeri-dan-keselamatan-dari-syirik",
     "title": {
       "title_id": "Mohon atas Keamanan Negeri dan Keselamatan dari Syirik",
       "title_en": "Seeking for the Safety of the Land and Protection from Idolatry/False Worship/Shirk"
@@ -1209,7 +1282,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Ibrahim [14]:35",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1218,7 +1294,6 @@
   },
   {
     "id": 39,
-    "slug": "39-mohon-perlindungan-dari-azab-neraka-jahannam",
     "title": {
       "title_id": "Mohon Perlindungan dari Azab Neraka Jahannam",
       "title_en": "Refuge from the Torment of the Jahannam Fire"
@@ -1237,7 +1312,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Furqan [25]:65–66",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1246,7 +1324,6 @@
   },
   {
     "id": 40,
-    "slug": "40-mohon-perlindungan-dari-setan",
     "title": {
       "title_id": "Mohon Perlindungan dari Setan",
       "title_en": "Seeking Refuge from the Devils/Shaytan"
@@ -1265,7 +1342,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Mu'minun [23]:97–98",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1274,7 +1354,6 @@
   },
   {
     "id": 41,
-    "slug": "41-mohon-agar-dilimpahkan-kesabaran-dan-diteguhkan-pendirian-dalam-melawan-orang-orang-kafir",
     "title": {
       "title_id": "Mohon agar Dilimpahkan Kesabaran dan Diteguhkan Pendirian dalam Melawan Orang-Orang Kafir",
       "title_en": "Seeking an Increase in Patience/Sabr and Steadfastness Against the Disbelievers"
@@ -1296,7 +1375,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Baqarah [2]:250",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1305,7 +1387,6 @@
   },
   {
     "id": 42,
-    "slug": "42-mohon-agar-dilimpahkan-kesabaran-dan-diwafatkan-dalam-keadaan-muslim",
     "title": {
       "title_id": "Mohon agar Dilimpahkan Kesabaran dan Diwafatkan dalam Keadaan Muslim",
       "title_en": "Seeking an Increase in Patience/Sabr and to Die as a Muslim"
@@ -1330,7 +1411,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-A'raf [7]:126",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "Doa para penyihir Firaun ketika bertaubat (atas izin Allah) setelah berhadapan dengan Nabi Musa AS.",
@@ -1339,7 +1423,6 @@
   },
   {
     "id": 43,
-    "slug": "43-mohon-agar-diwafatkan-dalam-keadaan-muslim-dan-dikumpulkan-bersama-orang-orang-saleh",
     "title": {
       "title_id": "Mohon agar Diwafatkan dalam Keadaan Muslim dan Dikumpulkan Bersama Orang-Orang Saleh",
       "title_en": "Seeking to Die as a Muslim and Be Gathered Among the Righteous"
@@ -1366,7 +1449,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Yusuf [12]:101",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1375,7 +1461,6 @@
   },
   {
     "id": 44,
-    "slug": "44-mohon-agar-digantikan-dengan-yang-lebih-baik",
     "title": {
       "title_id": "Mohon agar Digantikan dengan yang Lebih Baik (Ketika Mendapatkan Musibah)",
       "title_en": "Seeking for a Better Replacement from What is Lost (Upon Facing a Trial/Disaster/Calamity)"
@@ -1394,7 +1479,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Qalam [68]:32",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "Doa Ashabul Jannah (pemilik kebun) ketika kebun mereka dihancurkan akibat kesombongan dan keengganan untuk berbagi dengan orang miskin.",
@@ -1403,7 +1491,6 @@
   },
   {
     "id": 45,
-    "slug": "45-mohon-agar-ditunjukkan-ke-jalan-yang-lurus",
     "title": {
       "title_id": "Mohon agar Ditunjukkan ke Jalan yang Lurus",
       "title_en": "Seeking to Be Guided to the Right Path"
@@ -1422,7 +1509,10 @@
     },
     "source": "Al-Qur'an",
     "reference": "QS. Al-Qashash [28]:22",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1430,8 +1520,125 @@
     }
   },
   {
+    "id": 46,
+    "title": {
+      "title_id": "Mohon Perlindungan dari Hilangnya Nikmat, Hilangnya Kesehatan, Siksa yang Tiba-Tiba, dan Kemurkaan Allah",
+      "title_en": "Seeking Refuge from the Disappearance of Blessings, Loss of Good Health, Allah's Sudden Torment, and His Wrath"
+    },
+    "arabic": "اللَّهُمَّ إِنِّى أَعُوذُ بِكَ مِنْ زَوَالِ نِعْمَتِكَ وَتَحَوُّلِ عَافِيَتِكَ وَفُجَاءَةِ نِقْمَتِكَ وَجَمِيعِ سَخَطِكَ",
+    "arabic_first_person_plural": null,
+    "translation": {
+      "translation_id": "Ya Allah, sesungguhnya aku berlindung kepada-Mu dari hilangnya kenikmatan yang telah Engkau berikan, dari berubahnya kesehatan yang telah Engkau anugerahkan, dari siksa-Mu yang datang secara tiba-tiba, dan dari segala kemurkaan-Mu.",
+      "translation_en": "O Allah, I seek refuge with You from the disappearance of Your blessing and from the loss of good health and Your sudden vengeance and all of Your anger."
+    },
+    "transliteration": "Allāhumma innī a‘ūdhu bika min zawāli ni‘matika wa taḥawwuli ‘āfiyatika wa fujā’ati niqmatika wa jamī‘i sakhaṭika.",
+    "transliteration_first_person_plural": null,
+    "categories": {
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Hilangnya Nikmat",
+        "Kesehatan",
+        "Perlindungan dari Murka Allah"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from the Disappearance of Blessings",
+        "Good Health",
+        "Refuge from Allah's Wrath"
+      ]
+    },
+    "source": "As-Sunnah",
+    "reference": "HR. Muslim no. 2739. Al-Adab Al-Mufrad 685. Graded Sahih by al-Albani رحمه الله.",
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
+    "benefits": null,
+    "note": {
+      "note_id": "Dari ‘Abdullah bin ‘Umar, dia berkata, “Di antara doa Rasulullah shallallahu ‘alaihi wa sallam adalah: \"Ya Allah, sesungguhnya aku berlindung kepada-Mu dari hilangnya kenikmatan yang telah Engkau berikan, dari berubahnya kesehatan yang telah Engkau anugerahkan, dari siksa-Mu yang datang secara tiba-tiba, dan dari segala kemurkaan-Mu\".",
+      "note_en": "'Abdullah ibn 'Umar said, \"One of the supplications of the Messenger of Allah was, 'O Allah, I seek refuge with You from the disappearance of Your blessing and from the loss of good health and Your sudden vengeance and all of Your anger.'\""
+    }
+  },
+  {
+    "id": 47,
+    "title": {
+      "title_id": "Mohon Perlindungan dari Kefakiran, Kemiskinan, Kehinaan, dan Kezaliman Diri maupun Orang Lain",
+      "title_en": "Seeking Refuge from Poverty, Need, Abasement, and Own or Others' Wrongdoing"
+    },
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْفَقْرِ وَالْقِلَّةِ وَالذِّلَّةِ، وَأَعُوذُ بِكَ أَنْ أَظْلِمَ أَوْ أُظْلَمَ",
+    "arabic_first_person_plural": null,
+    "translation": {
+      "translation_id": "Ya Allah, aku berlindung kepada-Mu dari kefakiran, kemiskinan, dan kehinaan. Dan aku berlindung kepada-Mu jangan sampai aku menzalimi atau dizalimi.",
+      "translation_en": "O Allah, I seek refuge with You from poverty, need and abasement. I seek refuge with You from being unjust or wronged."
+    },
+    "transliteration": "Allāhumma innī a‘ūdhu bika minal-faqri wal-qillati wadh-dhillati, wa a‘ūdhu bika min an aẓlima aw uẓlam.",
+    "transliteration_first_person_plural": null,
+    "categories": {
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Kefakiran/Kemiskinan/Kehinaan/Kelaparan",
+        "Perlindungan dari Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Pertolongan atas Kaum Kafir/Zalim"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from Poverty/Need/Abasement/Hunger",
+        "Refuge from One's Own Wrongdoings/Excessiveness",
+        "Protection from the Disbelievers/Wrongdoers"
+      ]
+    },
+    "source": "As-Sunnah",
+    "reference": "HR. Ahmad no. 8053. Abu Daud no. 1546. Al-Adab Al-Mufrad 678. Graded Sahih by Syuaib al-Arnauth and al-Albani رحمهما الله.",
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
+    "benefits": null,
+    "note": {
+      "note_id": "Dari Abu Hurairah radhiyallahu ‘anhu, Nabi shallallahu ‘alaihi wa sallam berdo’a: “Ya Allah, aku berlindung kepada-Mu dari kefakiran, kemiskinan, dan kehinaan. Dan aku berlindung kepada-Mu jangan sampai aku menzalimi atau dizalimi.”",
+      "note_en": "Abu Hurayra reported that the Prophet, may Allah bless him and grant him peace, used to say, \"O Allah, I seek refuge with You from poverty, need and abasement. I seek refuge with You from being unjust or wronged.\""
+    }
+  },
+  {
+    "id": 48,
+    "title": {
+      "title_id": "Mohon Perlindungan dari Rasa Lapar dan Pengkhianatan",
+      "title_en": "Seeking Refuge from Hunger and Treachery"
+    },
+    "arabic": "اللهم إني أعوذ بك من الجوع، فإنه بئس الضجيع، وأعوذ بك من الخيانة، فإنها بئست البطانة",
+    "arabic_first_person_plural": null,
+    "translation": {
+      "translation_id": "Ya Allah, sesungguhnya aku berlindung kepada-Mu dari kelaparan, karena ia adalah sejelek-jeleknya teman tidur. Dan aku berlindung kepada-Mu dari pengkhianatan, karena ia sejelek-jeleknya teman yang menyertai.",
+      "translation_en": "O Allah! I seek refuge in You from hunger; surely, it is the worst companion. And I seek refuge in You from treachery; surely, it is a bad inner trait."
+    },
+    "transliteration": "Allāhumma innī a‘ūdhu bika minal-jū‘, fa’innahū bi’saḍ-ḍajī‘, wa a‘ūdhu bika minal-khiyānah, fa’innahā bi’satil-biṭānah.",
+    "transliteration_first_person_plural": null,
+    "categories": {
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Kefakiran/Kemiskinan/Kehinaan/Kelaparan",
+        "Perlindungan dari Kezaliman Diri/Perbuatan Melampaui Batas"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from Poverty/Need/Abasement/Hunger",
+        "Refuge from One's Own Wrongdoings/Excessiveness"
+      ]
+    },
+    "source": "As-Sunnah",
+    "reference": "HR. Abu Daud, no. 1547 Bi sanad-in shahih. HR An-Nasai no. (VIII/263). Riyadus Saliheen 1485.",
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
+    "benefits": null,
+    "note": {
+      "note_id": "Dari Abu Hurairah radhiyallahu ‘anhu, ia berkata, Rasulullah shallallahu ‘alaihi wa sallam mengucapkan: Ya Allah, sesungguhnya aku berlindung kepada-Mu dari kelaparan, karena ia adalah sejelek-jeleknya teman tidur. Dan aku berlindung kepada-Mu dari pengkhianatan, karena ia sejelek-jeleknya teman yang menyertai.",
+      "note_en": "Abu Hurairah (May Allah be pleased with him) reported: The Messenger of Allah (ﷺ) used to supplicate: O Allah! I seek refuge in You from hunger; surely, it is the worst companion. And I seek refuge in You from treachery; surely, it is a bad inner trait."
+    }
+  },
+  {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1450,7 +1657,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1459,7 +1669,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1478,7 +1687,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1487,7 +1699,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1506,7 +1717,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1515,7 +1729,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1534,7 +1747,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1543,7 +1759,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1562,7 +1777,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1571,7 +1789,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1590,7 +1807,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1599,7 +1819,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1618,7 +1837,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1627,7 +1849,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1646,7 +1867,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1655,7 +1879,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1674,7 +1897,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1683,7 +1909,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1702,7 +1927,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1711,7 +1939,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1730,7 +1957,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1739,7 +1969,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1758,7 +1987,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1767,7 +1999,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1786,7 +2017,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1795,7 +2029,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1814,7 +2047,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1823,7 +2059,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1842,7 +2077,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1851,7 +2089,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1870,7 +2107,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1879,7 +2119,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1898,7 +2137,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1907,7 +2149,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1926,7 +2167,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1935,7 +2179,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1954,7 +2197,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1963,7 +2209,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -1982,7 +2227,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -1991,7 +2239,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2010,7 +2257,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2019,7 +2269,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2038,7 +2287,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2047,7 +2299,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2066,7 +2317,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2075,7 +2329,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2094,7 +2347,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2103,7 +2359,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2122,7 +2377,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2131,7 +2389,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2150,7 +2407,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2159,7 +2419,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2178,7 +2437,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2187,7 +2449,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2206,7 +2467,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2215,7 +2479,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2234,7 +2497,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2243,7 +2509,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2262,7 +2527,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2271,7 +2539,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2290,7 +2557,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2299,7 +2569,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2318,7 +2587,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2327,7 +2599,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2346,7 +2617,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2355,7 +2629,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2374,7 +2647,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2383,7 +2659,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2402,7 +2677,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2411,7 +2689,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2430,7 +2707,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2439,7 +2719,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2458,7 +2737,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2467,7 +2749,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2486,7 +2767,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2495,7 +2779,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2514,7 +2797,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2523,7 +2809,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2542,7 +2827,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2551,7 +2839,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2570,7 +2857,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2579,7 +2869,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2598,7 +2887,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2607,7 +2899,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2626,7 +2917,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2635,7 +2929,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2654,7 +2947,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2663,7 +2959,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2682,7 +2977,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2691,7 +2989,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2710,7 +3007,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2719,7 +3019,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2738,7 +3037,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2747,7 +3049,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2766,7 +3067,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2775,7 +3079,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2794,7 +3097,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2803,7 +3109,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2822,7 +3127,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2831,7 +3139,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2850,7 +3157,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2859,7 +3169,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2878,7 +3187,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2887,7 +3199,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2906,7 +3217,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2915,7 +3229,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2934,7 +3247,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2943,7 +3259,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2962,7 +3277,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2971,7 +3289,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -2990,7 +3307,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -2999,7 +3319,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -3018,7 +3337,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
+    },
     "benefits": null,
     "note": {
       "note_id": "",
@@ -3027,7 +3349,6 @@
   },
   {
     "id": null,
-    "slug": "",
     "title": {
       "title_id": "",
       "title_en": ""
@@ -3046,91 +3367,10 @@
     },
     "source": "",
     "reference": "",
-    "occasion": null,
-    "benefits": null,
-    "note": {
-      "note_id": "",
-      "note_en": ""
-    }
-  },
-  {
-    "id": null,
-    "slug": "",
-    "title": {
-      "title_id": "",
-      "title_en": ""
+    "occasion": {
+      "occassion_id": "",
+      "occassion_en": ""
     },
-    "arabic": "",
-    "arabic_first_person_plural": null,
-    "translation": {
-      "translation_id": "",
-      "translation_en": ""
-    },
-    "transliteration": "",
-    "transliteration_first_person_plural": null,
-    "categories": {
-      "categories_id": [],
-      "categories_en": []
-    },
-    "source": "",
-    "reference": "",
-    "occasion": null,
-    "benefits": null,
-    "note": {
-      "note_id": "",
-      "note_en": ""
-    }
-  },
-  {
-    "id": null,
-    "slug": "",
-    "title": {
-      "title_id": "",
-      "title_en": ""
-    },
-    "arabic": "",
-    "arabic_first_person_plural": null,
-    "translation": {
-      "translation_id": "",
-      "translation_en": ""
-    },
-    "transliteration": "",
-    "transliteration_first_person_plural": null,
-    "categories": {
-      "categories_id": [],
-      "categories_en": []
-    },
-    "source": "",
-    "reference": "",
-    "occasion": null,
-    "benefits": null,
-    "note": {
-      "note_id": "",
-      "note_en": ""
-    }
-  },
-  {
-    "id": null,
-    "slug": "",
-    "title": {
-      "title_id": "",
-      "title_en": ""
-    },
-    "arabic": "",
-    "arabic_first_person_plural": null,
-    "translation": {
-      "translation_id": "",
-      "translation_en": ""
-    },
-    "transliteration": "",
-    "transliteration_first_person_plural": null,
-    "categories": {
-      "categories_id": [],
-      "categories_en": []
-    },
-    "source": "",
-    "reference": "",
-    "occasion": null,
     "benefits": null,
     "note": {
       "note_id": "",
