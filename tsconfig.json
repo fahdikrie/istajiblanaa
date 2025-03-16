@@ -7,6 +7,12 @@
       {
         "name": "@astrojs/ts-plugin"
       }
-    ]
+    ],
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   }
 }
