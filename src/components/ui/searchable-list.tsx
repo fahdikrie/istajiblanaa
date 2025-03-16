@@ -1,47 +1,253 @@
 import { useState } from "react";
 import { Input } from "./input";
-import { Card, CardContent } from "./card";
+import { Card, CardContent, CardHeader, CardTitle } from "./card";
+import DUAA from "data/duaa.json";
 
-// Data kategori doa
-const categories = [
-  { id: 1, name: "Doa Pagi", slug: "doa-pagi" },
-  { id: 2, name: "Doa Sore", slug: "doa-sore" },
-  { id: 3, name: "Doa Ramadhan", slug: "doa-ramadhan" },
-  { id: 4, name: "Doa Perlindungan", slug: "doa-perlindungan" },
-  { id: 5, name: "Doa Keselamatan", slug: "doa-keselamatan" },
-  { id: 6, name: "Doa Rezeki", slug: "doa-rezeki" },
-];
+// Definisi tipe untuk data doa
+// const dataDoa = {
+//   id: null,
+//   title: {
+//     title_id: "",
+//     title_en: "",
+//   },
+//   arabic: "",
+//   arabic_first_person_plural: null,
+//   translation: {
+//     translation_id: "",
+//     translation_en: "",
+//   },
+//   transliteration: "",
+//   transliteration_first_person_plural: null,
+//   categories: {
+//     categories_id: [],
+//     categories_en: [],
+//   },
+//   source: "",
+//   reference: "",
+//   occasion: {
+//     occassion_id: "",
+//     occassion_en: "",
+//   },
+//   benefits: null,
+//   note: {
+//     note_id: "",
+//     note_en: "",
+//   },
+// };
 
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
 
-  const filteredCategories = categories.filter((cat) =>
-    cat.name.toLowerCase().includes(query.toLowerCase()),
-  );
+  // Contoh data
+  const duaList: any[] = DUAA;
+
+  const normalizeText = (text: string | null | undefined): string => {
+    if (!text) return "";
+
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "") // Hapus aksen Latin (ā → a)
+      .replace(/[\u064B-\u065F\u0670]/g, "") // Hapus harakat Arab (َ ُ ِ ّ ْ ـٰ)
+      .replace(/[^a-z0-9\u0600-\u06FF]/g, "") // Hapus tanda baca, kecuali huruf Arab
+      .replace(/\s+/g, ""); // Hilangkan semua spasi
+  };
+
+  const highlightMatch = (text: string | null | undefined, query: string) => {
+    if (!text) return "";
+    if (!query.trim()) return text;
+
+    const normalizedText = normalizeText(text);
+    const normalizedQuery = normalizeText(query);
+
+    if (normalizedQuery.length === 0) return text;
+
+    const index = normalizedText.indexOf(normalizedQuery);
+    if (index === -1) return text;
+
+    // Find the actual positions in the original text
+    let startPos = 0;
+    let currentPos = 0;
+
+    // Find the start position in the original text that corresponds to the normalized index
+    for (let i = 0; i < text.length && currentPos < index; i++) {
+      // Skip harakat and other characters that are removed in normalization
+      const char = text[i];
+      if (normalizeText(char).length > 0) {
+        currentPos++;
+      }
+      startPos++;
+    }
+
+    // Find the end position by counting normalized characters
+    let endPos = startPos;
+    let matchedChars = 0;
+
+    while (endPos < text.length && matchedChars < normalizedQuery.length) {
+      const normalChar = normalizeText(text[endPos]);
+      if (normalChar.length > 0) {
+        matchedChars++;
+      }
+      endPos++;
+    }
+
+    const beforeMatch = text.slice(0, startPos);
+    const match = text.slice(startPos, endPos);
+    const afterMatch = text.slice(endPos);
+
+    return (
+      <>
+        {beforeMatch}
+        <span className="font-bold bg-yellow-200">{match}</span>
+        {afterMatch}
+      </>
+    );
+  };
+
+  // Mencari doa berdasarkan prioritas field
+  const searchDua = (
+    dua: any,
+    query: string,
+  ): { matches: boolean; matchField?: string } => {
+    if (!query.trim()) return { matches: true };
+
+    const normalizedQuery = normalizeText(query);
+    if (normalizedQuery.length === 0) return { matches: true };
+
+    // Prioritas 1: title_id
+    if (normalizeText(dua.title.title_id).includes(normalizedQuery)) {
+      return { matches: true, matchField: "title_id" };
+    }
+
+    // Prioritas 2: arabic
+    if (normalizeText(dua.arabic).includes(normalizedQuery)) {
+      return { matches: true, matchField: "arabic" };
+    }
+
+    // Prioritas 3: translation_id
+    if (
+      normalizeText(dua.translation.translation_id).includes(normalizedQuery)
+    ) {
+      return { matches: true, matchField: "translation_id" };
+    }
+
+    // Prioritas 4: transliteration
+    if (normalizeText(dua.transliteration).includes(normalizedQuery)) {
+      return { matches: true, matchField: "transliteration" };
+    }
+
+    // Prioritas 5: categories_id (cek semua kategori)
+    if (
+      dua.categories.categories_id.some((cat: string | null | undefined) =>
+        normalizeText(cat).includes(normalizedQuery),
+      )
+    ) {
+      return { matches: true, matchField: "categories_id" };
+    }
+
+    return { matches: false };
+  };
+
+  const filteredDuas =
+    query === ""
+      ? duaList
+      : duaList.filter((dua) => {
+          if (searchDua(dua, query).matches) {
+            console.log("dua", dua);
+          }
+          return searchDua(dua, query).matches;
+        });
+
+  console.log("filteredDuas", filteredDuas);
+
+  // Fungsi untuk menampilkan kategori dengan highlight
+  const renderCategories = (categories: string[], query: string) => {
+    return categories.map((category, index) => {
+      const normalizedCategory = normalizeText(category);
+      const normalizedQuery = normalizeText(query);
+
+      if (query.trim() && normalizedCategory.includes(normalizedQuery)) {
+        return (
+          <span
+            key={index}
+            className="inline-block bg-gray-100 rounded-full px-2 py-1 text-xs mr-2 mb-2"
+          >
+            {highlightMatch(category, query)}
+          </span>
+        );
+      }
+
+      return (
+        <span
+          key={index}
+          className="inline-block bg-gray-100 rounded-full px-2 py-1 text-xs mr-2 mb-2"
+        >
+          {category}
+        </span>
+      );
+    });
+  };
 
   return (
-    <div className="max-w-xl mx-auto p-4">
-      {/* Search Bar */}
+    <div className="max-w-2xl mx-auto p-4">
       <Input
         type="text"
         placeholder="Cari doa..."
-        className="w-full p-2 border rounded-md"
+        className="w-full p-2 border rounded-md mb-4"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
 
-      {/* List Kategori / Hasil Pencarian */}
-      <div className="grid grid-cols-2 gap-4 mt-4">
-        {filteredCategories.length > 0 ? (
-          filteredCategories.map((cat) => (
-            <Card key={cat.id} className="p-4 cursor-pointer hover:bg-gray-100">
-              <CardContent>{cat.name}</CardContent>
+      <div className="space-y-4">
+        {filteredDuas.length > 0 ? (
+          filteredDuas.map((dua) => (
+            <Card key={dua.id} className="overflow-hidden">
+              <CardHeader className="bg-gray-50">
+                <CardTitle className="text-lg">
+                  {highlightMatch(dua.title.title_id, query)}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-4">
+                  {/* Arabic */}
+                  <div className="text-right">
+                    <p className="text-xl leading-loose">
+                      {highlightMatch(dua.arabic, query)}
+                    </p>
+                  </div>
+
+                  {/* Transliteration */}
+                  <div>
+                    <p className="text-sm text-gray-500 italic">
+                      {highlightMatch(dua.transliteration, query)}
+                    </p>
+                  </div>
+
+                  {/* Translation */}
+                  <div>
+                    <p className="text-base">
+                      {highlightMatch(dua.translation.translation_id, query)}
+                    </p>
+                  </div>
+
+                  {/* Categories */}
+                  <div className="pt-2">
+                    <p className="text-xs text-gray-500 mb-1">Kategori:</p>
+                    <div className="flex flex-wrap">
+                      {renderCategories(dua.categories.categories_id, query)}
+                    </div>
+                  </div>
+
+                  {/* Reference */}
+                  <div className="pt-2 text-xs text-gray-500">
+                    <p>{dua.reference}</p>
+                  </div>
+                </div>
+              </CardContent>
             </Card>
           ))
         ) : (
-          <p className="col-span-2 text-center text-gray-500">
-            Tidak ditemukan
-          </p>
+          <p className="text-gray-500 text-center p-8">Tidak ditemukan</p>
         )}
       </div>
     </div>
