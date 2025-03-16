@@ -152,13 +152,8 @@ export const SearchableList = () => {
     query === ""
       ? duaList
       : duaList.filter((dua) => {
-          if (searchDua(dua, query).matches) {
-            console.log("dua", dua);
-          }
           return searchDua(dua, query).matches;
         });
-
-  console.log("filteredDuas", filteredDuas);
 
   // Fungsi untuk menampilkan kategori dengan highlight
   const renderCategories = (categories: string[], query: string) => {
@@ -202,16 +197,21 @@ export const SearchableList = () => {
         {filteredDuas.length > 0 ? (
           filteredDuas.map((dua) => (
             <Card key={dua.id} className="overflow-hidden">
-              <CardHeader className="bg-gray-50">
+              <CardHeader>
                 <CardTitle className="text-lg">
+                  {/* ID */}
+                  <div className="text-xs text-gray-500">
+                    <p>ID: {dua.id}</p>
+                  </div>
+
                   {highlightMatch(dua.title.title_id, query)}
                 </CardTitle>
               </CardHeader>
               <CardContent className="pt-4">
                 <div className="space-y-4">
                   {/* Arabic */}
-                  <div className="text-right">
-                    <p className="text-xl leading-loose">
+                  <div className="text-right font-serif">
+                    <p className="text-3xl leading-loose font-thin">
                       {highlightMatch(dua.arabic, query)}
                     </p>
                   </div>
@@ -230,17 +230,25 @@ export const SearchableList = () => {
                     </p>
                   </div>
 
+                  {/* Reference */}
+                  <div className="pt-2 text-xs text-gray-500">
+                    <p>{dua.reference}</p>
+                  </div>
+
+                  {/* Note */}
+                  {dua.note.note_id ? (
+                    <div className="pt-1 text-xs text-gray-500">
+                      <p className="text-xs text-gray-500 mb-1">Keterangan:</p>
+                      <p>{dua.note.note_id}</p>
+                    </div>
+                  ) : null}
+
                   {/* Categories */}
                   <div className="pt-2">
                     <p className="text-xs text-gray-500 mb-1">Kategori:</p>
                     <div className="flex flex-wrap">
                       {renderCategories(dua.categories.categories_id, query)}
                     </div>
-                  </div>
-
-                  {/* Reference */}
-                  <div className="pt-2 text-xs text-gray-500">
-                    <p>{dua.reference}</p>
                   </div>
                 </div>
               </CardContent>
