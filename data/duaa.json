@@ -18,7 +18,7 @@
         "Doa Nabi Nuh AS",
         "Rahmat",
         "Taubat/Ampunan",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas"
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas"
       ],
       "categories_en": [
         "Prophet Noah's PBUH Prayer",
@@ -162,7 +162,7 @@
       "categories_id": [
         "Doa Nabi Musa AS",
         "Taubat/Ampunan",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas"
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas"
       ],
       "categories_en": [
         "Prophet Moses's PBUH Prayer",
@@ -276,7 +276,7 @@
     "categories": {
       "categories_id": [
         "Taubat/Ampunan",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
         "Pertolongan atas Kaum Kafir/Zalim"
       ],
       "categories_en": [
@@ -319,7 +319,7 @@
         "Doa Nabi Adam AS",
         "Rahmat",
         "Taubat/Ampunan",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas"
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas"
       ],
       "categories_en": [
         "Prophet Adam's PBUH Prayer",
@@ -1181,7 +1181,7 @@
     "categories": {
       "categories_id": [
         "Doa Nabi Yunus AS",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
         "Pertolongan dalam Ujian/Kemudahan dalam Urusan"
       ],
       "categories_en": [
@@ -1290,8 +1290,8 @@
   {
     "id": 36,
     "title": {
-      "title_id": "Mohon Kebaikan Dunia dan Akhirat",
-      "title_en": "Seeking for Goodness in this World and Hereafter"
+      "title_id": "Mohon Kebaikan and Keselamatan di Dunia dan Akhirat #1",
+      "title_en": "Seeking for Goodness and Salvation in this World and Hereafter #1"
     },
     "arabic": "رَبَّنَآ ءَاتِنَا فِى ٱلدُّنْيَا حَسَنَةًۭ وَفِى ٱلْـَٔاخِرَةِ حَسَنَةًۭ وَقِنَا عَذَابَ ٱلنَّارِ",
     "arabic_first_person_plural": null,
@@ -1711,18 +1711,18 @@
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
         "Perlindungan dari Hilangnya Nikmat",
-        "Kesehatan",
+        "Kesehatan dan Perlindungan dari Penyakit",
         "Perlindungan dari Murka Allah"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
         "Refuge from the Disappearance of Blessings",
-        "Good Health",
+        "Good Health and Refuge from Sickness/Disease",
         "Refuge from Allah's Wrath"
       ]
     },
     "source": "As-Sunnah",
-    "reference": "HR. Muslim no. 2739. Al-Adab Al-Mufrad 685. Graded Sahih by al-Albani رحمه الله.",
+    "reference": "HR. Muslim no. 2739. Al-Adab Al-Mufrad 685. Graded Sahih by al-Albani.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -1754,7 +1754,7 @@
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
         "Perlindungan dari Kefakiran/Kemiskinan/Kehinaan/Kelaparan",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
         "Pertolongan atas Kaum Kafir/Zalim"
       ],
       "categories_en": [
@@ -1765,7 +1765,7 @@
       ]
     },
     "source": "As-Sunnah",
-    "reference": "HR. Ahmad no. 8053. Abu Daud no. 1546. Al-Adab Al-Mufrad 678. Graded Sahih by Syuaib al-Arnauth and al-Albani رحمهما الله.",
+    "reference": "HR. Ahmad no. 8053. Abu Daud no. 1546. Al-Adab Al-Mufrad 678. Graded Sahih by Syuaib al-Arnauth and al-Albani.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -1797,7 +1797,7 @@
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
         "Perlindungan dari Kefakiran/Kemiskinan/Kehinaan/Kelaparan",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas"
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
@@ -1849,7 +1849,7 @@
       ]
     },
     "source": "As-Sunnah",
-    "reference": "HR. Al-Bukhari, no. 6347. HR. Muslim, no. 2707.",
+    "reference": "HR. Bukhari, no. 6347. HR. Muslim, no. 2707.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -1867,7 +1867,7 @@
     "id": 51,
     "title": {
       "title_id": "Mohon Perlindungan dari Kematian yang Mengerikan dan Gangguan Syaitan ketika Akan Mati",
-      "title_en": "Seeking Protection from Tragic Death and the Trials of the Devil before Death"
+      "title_en": "Seeking Protection from Tragic Death and the Trial from the Devil before Death"
     },
     "arabic": "اَللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ التَّرَدِّي وَالْهَدْمِ وَالْغَرَقِ وَالْحَرِيقِ وَأَعُوذُ بِكَ أَنْ يَتَخَبَّطَنِي الشَّيْطَانُ عِنْدَ الْمَوْتِ وَأَعُوذُ بِكَ أَنْ أَمُوتَ فِي سَبِيلِكَ مُدْبِرًا وَأَعُوذُ بِكَ أَنْ أَمُوتَ لَدِيغًا",
     "arabic_first_person_plural": null,
@@ -1890,7 +1890,7 @@
       ]
     },
     "source": "As-Sunnah",
-    "reference": "HR. An-Nasa’i, no. 5531. Graded Sahih by Al-Hafiz Abu Thahir. Graded Hasan by Darussalam.",
+    "reference": "HR. An-Nasa’i, no. 5531. Graded Sahih by Al-Hafiz Abu Thahir.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -1941,7 +1941,7 @@
       ]
     },
     "source": "As-Sunnah",
-    "reference": "HR. Al-Bukhari, no. 6377. HR. Muslim no. 589 [129]",
+    "reference": "HR. Bukhari, no. 6377. HR. Muslim no. 589 [129]",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -1972,15 +1972,15 @@
     "categories": {
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
         "Perlindungan dari Kefakiran/Kemiskinan/Kehinaan/Kelaparan",
-        "Perlindungan dari Penyakit"
+        "Kesehatan dan Perlindungan dari Penyakit"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
         "Refuge from One's Own Wrongdoings/Excessiveness",
         "Refuge from Poverty/Need/Abasement/Hunger",
-        "Refuge from Sickness/Disease"
+        "Good Health and Refuge from Sickness/Disease"
       ]
     },
     "source": "As-Sunnah",
@@ -2015,19 +2015,19 @@
     "categories": {
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
-        "Perlindungan dari Keburukan Diri/Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
         "Perlindungan dari Keburukan di Hari Tua",
         "Perlindungan dari Azab Kubur"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
         "Refuge from One's Own Wrongdoings/Excessiveness",
-        "Refuge from Degradation/Geriatric in Old Age",
+        "Refuge from Degradation/Geriatric/Senility in Old Age",
         "Refuge from the Torment of the Grave"
       ]
     },
     "source": "As-Sunnah",
-    "reference": "HR. Al-Bukhari no. 6374.",
+    "reference": "HR. Bukhari no. 6374.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2042,25 +2042,37 @@
     }
   },
   {
-    "id": null,
+    "id": 55,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Perlindungan dari Hal-Hal Buruk #4",
+      "title_en": "Seeking Refuge from Many Unwanted Things #4"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ قِنِي شَرَّ نَفْسِي، وَاعْزِمْ لِي عَلَى أَرْشَدِ أَمْرِي، اللَّهُمَّ اغْفِرْ لِي مَا أَسْرَرْتُ، وَمَا أَعْلَنْتُ، وَمَا أَخْطَأْتُ، وَمَا عَمَدْتُ، وَمَا عَلِمْتُ، وَمَا جَهِلْتُ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, lindungilah aku dari keburukan diriku sendiri, dan teguhkanlah aku dalam menjalankan urusanku dengan petunjuk terbaik. Ya Allah, ampunilah dosa-dosaku yang aku sembunyikan maupun yang aku tampakkan, yang aku lakukan karena kesalahan maupun dengan sengaja, yang aku ketahui maupun yang tidak aku ketahui.",
+      "translation_en": "O Allah, protect me from the evil of my own self, and guide me firmly towards the best course of my affairs. O Allah, forgive me for what I have kept secret and what I have made public, what I have done by mistake and what I have done deliberately, what I know and what I am unaware of."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma qinī sharra nafsī, wa‘zim lī ‘alā arshadi amrī. Allāhumma ighfir lī mā asrartu, wa mā a‘lantu, wa mā akhṭa’tu, wa mā ‘amadt, wa mā ‘alimtu, wa mā jahiltu.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Pertolongan dalam Ujian/Kemudahan dalam Urusan",
+        "Hidayah/Petunjuk",
+        "Taubat/Ampunan"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from One's Own Wrongdoings/Excessiveness",
+        "Allah's Aid in Trials/Ease in Affairs",
+        "Guidance",
+        "Tawbah/Forgiveness"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Ahmad (IV/444). HR. Al-Hakim (I/510). Graded Sahih by Al-Hakim.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2075,25 +2087,33 @@
     }
   },
   {
-    "id": null,
+    "id": 56,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Perlindungan dari Hal-Hal Buruk #5",
+      "title_en": "Seeking Refuge from Many Unwanted Things #5"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ إِنِّى أَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ وَالْجُبْنِ وَالْهَرَمِ وَالْبُخْلِ وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah! Sesungguhnya aku berlindung kepada-Mu dari kelemahan, kemalasan, sifat pengecut, usia tua yang lemah (kepikunan), dan sifat kikir. Aku juga berlindung kepada-Mu dari azab kubur serta dari fitnah kehidupan dan kematian.",
+      "translation_en": "O Allah! I seek refuge with You from incapacity, laziness, cowardice, senility, and miserliness. I also seek refuge with You from the punishment of the grave and from the trials of life and death."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma innī a‘ūdhu bika minal-‘ajzi wal-kasali wal-jubni wal-harami wal-bukhli, wa a‘ūdhu bika min ‘adhābil-qabri wa min fitnatil-mahyā wal-mamāt.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Perlindungan dari Keburukan di Hari Tua"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from One's Own Wrongdoings/Excessiveness",
+        "Refuge from Degradation/Geriatric/Senility in Old Age"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Bukhari no. 6374. HR. Muslim no. 2706.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2103,30 +2123,36 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Anas bin Malik radhiyallahu ‘anhu berkata bahwa Rasulullah shallallahu ‘alaihi wa sallam biasa membaca do’a: \"Ya Allah, aku berlindung kepada-Mu dari kelemahan, rasa malas, rasa takut, kejelekan di waktu tua, dan sifat kikir. Dan aku juga berlindung kepada-Mu dari siksa kubur serta bencana kehidupan dan kematian\"",
+      "note_en": "Narrated from Anas bin Malik: Allah's Prophet used to say, \"O Allah! I seek refuge with You from incapacity, laziness, cowardice, senility, and miserliness. I also seek refuge with You from the punishment of the grave and from the trials of life and death.\""
     }
   },
   {
-    "id": null,
+    "id": 57,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon agar Dijauhkan dari Segala Penyakit",
+      "title_en": "Seeking Refuge from all Sickness/Diseases"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ البَرَصِ ، وَالجُنُونِ ، والجُذَامِ ، وَسَيِّيءِ الأسْقَامِ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, aku berlindung kepada-Mu dari penyakit kulit, gila, lepra, dan dari penyakit yang jelek lainnya.",
+      "translation_en": "O Allah, I seek refuge in You from possession, leprosy, leukederma and bad/evil sickness."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma innī a‘ūdhu bika minal-baraṣi, wal-junūni, wal-jużāmi, wa sayyi’il-asqām.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Kesehatan dan Perlindungan dari Penyakit"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Good Health and Refuge from Sickness/Disease"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Abu Daud, no. 1554. HR. An-Nasai (VIII/270). HR Ahmad (III/192). Graded Sahih by al-Albani.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2136,30 +2162,36 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Dari Anas radhiyallahu ‘anhu bahwa Nabi shallallahu ‘alaihi wa sallam mengucapkan: \"Ya Allah, aku berlindung kepada-Mu dari penyakit kulit, gila, lepra, dan dari penyakit yang jelek lainnya.\"",
+      "note_en": "It was narrated from Anas that: The Prophet [SAW] used to say: \"Allahumma inni a'udhu bika minal-jununi wal-jadhami, wal-barasi wa sayy'il-asqam (O Allah, I seek refuge in You from possession, leprosy, leukederma and bad sickness (that may lead to visible deformity).\""
     }
   },
   {
-    "id": null,
+    "id": 58,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Perlindungan atas Keburukan Diri #1",
+      "title_en": "Seeking Protection from the Evil Within #1"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ إِنِّى أَعُوذُ بِكَ مِنْ شَرِّ سَمْعِى وَمِنْ شَرِّ بَصَرِى وَمِنْ شَرِّ لِسَانِى وَمِنْ شَرِّ قَلْبِى وَمِنْ شَرِّ مَنِيِّى",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, aku meminta perlindungan pada-Mu dari kejelakan pada pendengaranku, dari kejelakan pada penglihatanku, dari kejelekan pada lisanku, dari kejelekan pada hatiku, serta dari kejelakan pada mani (atau kemaluanku)",
+      "translation_en": "O Allah, indeed I seek refuge in You from the evil of my hearing and the evil of my sight, and the evil of my tongue and the evil of my heart, and the evil of my semen (i.e. sexual desire)."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma innī a‘ūdhu bika min sharri sam‘ī, wa min sharri baṣarī, wa min sharri lisānī, wa min sharri qalbī, wa min sharri maniyyī.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from One's Own Wrongdoings/Excessiveness"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. An-Nasa’i, no. 5446. HR. Abu Daud, no. 1551. HR. Tirmidzi, no. 3492. Graded Hasan by Al-Hafiz Abu Thahir.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2169,30 +2201,38 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Syakal bin Humaid pernah mendatangi Nabi shallallahu ‘alaihi wa sallam lantas ia meminta pada beliau untuk mengajarkannya bacaan ta’awudz yang biasa ia gunakan ketika meminta perlindungan pada Allah. Kemudian Nabi shallallahu ‘alaihi wa sallam mengajarkan do’a dengan beliau memegang tanganku lalu beliau ajarkan, ucapkanlah, \"Ya Allah, aku meminta perlindungan pada-Mu dari kejelakan pada pendengaranku, dari kejelakan pada penglihatanku, dari kejelekan pada lisanku, dari kejelekan pada hatiku, serta dari kejelakan pada mani atau kemaluanku.\"",
+      "note_en": "Shakal bin Humaid said: \"I came to the Prophet and said: 'O Messenger of Allah, teach me a way of seeking refuge so that I may seek refuge by it.\" He said: \"So he took my hand and said: 'Say: O Allah, indeed I seek refuge in You from the evil of my hearing and the evil of my sight, and the evil of my tongue and the evil of my heart, and the evil of my semen (Allāhumma innī a`ūdhu bika min sharri sam`ī wa min sharri baṣarī, wa min sharri lisānī, wa min sharri qalbī, wa min sharri maniyyī).'\""
     }
   },
   {
-    "id": null,
+    "id": 59,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Perlindungan atas Keburukan Diri #2",
+      "title_en": "Seeking Protection from the Evil Within #2"
     },
-    "arabic": "",
+    "arabic": "اَللَّهُمَّ جَنِّبْنِي مُنْكَرَاتِ اَلْأَخْلَاقِ, وَالْأَعْمَالِ, وَالْأَهْوَاءِ, وَالْأَدْوَاءِ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, jauhkanlah dari aku akhlak yang mungkar, amal-amal yang mungkar, hawa nafsu yang mungkar, dan juga berbagai penyakit.",
+      "translation_en": "O Allah, I seek refuge in you from evil morals, deeds, passions and diseases."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma jannibnī munkarāti al-akhlāq, wa al-a‘māl, wa al-ahwā’, wa al-adwā’.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
+        "Kesehatan dan Perlindungan dari Penyakit"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from One's Own Wrongdoings/Excessiveness",
+        "Good Health and Refuge from Sickness/Disease"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Ibnu Hibban no. 956/at-Ta'liqatul Hisan. HR. Tirmidzi no. 3591. Graded Sahih by al-Hakim.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2202,30 +2242,36 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Dari Quthbah bin Malik berkata, Rasulullah ﷺ  berdoa, “Allahumma jannibni munkaratil akhlaq, wal a’mal, wal ahwai, wal adwa. (Ya Allah, jauhkanlah dari aku akhlak yang mungkar, amal-amal yang mungkar, hawa nafsu yang mungkar, dan juga berbagai penyakit).",
+      "note_en": "Qutbah bin Malik (RAA) narrated, ‘The Messenger of Allah (ﷺ) used to say, “O Allah, I seek refuge in you from evil morals, deeds, passions and diseases.”"
     }
   },
   {
-    "id": null,
+    "id": 60,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Perlindungan atas Keburukan Diri #3",
+      "title_en": "Seeking Protection from the Evil Within #3"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ شَرِّ مَا عَمِلْتُ وَمِنْ شَرِّ مَا لَمْ أَعْمَلْ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, aku berlindung kepada-Mu dari kejelekan yang telah aku lakukan dan kejelekan yang belum aku lakukan.",
+      "translation_en": "O Allah, I seek refuge in You from the evil of what I have done, and from the evil of what I have not done."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma innī a‘ūdhu bika min sharri mā ‘amiltu wa min sharri mā lam a‘mal.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Perlindungan dari Hal-Hal Buruk",
+        "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas"
+      ],
+      "categories_en": [
+        "Refuge from Unwanted Things",
+        "Refuge from One's Own Wrongdoings/Excessiveness"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Muslim no. 2716. HR. Abu Daud no. 1550 (in his Sunan). HR. An-Nasai no. 5524 (in his Sunan).",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2235,8 +2281,8 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Dari Aisyah radhiyallahu ‘anha, bahwa Nabi shallallahu ‘alaihi wa sallam di dalam doanya mengucapkan, \"Ya Allah, aku berlindung kepada-Mu dari kejelekan yang telah aku lakukan dan kejelekan yang belum aku lakukan.\"",
+      "note_en": "Farwah b. Nawfal Al-Ashja'i asked 'Aishah the Mother of the Believers, about the supplication of the Messenger of Allah (ﷺ). She replied: \"He would say: 'O Allah, I seek refuge in You from the evil of what I have done, and from the evil of what I have not done.'\""
     }
   },
   {

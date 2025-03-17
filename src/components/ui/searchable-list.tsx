@@ -97,8 +97,7 @@ export const SearchableList = () => {
 
     return (
       <>
-        {beforeMatch}
-        <span className="font-bold bg-yellow-200">{match}</span>
+        {beforeMatch} <span className="font-bold bg-yellow-200">{match}</span>
         {afterMatch}
       </>
     );
@@ -188,7 +187,7 @@ export const SearchableList = () => {
       <Input
         type="text"
         placeholder="Cari doa..."
-        className="w-full p-2 border rounded-md mb-4"
+        className="w-full p-2 bg-white border rounded-md mb-4"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
@@ -201,7 +200,7 @@ export const SearchableList = () => {
                 <CardTitle className="text-lg">
                   {/* ID */}
                   <div className="text-xs text-gray-500">
-                    <p>ID: {dua.id}</p>
+                    <p>No. {dua.id}</p>
                   </div>
 
                   {highlightMatch(dua.title.title_id, query)}
