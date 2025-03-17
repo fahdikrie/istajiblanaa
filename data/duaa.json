@@ -191,7 +191,7 @@
       "title_id": "Mohon Ampunan atas Dosa dan Meminta Keselamatan di Hari Kiamat",
       "title_en": "Seeking for Forgiveness from One's Sins and Seeking Refuge in the Day of Judgment"
     },
-    "arabic": "رَّبَّنَآ إِنَّنَا سَمِعْنَا مُنَادِيًۭا يُنَادِى لِلْإِيمَـٰنِ أَنْ ءَامِنُوا۟ بِرَبِّكُمْ فَـَٔامَنَّا ۚ رَبَّنَا فَٱغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّـَٔاتِنَا وَتَوَفَّنَا مَعَ ٱلْأَبْرَارِ\n\nرَبَّنَا وَءَاتِنَا مَا وَعَدتَّنَا عَلَىٰ رُسُلِكَ وَلَا تُخْزِنَا يَوْمَ ٱلْقِيَـٰمَةِ ۗ إِنَّكَ لَا تُخْلِفُ ٱلْمِيعَادَ\n\n",
+    "arabic": "رَّبَّنَآ إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِى لِلْإِيمَـٰنِ أَنْ ءَامِنُوا۟ بِرَبِّكُمْ فَـَٔامَنَّا ۚ رَبَّنَا فَٱغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّـَٔاتِنَا وَتَوَفَّنَا مَعَ ٱلْأَبْرَارِ\n\nرَبَّنَا وَءَاتِنَا مَا وَعَدتَّنَا عَلَىٰ رُسُلِكَ وَلَا تُخْزِنَا يَوْمَ ٱلْقِيَـٰمَةِ ۗ إِنَّكَ لَا تُخْلِفُ ٱلْمِيعَادَ\n\n",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan kami, sesungguhnya kami mendengar (seruan) yang menyeru kepada iman, (yaitu): \"Berimanlah kamu kepada Tuhanmu\", maka kamipun beriman. Ya Tuhan kami, ampunilah bagi kami dosa-dosa kami dan hapuskanlah dari kami kesalahan-kesalahan kami, dan wafatkanlah kami beserta orang-orang yang banyak berbakti.\n\nYa Tuhan kami, berilah kami apa yang telah Engkau janjikan kepada kami dengan perantaraan rasul-rasul Engkau. Dan janganlah Engkau hinakan kami di hari kiamat. Sesungguhnya Engkau tidak menyalahi janji.",
@@ -1137,7 +1137,7 @@
       "title_id": "Mohon agar Dijadikan Hamba yang Bersyukur #2 (Doa Memasuki Usia 40 Tahun)",
       "title_en": "Seeking to Be Made a Grateful Servant #2 (Prayer when Entering 40 Years Old of Age)"
     },
-    "arabic": "رَبِّ أَوْزِعْنِىٓ أَنْ أَشْكُرَ نِعْمَتَكَ ٱلَّتِىٓ أَنْعَمْتَ عَلَىَّ وَعَلَىٰ وَٰلِدَىَّ وَأَنْ أَعْمَلَ صَـٰلِحًۭا تَرْضَىٰهُ وَأَصْلِحْ لِى فِى ذُرِّيَّتِىٓ ۖ إِنِّى تُبْتُ إِلَيْكَ وَإِنِّى مِنَ ٱلْمُسْلِمِينَ",
+    "arabic": "رَبِّ أَوْزِعْنِىٓ أَنْ أَشْكُرَ نِعْمَتَكَ ٱلَّتِىٓ أَنْعَمْتَ عَلَىَّ وَعَلَىٰ وَٰلِدَىَّ وَأَنْ أَعْمَلَ صَـٰلِحًا تَرْضَىٰهُ وَأَصْلِحْ لِى فِى ذُرِّيَّتِىٓ ۖ إِنِّى تُبْتُ إِلَيْكَ وَإِنِّى مِنَ ٱلْمُسْلِمِينَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku, tunjukilah aku untuk mensyukuri nikmat Engkau yang telah Engkau berikan kepadaku dan kepada ibu bapakku dan supaya aku dapat berbuat amal yang saleh yang Engkau ridai; berilah kebaikan kepadaku dengan (memberi kebaikan) kepada anak cucuku. Sesungguhnya aku bertobat kepada Engkau dan sesungguhnya aku termasuk orang-orang yang berserah diri.",
@@ -1290,8 +1290,8 @@
   {
     "id": 36,
     "title": {
-      "title_id": "Mohon Kebaikan and Keselamatan di Dunia dan Akhirat #1",
-      "title_en": "Seeking for Goodness and Salvation in this World and Hereafter #1"
+      "title_id": "Mohon Kebaikan dan Keselamatan di Dunia dan di Akhirat #1",
+      "title_en": "Seeking for Goodness and Salvation in this World and the Hereafter #1"
     },
     "arabic": "رَبَّنَآ ءَاتِنَا فِى ٱلدُّنْيَا حَسَنَةًۭ وَفِى ٱلْـَٔاخِرَةِ حَسَنَةًۭ وَقِنَا عَذَابَ ٱلنَّارِ",
     "arabic_first_person_plural": null,
@@ -2286,25 +2286,37 @@
     }
   },
   {
-    "id": null,
+    "id": 61,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Kebaikan dan Keselamatan di Dunia dan di Akhirat #2",
+      "title_en": "Seeking for Goodness and Salvation in this World and the Hereafter #2"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ اغْفِرْ لِي وَاهْدِنِي وَارْزُقْنِي وَعَافِنِي، أَعُوْذُ بِالله مِنْ ضِيقِ الْمَقَامِ يَوْمَ الْقِيَامَةِ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, ampunilah aku, berilah aku petunjuk, karuniakanlah rezeki kepadaku, dan berikan kesehatan bagiku. Aku berlindung kepada Allah dari kesempitan tempat berdiri pada Hari Kiamat.",
+      "translation_en": "O Allah, forgive me, guide me, provide for me, and grant me well-being. I seek refuge with Allah from the hardship of standing on the Day of Judgment."
     },
-    "transliteration": "",
+    "transliteration": "Allāhummaghfir lī, wahdinī, warzuqnī, wa ‘āfinī. A‘ūdhu billāhi min ḍīqil-maqāmi yawmal-qiyāmah.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Taubat/Ampunan",
+        "Hidayah/Petunjuk",
+        "Kemudahan Rezeki",
+        "Kesehatan dan Perlindungan dari Penyakit",
+        "Perlindungan di Hari Kiamat"
+      ],
+      "categories_en": [
+        "Tawbah/Forgiveness",
+        "Guidance",
+        "Ease of Provision/Rizq",
+        "Good Health and Refuge from Sickness/Disease",
+        "Refuge in the Day of Judgement"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Abu Dawud no. 766. HR. Ibnu Majah no. 1356. HR. An-Nasai (III/209).",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2314,30 +2326,36 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Diriwayatkan bahwa ‘Asim bin Humaid berkata: “Aku bertanya kepada ‘Aisyah: ‘Dengan apa Nabi (ﷺ) memulai shalat sunnahnya?’ Dia berkata: ‘Kamu telah menanyakan sesuatu yang belum pernah ditanyakan oleh siapa pun sebelumnya. Beliau biasa mengucapkan Allahu Akbar sepuluh kali, Al-Hamdu Lillah sepuluh kali, dan Subhan Allah sepuluh kali, lalu beliau mengucapkan: Allahumma aghfirli wahdini, warzuqni, wa ‘afini (Ya Allah, ampunilah aku, bimbinglah aku, berilah aku rezeki, dan berilah aku kesehatan yang baik),” serta beliau berlindung dari kesulitan/kesempitan saat berdiri pada Hari Kiamat.”",
+      "note_en": "It was narrated that ‘Asim bin Humaid said: “I asked ‘Aishah: ‘With what did the Prophet (ﷺ) start voluntary prayers?’ She said: ‘You have asked me about something which no one has asked before. He used to say Allahu Akbar ten times, and Al-Hamdu Lillah ten times and Subhan Allah ten times, and he would say Allahumma aghfirli wahdini, warzuqni, wa ‘afini (O Allah, forgive me, guide me, grant me provision and give me good health),” and he would seek refuge from the difficulty of the standing on the Day of Resurrection.”"
     }
   },
   {
-    "id": null,
+    "id": 62,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Kebaikan dan Keselamatan di Dunia dan di Akhirat #3",
+      "title_en": "Seeking for Goodness and Salvation in this World and the Hereafter #3"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْعَافِيَةَ فِي الدُّنْيَا وَالآخِرَةِ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, aku memohon kepada-Mu kesehatan ('afiat—dijauhkan dari petaka) di dunia dan di akhirat.",
+      "translation_en": "O Allah, I ask You for well-being ('aafiyah—security) in this world and the Hereafter."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma innī as’aluka al-‘āfiyata fī ad-dunyā wa al-ākhirah.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Kebaikan dan Keberkahan dalam Urusan Dunia",
+        "Surga/Kebaikan di Akhirat"
+      ],
+      "categories_en": [
+        "Goodness and Blessings in Worldly Affairs",
+        "Garden/Heaven/Jannah/Goodness in the Hereafter"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Bukhari (Al-Adabul Mufrad) no. 726.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2347,30 +2365,36 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Abbas bin Abdul Muttalib (ra) berkata bahwa ia meminta Rasulullah (ﷺ) untuk mengajarkan kepadanya sebuah doa agar ia dapat memohon kepada Allah untuk kebutuhannya. Nabi (ﷺ) bersabda, \"Wahai Abbas, mintalah kepada Allah ‘afiyah (keselamatan dan perlindungan).\"\n\nBeberapa hari kemudian, ia kembali bertemu dengan Nabi (ﷺ) dan bertanya, \"Ajarkanlah aku sebuah doa untuk memohon kepada Allah atas kebutuhanku.\" Beliau bersabda, \"Wahai Abbas! Wahai paman Rasulullah! Mintalah kepada Allah ‘afiyah (keselamatan dan perlindungan) di dunia dan di akhirat.\"",
+      "note_en": "Abbas bin Abdul Muttalib (ra) said that he requested the Messenger of Allah (ﷺ) to teach him a supplication whereby he May request Allah for his needs. The Prophet (ﷺ) said,\"O Abbas, ask Allah for aafiyah (security).\n\nAfter some days, he again met the Prophet (ﷺ) and asked,\" Teach me a supplication to beseech Allah for my want.\" He said, \"O Abbas! O uncle of the messenger of Allah! Ask Allah for aafiyah (security) in this world and the next.\""
     }
   },
   {
-    "id": null,
+    "id": 63,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Kebaikan dan Keselamatan di Dunia dan di Akhirat #4",
+      "title_en": "Seeking for Goodness and Salvation in this World and the Hereafter #4"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ وَأَعُوذُ بِكَ مِنَ النَّارِ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, aku memohon surga kepada-Mu dan aku berlindung kepada-Mu dari neraka.",
+      "translation_en": "O Allah, I ask Thee for Paradise, and I seek refuge in Thee from Hell-Fire."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma innī as'aluka al-jannata wa a‘ūdhu bika mina an-nār.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Surga/Kebaikan di Akhirat",
+        "Perlindungan dari Azab Neraka"
+      ],
+      "categories_en": [
+        "Garden/Heaven/Jannah/Goodness in the Hereafter",
+        "Refuge from the Torment of the Fire"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Abu Dawud no. 792. HR Ibnu Majah no. 910.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2380,30 +2404,38 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Abu Salih meriwayatkan dari beberapa sahabat Nabi (ﷺ): Nabi (ﷺ) bertanya kepada seseorang, \"Apa yang kamu ucapkan dalam salat?\"\n\nOrang itu menjawab, \"Aku pertama-tama membaca tasyahud, lalu aku berkata: ‘Ya Allah, aku memohon surga kepada-Mu dan aku berlindung kepada-Mu dari neraka,’ tetapi aku tidak memahami suaramu dan suara Mu'adz (apa yang engkau atau dia ucapkan dalam salat).\"\n\nNabi (ﷺ) bersabda, \"Kami pun mengitari hal itu (surga dan neraka).\"",
+      "note_en": "Abu Salih reported on the authority of some Companions of the Prophet (ﷺ): The Prophet (ﷺ) said to a person: what do you say in prayer?\n\nHe replied: I first recite tashahhud (supplication recited in sitting position), and then I say: O Allah, I ask Thee for Paradise, and I seek refuge in Thee from Hell-Fire, but I do not understand your sound and the sound of Mu'adh (what you say or he says in prayer). The Prophet (ﷺ) said: We too go around it (paradise and Hell-fire)."
     }
   },
   {
-    "id": null,
+    "id": 64,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Kebaikan dan Keselamatan di Dunia dan di Akhirat #5",
+      "title_en": "Seeking for Goodness and Salvation in this World and the Hereafter #5"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ آتِنَا فِي الدُّنْيَا حَسَنَةً، وَفِي الآخِرَةِ حَسَنَةً، وَقِنَا عَذَابَ النَّارِ",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, berikanlah kami kebaikan di dunia dan kebaikan di akhirat, serta lindungilah kami dari azab neraka.",
+      "translation_en": "O Allah, grant us goodness in this world and goodness in the Hereafter, and protect us from the punishment of the Fire."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma ātinā fid-dunyā ḥasanah, wa fil-ākhirati ḥasanah, waqinā ‘adhāban-nār.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Kebaikan dan Keberkahan dalam Urusan Dunia",
+        "Surga/Kebaikan di Akhirat",
+        "Perlindungan dari Azab Neraka"
+      ],
+      "categories_en": [
+        "Goodness and Blessings in Worldly Affairs",
+        "Garden/Heaven/Jannah/Goodness in the Hereafter",
+        "Refuge from the Torment of the Fire"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Bukhari no. 6389. HR. Muslim no. 2690.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2413,30 +2445,38 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Qatadah bertanya kepada Anas tentang doa yang sering dipanjatkan oleh Rasulullah (ﷺ).\n\nAnas menjawab: \"Doa yang paling sering beliau (Nabi) ucapkan adalah: 'Ya Allah, berikanlah kami kebaikan di dunia dan kebaikan di akhirat serta lindungilah kami dari azab neraka.'\"\n\nQatadah berkata bahwa setiap kali Anas berdoa, ia selalu mengucapkan doa ini. Dan setiap kali ia hendak memanjatkan doa lain, ia selalu menyelipkan doa ini di dalamnya.",
+      "note_en": "Qatada asked Anas which Supplication Allah's Apostle (ﷺ) frequently made. He said:\n\nThe supplication that he (the Prophet made very frequently is this: \"O Allah, grant us the good in this world and the good in the Hereafter and save us from the torment of Hell-Fire.\"\n\nHe (Qatada) said that whenever Anas had to supplicate he made this very supplication, and whenever he (intended) to make another supplication he (inserted) this very supplication in that."
     }
   },
   {
-    "id": null,
+    "id": 65,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Kebaikan dan Keselamatan di Dunia dan di Akhirat #6 (Perbaikan Segala Urusan)",
+      "title_en": "Seeking for Goodness and Salvation in this World and the Hereafter #6 (Rectification of All Affairs)"
     },
-    "arabic": "",
-    "arabic_first_person_plural": null,
+    "arabic": "اللَّهُمَّ أَصْلِحْ لِي دِينِيَ الَّذِي هُوَ عِصْمَةُ أَمْرِي وَأَصْلِحْ لِي دُنْيَاىَ الَّتِي فِيهَا مَعَاشِي وَأَصْلِحْ لِي آخِرَتِي الَّتِي فِيهَا مَعَادِي وَاجْعَلِ الْحَيَاةَ زِيَادَةً لِي فِي كُلِّ خَيْرٍ وَاجْعَلِ الْمَوْتَ رَاحَةً لِي مِنْ كُلِّ شَرٍّ",
+    "arabic_first_person_plural": "اللَّهُمَّ أَصْلِحْ لَنَا دِينَنَا الَّذِي هُوَ عِصْمَةُ أَمْرِنَا وَأَصْلِحْ لَنَا دُنْيَانَا الَّتِي فِيهَا مَعَاشُنَا وَأَصْلِحْ لَنَا آخِرَتَنَا الَّتِي فِيهَا مَعَادُنَا وَاجْعَلِ الْحَيَاةَ زِيَادَةً لَنَا فِي كُلِّ خَيْرٍ وَاجْعَلِ الْمَوْتَ رَاحَةً لَنَا مِنْ كُلِّ شَرٍّ",
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, perbaikilah agamaku untukku, yang merupakan penjaga urusanku. Perbaikilah duniawiku untukku, di mana terdapat penghidupanku. Perbaikilah akhiratku untukku, di mana tempat kembaliku. Jadikanlah kehidupan sebagai tambahan bagiku dalam segala kebaikan, dan jadikanlah kematian sebagai istirahat bagiku dari segala keburukan.",
+      "translation_en": "O Allah, set right my religion for me, which is the safeguard of my affairs. Set right my worldly life for me, in which is my livelihood. Set right my Hereafter for me, in which is my return. Make life an increase for me in all that is good, and make death a relief for me from all that is evil."
     },
-    "transliteration": "",
-    "transliteration_first_person_plural": null,
+    "transliteration": "Allahumma aṣliḥ lī dīnīya-lladhī huwa ‘iṣmatu amrī, wa aṣliḥ lī dunyāya-llatī fīhā ma‘āshī, wa aṣliḥ lī ākhiratīya-llatī fīhā ma‘ādī, waj‘alil-ḥayāta ziyādatan lī fī kulli khayr, waj‘alil-mawta rāḥatan lī min kulli sharr.",
+    "transliteration_first_person_plural": "Allahumma aṣliḥ lanā dīnanā-lladhī huwa ‘iṣmatu amrinā, wa aṣliḥ lanā dunyānā-llatī fīhā ma‘āshunā, wa aṣliḥ lanā ākhiratanā-llatī fīhā ma‘ādunā, waj‘alil-ḥayāta ziyādatan lanā fī kulli khayr, waj‘alil-mawta rāḥatan lanā min kulli sharr.",
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Hidayah/Petunjuk",
+        "Kebaikan dan Keberkahan dalam Urusan Dunia",
+        "Surga/Kebaikan di Akhirat"
+      ],
+      "categories_en": [
+        "Guidance",
+        "Goodness and Blessings in Worldly Affairs",
+        "Garden/Heaven/Jannah/Goodness in the Hereafter"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Muslim no. 2720.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2446,17 +2486,17 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Abu Hurairah meriwayatkan bahwa Rasulullah (ﷺ) biasa berdoa dengan kata-kata berikut:\n\n\"Ya Allah, perbaikilah agamaku untukku, yang merupakan penjaga urusanku. Dan perbaikilah urusan duniaku untukku, di mana terdapat kehidupanku. Dan perbaikilah urusan akhiratku untukku, yang menjadi penentu kehidupanku setelah mati. Jadikanlah kehidupan sebagai sumber kelimpahan bagi segala kebaikan, dan jadikanlah kematian sebagai sumber ketenangan bagiku yang melindungiku dari segala keburukan.\"",
+      "note_en": "Abu Huraira reported that Allah's Messenger (ﷺ) used to supplicate (in these words):\n\n\"O Allah, set right for me my religion which is the safeguard of my affairs. And set right for me the affairs of my world wherein is my living. And set right for me my Hereafter on which depends my after-life. And make the life for me (a source) of abundance for every good and make my death a source of comfort for me protecting me against every evil.\""
     }
   },
   {
-    "id": null,
+    "id": 66,
     "title": {
       "title_id": "",
       "title_en": ""
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَاهْدِنِي وَارْزُقْنِي",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "",

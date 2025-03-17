@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Input } from "./input";
-import { Card, CardContent, CardHeader, CardTitle } from "./card";
+import { Input } from "@/components/ui/Input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import DUAA from "data/duaa.json";
 
 // Definisi tipe untuk data doa
@@ -97,7 +97,10 @@ export const SearchableList = () => {
 
     return (
       <>
-        {beforeMatch} <span className="font-bold bg-yellow-200">{match}</span>
+        {beforeMatch}
+        {match.startsWith(" ") && " "}
+        <span className="font-bold bg-yellow-200">{match.trim()}</span>
+        {match.endsWith(" ") && " "}
         {afterMatch}
       </>
     );
@@ -183,11 +186,11 @@ export const SearchableList = () => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
+    <div className="max-w-4xl mx-auto p-4">
       <Input
         type="text"
         placeholder="Cari doa..."
-        className="w-full p-2 bg-white border rounded-md mb-4"
+        className="w-full h-10 bg-white border rounded-md mb-4"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
@@ -238,7 +241,7 @@ export const SearchableList = () => {
                   {dua.note.note_id ? (
                     <div className="pt-1 text-xs text-gray-500">
                       <p className="text-xs text-gray-500 mb-1">Keterangan:</p>
-                      <p>{dua.note.note_id}</p>
+                      <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
                     </div>
                   ) : null}
 
