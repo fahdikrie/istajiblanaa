@@ -111,8 +111,8 @@
   {
     "id": 4,
     "title": {
-      "title_id": "Mohon Rahmat dan Perlindungan dari Azab Neraka",
-      "title_en": "Seeking for Mercy and Refuge from the Torment of the Fire"
+      "title_id": "Mohon Ampunan dan Perlindungan dari Azab Neraka",
+      "title_en": "Seeking for Forgiveness and Refuge from the Torment of the Fire"
     },
     "arabic": "رَبَّنَآ إِنَّنَآ ءَامَنَّا فَٱغْفِرْ لَنَا ذُنُوبَنَا وَقِنَا عَذَابَ ٱلنَّارِ",
     "arabic_first_person_plural": null,
@@ -224,7 +224,7 @@
       "title_id": "Mohon Ampunan, Rahmat, dan Dihindarkan dari Cobaan Berat",
       "title_en": "Seeking for Forgiveness, Mercy, and Strength in Trials"
     },
-    "arabic": "رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًۭا كَمَا حَمَلْتَهُۥ عَلَى ٱلَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ ۚ أَنتَ مَوْلَىٰنَا فَٱنصُرْنَا عَلَى ٱلْقَوْمِ ٱلْكَـٰفِرِينَ",
+    "arabic": "رَبَّنَا لَا تُؤَاخِذْنَآ إِن نَّسِينَآ أَوْ أَخْطَأْنَا ۚ رَبَّنَا وَلَا تَحْمِلْ عَلَيْنَآ إِصْرًا كَمَا حَمَلْتَهُۥ عَلَى ٱلَّذِينَ مِن قَبْلِنَا ۚ رَبَّنَا وَلَا تُحَمِّلْنَا مَا لَا طَاقَةَ لَنَا بِهِۦ ۖ وَٱعْفُ عَنَّا وَٱغْفِرْ لَنَا وَٱرْحَمْنَآ ۚ أَنتَ مَوْلَىٰنَا فَٱنصُرْنَا عَلَى ٱلْقَوْمِ ٱلْكَـٰفِرِينَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan kami, janganlah Engkau hukum kami jika kami lupa atau kami tersalah. Ya Tuhan kami, janganlah Engkau bebankan kepada kami beban yang berat sebagaimana Engkau bebankan kepada orang-orang sebelum kami. Ya Tuhan kami, janganlah Engkau pikulkan kepada kami apa yang tak sanggup kami memikulnya. Beri maaflah kami; ampunilah kami; dan rahmatilah kami. Engkaulah Penolong kami, maka tolonglah kami terhadap kaum yang kafir",
@@ -349,7 +349,7 @@
       "title_id": "Mohon agar Dimasukkan ke dalam Golongan Orang Saleh",
       "title_en": "Seeking to Be Included Among the Righteous"
     },
-    "arabic": "رَبِّ هَبْ لِى حُكْمًۭا وَأَلْحِقْنِى بِٱلصَّـٰلِحِينَ\n\nوَٱجْعَل لِّى لِسَانَ صِدْقٍۢ فِى ٱلْـَٔاخِرِينَ\n\nوَٱجْعَلْنِى مِن وَرَثَةِ جَنَّةِ ٱلنَّعِيمِ\n\nوَلَا تُخْزِنِى يَوْمَ يُبْعَثُونَ",
+    "arabic": "رَبِّ هَبْ لِى حُكْمًا وَأَلْحِقْنِى بِٱلصَّـٰلِحِينَ\n\nوَٱجْعَل لِّى لِسَانَ صِدْقٍۢ فِى ٱلْـَٔاخِرِينَ\n\nوَٱجْعَلْنِى مِن وَرَثَةِ جَنَّةِ ٱلنَّعِيمِ\n\nوَلَا تُخْزِنِى يَوْمَ يُبْعَثُونَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku, berikanlah kepadaku hikmah dan masukkanlah aku ke dalam golongan orang-orang yang saleh, dan jadikanlah aku buah tutur yang baik bagi orang-orang (yang datang) kemudian, dan jadikanlah aku termasuk orang-orang yang mempusakai surga yang penuh kenikmatan, dan janganlah Engkau hinakan aku pada hari mereka dibangkitkan.",
@@ -456,7 +456,7 @@
       "title_id": "Mohon Keturunan yang Saleh/Salihah #1",
       "title_en": "Seeking for a Righteous Offspring #1"
     },
-    "arabic": "رَبِّ لَا تَذَرْنِى فَرْدًۭا وَأَنتَ خَيْرُ ٱلْوَٰرِثِينَ",
+    "arabic": "رَبِّ لَا تَذَرْنِى فَرْدًا وَأَنتَ خَيْرُ ٱلْوَٰرِثِينَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku janganlah Engkau membiarkan aku hidup seorang diri dan Engkau-lah waris yang paling baik.",
@@ -522,7 +522,7 @@
       "title_id": "Mohon Keturunan yang Saleh/Salihah #3",
       "title_en": "Seeking for a Righteous Offspring #3"
     },
-    "arabic": "قَالَ رَبِّ هَبْ لِى مِن لَّدُنكَ ذُرِّيَّةًۭ طَيِّبَةً ۖ إِنَّكَ سَمِيعُ ٱلدُّعَآءِ",
+    "arabic": "قَالَ رَبِّ هَبْ لِى مِن لَّدُنكَ ذُرِّيَّةً طَيِّبَةً ۖ إِنَّكَ سَمِيعُ ٱلدُّعَآءِ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku, berilah aku dari sisi Engkau seorang anak yang baik. Sesungguhnya Engkau Maha Pendengar doa.",
@@ -677,7 +677,7 @@
       "title_id": "Mohon Ampun atas Diri dan Pendahulu dari Orang-Orang Mukmin",
       "title_en": "Seeking for Forgiveness for Oneself and the Predecessors from the Believers"
     },
-    "arabic": "رَبَّنَا ٱغْفِرْ لَنَا وَلِإِخْوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلْإِيمَـٰنِ وَلَا تَجْعَلْ فِى قُلُوبِنَا غِلًّۭا لِّلَّذِينَ ءَامَنُوا۟ رَبَّنَآ إِنَّكَ رَءُوفٌۭ رَّحِيمٌ",
+    "arabic": "رَبَّنَا ٱغْفِرْ لَنَا وَلِإِخْوَٰنِنَا ٱلَّذِينَ سَبَقُونَا بِٱلْإِيمَـٰنِ وَلَا تَجْعَلْ فِى قُلُوبِنَا غِلًّا لِّلَّذِينَ ءَامَنُوا۟ رَبَّنَآ إِنَّكَ رَءُوفٌ رَّحِيمٌ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan kami, beri ampunlah kami dan saudara-saudara kami yang telah beriman lebih dulu dari kami, dan janganlah Engkau membiarkan kedengkian dalam hati kami terhadap orang-orang yang beriman; Ya Tuhan kami, sesungguhnya Engkau Maha Penyantun lagi Maha Penyayang.",
@@ -710,7 +710,7 @@
       "title_id": "Mohon Ampun atas Diri, Orang Tua, dan Orang-Orang Mukmin #2",
       "title_en": "Seeking for Forgiveness for Oneself, One’s Parents, and the Believers #2"
     },
-    "arabic": "رَّبِّ ٱغْفِرْ لِى وَلِوَٰلِدَىَّ وَلِمَن دَخَلَ بَيْتِىَ مُؤْمِنًۭا وَلِلْمُؤْمِنِينَ وَٱلْمُؤْمِنَـٰتِ",
+    "arabic": "رَّبِّ ٱغْفِرْ لِى وَلِوَٰلِدَىَّ وَلِمَن دَخَلَ بَيْتِىَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَٱلْمُؤْمِنَـٰتِ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku! Ampunilah aku, ibu bapakku, orang yang masuk ke rumahku dengan beriman dan semua orang yang beriman laki-laki dan perempuan.",
@@ -786,7 +786,7 @@
       "title_id": "Mohon agar Disempurnakan Cahaya (Petunjuk)",
       "title_en": "Seeking for the Completeness of Light (Guidance)"
     },
-    "arabic": "رَبَّنَآ أَتْمِمْ لَنَا نُورَنَا وَٱغْفِرْ لَنَآ ۖ إِنَّكَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌۭ",
+    "arabic": "رَبَّنَآ أَتْمِمْ لَنَا نُورَنَا وَٱغْفِرْ لَنَآ ۖ إِنَّكَ عَلَىٰ كُلِّ شَىْءٍۢ قَدِيرٌ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan kami, sempurnakanlah bagi kami cahaya kami dan ampunilah kami; Sesungguhnya Engkau Maha Kuasa atas segala sesuatu.",
@@ -930,7 +930,7 @@
       "title_id": "Mohon Perlindungan dari Orang-Orang Zalim #4",
       "title_en": "Seeking Refuge from the Wrongdoers #4"
     },
-    "arabic": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةًۭ لِّلَّذِينَ كَفَرُوا۟ وَٱغْفِرْ لَنَا رَبَّنَآ ۖ إِنَّكَ أَنتَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
+    "arabic": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِّلَّذِينَ كَفَرُوا۟ وَٱغْفِرْ لَنَا رَبَّنَآ ۖ إِنَّكَ أَنتَ ٱلْعَزِيزُ ٱلْحَكِيمُ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan kami, janganlah Engkau jadikan kami (sasaran) fitnah bagi orang-orang kafir. Dan ampunilah kami ya Tuhan kami. Sesungguhnya Engkau-lah Yang Maha Perkasa lagi Maha Bijaksana.",
@@ -1104,7 +1104,7 @@
       "title_id": "Mohon agar Dijadikan Hamba yang Bersyukur #1",
       "title_en": "Seeking to Be Made a Grateful Servant #1"
     },
-    "arabic": "رَبِّ أَوْزِعْنِىٓ أَنْ أَشْكُرَ نِعْمَتَكَ ٱلَّتِىٓ أَنْعَمْتَ عَلَىَّ وَعَلَىٰ وَٰلِدَىَّ وَأَنْ أَعْمَلَ صَـٰلِحًۭا تَرْضَىٰهُ وَأَدْخِلْنِى بِرَحْمَتِكَ فِى عِبَادِكَ ٱلصَّـٰلِحِينَ",
+    "arabic": "رَبِّ أَوْزِعْنِىٓ أَنْ أَشْكُرَ نِعْمَتَكَ ٱلَّتِىٓ أَنْعَمْتَ عَلَىَّ وَعَلَىٰ وَٰلِدَىَّ وَأَنْ أَعْمَلَ صَـٰلِحًا تَرْضَىٰهُ وَأَدْخِلْنِى بِرَحْمَتِكَ فِى عِبَادِكَ ٱلصَّـٰلِحِينَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku, berilah aku ilham untuk tetap mensyukuri nikmat-Mu yang telah Engkau anugerahkan kepadaku, dan kepada dua orang ibu bapakku, dan untuk mengerjakan amal saleh yang Engkau ridai, dan masukkanlah aku dengan rahmat-Mu ke dalam golongan hamba-hamba-Mu yang saleh.",
@@ -1211,7 +1211,7 @@
       "title_id": "Mohon agar Dilapangkan Hati, Dimudahkan Urusan, dan Kelancaran Berbicara",
       "title_en": "Seeking for an Uplifted Heart, Ease in Affairs, and Eloquence in Speech"
     },
-    "arabic": "رَبِّ ٱشْرَحْ لِى صَدْرِى وَيَسِّرْ لِىٓ أَمْرِى وَٱحْلُلْ عُقْدَةًۭ مِّن لِّسَانِى يَفْقَهُوا۟ قَوْلِى",
+    "arabic": "رَبِّ ٱشْرَحْ لِى صَدْرِى وَيَسِّرْ لِىٓ أَمْرِى وَٱحْلُلْ عُقْدَةً مِّن لِّسَانِى يَفْقَهُوا۟ قَوْلِى",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku, lapangkanlah untukku dadaku, dan mudahkanlah untukku urusanku, dan lepaskanlah kekakuan dari lidahku, supaya mereka mengerti perkataanku.",
@@ -1293,7 +1293,7 @@
       "title_id": "Mohon Kebaikan dan Keselamatan di Dunia dan di Akhirat #1",
       "title_en": "Seeking for Goodness and Salvation in this World and the Hereafter #1"
     },
-    "arabic": "رَبَّنَآ ءَاتِنَا فِى ٱلدُّنْيَا حَسَنَةًۭ وَفِى ٱلْـَٔاخِرَةِ حَسَنَةًۭ وَقِنَا عَذَابَ ٱلنَّارِ",
+    "arabic": "رَبَّنَآ ءَاتِنَا فِى ٱلدُّنْيَا حَسَنَةً وَفِى ٱلْـَٔاخِرَةِ حَسَنَةً وَقِنَا عَذَابَ ٱلنَّارِ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan peliharalah kami dari siksa neraka.",
@@ -1514,7 +1514,7 @@
       "title_id": "Mohon agar Dilimpahkan Kesabaran dan Diwafatkan dalam Keadaan Muslim",
       "title_en": "Seeking an Increase in Patience/Sabr and to Die as a Muslim"
     },
-    "arabic": "رَبَّنَآ أَفْرِغْ عَلَيْنَا صَبْرًۭا وَتَوَفَّنَا مُسْلِمِينَ",
+    "arabic": "رَبَّنَآ أَفْرِغْ عَلَيْنَا صَبْرًا وَتَوَفَّنَا مُسْلِمِينَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan kami, limpahkanlah kesabaran kepada kami dan wafatkanlah kami dalam keadaan berserah diri (kepada-Mu).",
@@ -1553,7 +1553,7 @@
       "title_id": "Mohon agar Diwafatkan dalam Keadaan Muslim dan Dikumpulkan Bersama Orang-Orang Saleh",
       "title_en": "Seeking to Die as a Muslim and Be Gathered Among the Righteous"
     },
-    "arabic": "تَوَفَّنِى مُسْلِمًۭا وَأَلْحِقْنِى بِٱلصَّـٰلِحِينَ",
+    "arabic": "تَوَفَّنِى مُسْلِمًا وَأَلْحِقْنِى بِٱلصَّـٰلِحِينَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Wafatkanlah aku dalam keadaan Islam dan gabungkanlah aku dengan orang-orang yang saleh.",
@@ -1594,7 +1594,7 @@
       "title_id": "Mohon agar Digantikan dengan yang Lebih Baik (Ketika Mendapatkan Musibah)",
       "title_en": "Seeking for a Better Replacement from What is Lost (Upon Facing a Trial/Disaster/Calamity)"
     },
-    "arabic": "عَسَىٰ رَبُّنَآ أَن يُبْدِلَنَا خَيْرًۭا مِّنْهَآ إِنَّآ إِلَىٰ رَبِّنَا رَٰغِبُونَ",
+    "arabic": "عَسَىٰ رَبُّنَآ أَن يُبْدِلَنَا خَيْرًا مِّنْهَآ إِنَّآ إِلَىٰ رَبِّنَا رَٰغِبُونَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Mudah-mudahan Tuhan kita memberikan ganti kepada kita dengan (kebun) yang lebih baik daripada itu; sesungguhnya kita mengharapkan ampunan dari Tuhan kita.",
@@ -1660,7 +1660,7 @@
       "title_id": "Mohon agar Dilabuhkan di Tempat yang Diberkahi",
       "title_en": "Seeking to Be Accomodated in a Blessed Place"
     },
-    "arabic": "رَّبِّ أَنزِلْنِى مُنزَلًۭا مُّبَارَكًۭا وَأَنتَ خَيْرُ ٱلْمُنزِلِينَ",
+    "arabic": "رَّبِّ أَنزِلْنِى مُنزَلًا مُّبَارَكًا وَأَنتَ خَيْرُ ٱلْمُنزِلِينَ",
     "arabic_first_person_plural": null,
     "translation": {
       "translation_id": "Ya Tuhan-ku, tempatkanlah aku pada tempat yang diberkati dan Engkau adalah sebaik-baik Yang memberi tempat.",
@@ -1711,13 +1711,13 @@
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
         "Perlindungan dari Hilangnya Nikmat",
-        "Kesehatan dan Perlindungan dari Penyakit",
+        "Kesehatan Jasad (Badan, Penglihatan, dan Pendengaran) dan Perlindungan dari Penyakit",
         "Perlindungan dari Murka Allah"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
         "Refuge from the Disappearance of Blessings",
-        "Good Health and Refuge from Sickness/Disease",
+        "Good Health (Well-Being of the Body, the Hearing, and the Sight) and Refuge from Sickness/Disease",
         "Refuge from Allah's Wrath"
       ]
     },
@@ -1974,13 +1974,13 @@
         "Perlindungan dari Hal-Hal Buruk",
         "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
         "Perlindungan dari Kefakiran/Kemiskinan/Kehinaan/Kelaparan",
-        "Kesehatan dan Perlindungan dari Penyakit"
+        "Kesehatan Jasad (Badan, Penglihatan, dan Pendengaran) dan Perlindungan dari Penyakit"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
         "Refuge from One's Own Wrongdoings/Excessiveness",
         "Refuge from Poverty/Need/Abasement/Hunger",
-        "Good Health and Refuge from Sickness/Disease"
+        "Good Health (Well-Being of the Body, the Hearing, and the Sight) and Refuge from Sickness/Disease"
       ]
     },
     "source": "As-Sunnah",
@@ -2144,11 +2144,11 @@
     "categories": {
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
-        "Kesehatan dan Perlindungan dari Penyakit"
+        "Kesehatan Jasad (Badan, Penglihatan, dan Pendengaran) dan Perlindungan dari Penyakit"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
-        "Good Health and Refuge from Sickness/Disease"
+        "Good Health (Well-Being of the Body, the Hearing, and the Sight) and Refuge from Sickness/Disease"
       ]
     },
     "source": "As-Sunnah",
@@ -2223,12 +2223,12 @@
       "categories_id": [
         "Perlindungan dari Hal-Hal Buruk",
         "Perlindungan dari Keburukan dan Kezaliman Diri/Perbuatan Melampaui Batas",
-        "Kesehatan dan Perlindungan dari Penyakit"
+        "Kesehatan Jasad (Badan, Penglihatan, dan Pendengaran) dan Perlindungan dari Penyakit"
       ],
       "categories_en": [
         "Refuge from Unwanted Things",
         "Refuge from One's Own Wrongdoings/Excessiveness",
-        "Good Health and Refuge from Sickness/Disease"
+        "Good Health (Well-Being of the Body, the Hearing, and the Sight) and Refuge from Sickness/Disease"
       ]
     },
     "source": "As-Sunnah",
@@ -2304,14 +2304,14 @@
         "Taubat/Ampunan",
         "Hidayah/Petunjuk",
         "Kemudahan Rezeki",
-        "Kesehatan dan Perlindungan dari Penyakit",
+        "Kesehatan Jasad (Badan, Penglihatan, dan Pendengaran) dan Perlindungan dari Penyakit",
         "Perlindungan di Hari Kiamat"
       ],
       "categories_en": [
         "Tawbah/Forgiveness",
         "Guidance",
         "Ease of Provision/Rizq",
-        "Good Health and Refuge from Sickness/Disease",
+        "Good Health (Well-Being of the Body, the Hearing, and the Sight) and Refuge from Sickness/Disease",
         "Refuge in the Day of Judgement"
       ]
     },
@@ -2493,23 +2493,33 @@
   {
     "id": 66,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon Rahmat dan Ampunan #3 (Berikut Petunjuk dan Rezeki)",
+      "title_en": "Seeking for Mercy and Forgiveness #3 (Including Guidance and Provision)"
     },
     "arabic": "اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَاهْدِنِي وَارْزُقْنِي",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, ampunilah aku, rahmatilah aku, bimbinglah aku, dan berilah aku rezeki.",
+      "translation_en": "O Allah, forgive me, have mercy on me, guide me, and grant me provision."
     },
-    "transliteration": "",
+    "transliteration": "Allahumma-ghfir lī, warḥamnī, wahdinī, warzuqnī.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Taubat/Ampunan",
+        "Rahmat",
+        "Hidayah/Petunjuk",
+        "Kemudahan Rezeki"
+      ],
+      "categories_en": [
+        "Tawbah/Forgiveness",
+        "Mercy",
+        "Guidance",
+        "Ease of Provision/Rizq"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. Muslim 2697.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2519,30 +2529,36 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Abu Malik Al-Ashja'i meriwayatkan dari ayahnya bahwa setiap kali seseorang masuk Islam, Rasulullah (ﷺ) mengajarkan kepadanya doa berikut:\n\n\"Ya Allah, ampunilah aku, rahmatilah aku, bimbinglah aku ke jalan yang lurus, dan berilah aku rezeki.\"",
+      "note_en": "Abu Malik Ashaja'i reported on the authority of his father that whenever a person embraced Islam, Allah's Messenger (ﷺ) instructed him to recilte:\n\n\"O Allah, grant me pardon, have mercy upon me, direct me to the path of righteousness and provide me sustenance.\""
     }
   },
   {
-    "id": null,
+    "id": 67,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Doa Memohon Kenikmatan Pendengaran dan Penglihatan serta Pertolongan dari Kezaliman",
+      "title_en": "Seeking for the Blessing of Hearing and Sight and Seeking Help Against Oppression"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ مَتِّعْنِي بِسَمْعِي وَبَصَرِي وَاجْعَلْهُمَا الْوَارِثَ مِنِّي وَانْصُرْنِي عَلَى مَنْ يَظْلِمُنِي وَخُذْ مِنْهُ بِثَأْرِي",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, berikanlah aku kenikmatan dengan pendengaranku dan penglihatanku, jadikanlah keduanya tetap bersamaku hingga akhir hayatku, tolonglah aku atas orang yang menzalimi aku, dan balaskanlah darinya untukku.",
+      "translation_en": "O Allah, grant me enjoyment of my hearing and my sight, and keep them with me until the end of my life. Help me against those who oppress me, and take retribution from them on my behalf."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma matti`nī bisam`ī wa baṣarī waj`alhumal-wāritha minnī, wanṣurnī `alā man yaẓlimunī, wa khudh minhu bitha’rī.",
     "transliteration_first_person_plural": null,
     "categories": {
-      "categories_id": [],
-      "categories_en": []
+      "categories_id": [
+        "Kesehatan Jasad (Badan, Penglihatan, dan Pendengaran) dan Perlindungan dari Penyakit",
+        "Pertolongan atas Kaum Kafir/Zalim"
+      ],
+      "categories_en": [
+        "Good Health (Well-Being of the Body, the Hearing, and the Sight) and Refuge from Sickness/Disease",
+        "Protection from the Disbelievers/Wrongdoers"
+      ]
     },
     "source": "As-Sunnah",
-    "reference": "",
+    "reference": "HR. At-Tirmidzi no. 3604h.",
     "occasion": {
       "occassion_id": "",
       "occassion_en": ""
@@ -2552,23 +2568,23 @@
       "benefits_en": []
     },
     "note": {
-      "note_id": "",
-      "note_en": ""
+      "note_id": "Abu Hurairah meriwayatkan bahwa Rasulullah (ﷺ) biasa berdoa dengan mengatakan:\n\n\"Ya Allah, berikanlah aku kenikmatan pada pendengaranku dan penglihatanku, jadikanlah keduanya tetap bersamaku hingga akhir hayatku, tolonglah aku melawan orang yang menzalimiku, dan balaslah mereka atas namaku.\"",
+      "note_en": "Abu Hurairah narrated that the Messenger of Allah (ﷺ) used to supplicate, saying:\n\n\"O Allah, give me pleasure in my hearing and my sight, and make it the inheritor from me, and aid me against whoever oppresses me, and take vengeance from him for me.\""
     }
   },
   {
-    "id": null,
+    "id": 68,
     "title": {
-      "title_id": "",
-      "title_en": ""
+      "title_id": "Mohon atas Banyaknya Anak dan Harta dan Keberkahan atas Karunia",
+      "title_en": "Seeking for the Abundance of Children and Wealth and Blessing upon the Provision"
     },
-    "arabic": "",
+    "arabic": "اللَّهُمَّ أَكْثِرْ مَالِي وَوَلَدِي، وَبَارِكْ لِي فِيمَا أَعْطَيْتَنِي",
     "arabic_first_person_plural": null,
     "translation": {
-      "translation_id": "",
-      "translation_en": ""
+      "translation_id": "Ya Allah, perbanyaklah hartaku dan anak-anakku, serta berkahilah aku dalam apa yang telah Engkau berikan kepadaku.",
+      "translation_en": "O Allah, increase my wealth and children, and bless me in what You have given me."
     },
-    "transliteration": "",
+    "transliteration": "Allāhumma akthir mālī wa waladī, wa bārik lī fīmā a‘ṭaytanī.",
     "transliteration_first_person_plural": null,
     "categories": {
       "categories_id": [],
