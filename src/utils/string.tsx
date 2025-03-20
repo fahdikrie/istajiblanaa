@@ -59,7 +59,9 @@ export const highlightMatch = (
     <>
       {beforeMatch}
       {match.startsWith(" ") && " "}
-      <span className="font-bold bg-yellow-200">{match.trim()}</span>
+      <span className="font-bold bg-yellow-300 dark:bg-orange-500">
+        {match.trim()}
+      </span>
       {match.endsWith(" ") && " "}
       {afterMatch}
     </>

@@ -68,12 +68,18 @@ const DuaPreviewCard = ({
     });
   };
   return (
-    <Card key={dua.id} className={cn("overflow-hidden", classNames?.card)}>
+    <Card
+      key={dua.id}
+      className={cn(
+        "overflow-hidden shadow-none border-0 rounded-none dark:bg-black",
+        classNames?.card,
+      )}
+    >
       <CardHeader className={cn(classNames?.header)}>
         <CardTitle className={cn("text-lg", classNames?.title)}>
           {/* ID */}
           {showAttribute("id") ? (
-            <div className="text-xs text-gray-500">
+            <div className="text-xs text-gray-500 dark:text-zinc-400">
               <p>No. {dua.id}</p>
             </div>
           ) : null}
@@ -96,7 +102,7 @@ const DuaPreviewCard = ({
 
             {/* Transliteration */}
             {showAttribute("transliteration") ? (
-              <p className="text-sm text-gray-500 italic">
+              <p className="text-sm text-gray-500 dark:text-zinc-400 italic">
                 {highlightMatch(dua.transliteration, query)}
               </p>
             ) : null}
@@ -110,22 +116,24 @@ const DuaPreviewCard = ({
 
             {/* Source */}
             {showAttribute("source") ? (
-              <div className="pt-2 text-xs text-gray-500">
+              <div className="pt-1 text-xs text-gray-500 dark:text-zinc-400">
                 <p>{dua.source}</p>
               </div>
             ) : null}
 
             {/* Reference */}
             {showAttribute("reference") ? (
-              <div className="pt-1 text-xs text-gray-500">
+              <div className="pt-1 text-xs text-gray-500 dark:text-zinc-400">
                 <p>{dua.reference}</p>
               </div>
             ) : null}
 
             {/* Note */}
             {showAttribute("note") && dua.note.note_id ? (
-              <div className="pt-1 text-xs text-gray-500">
-                <p className="text-xs text-gray-500 mb-1">Keterangan:</p>
+              <div className="pt-1 text-xs text-gray-500 dark:text-zinc-400">
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+                  Keterangan:
+                </p>
                 <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
               </div>
             ) : null}
@@ -133,7 +141,9 @@ const DuaPreviewCard = ({
             {/* Categories */}
             {showAttribute("categories") ? (
               <div className="pt-2">
-                <p className="text-xs text-gray-500 mb-1">Kategori:</p>
+                <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+                  Kategori:
+                </p>
                 <div className="flex flex-wrap">
                   {renderCategories(dua.categories.categories_id, query)}
                 </div>

@@ -64,12 +64,14 @@ export const SearchableList = () => {
 
   return (
     <div className="max-w-2xl mx-auto p-4">
-      <h1>Duaa</h1>
+      {/* <h1 className="text-2xl text-gray-800 font-bold ">
+        Kumpulan Doa Ma'tsuur
+      </h1> */}
 
       <Input
         type="text"
         placeholder="Cari doa..."
-        className="w-full mt-4 h-10 bg-white border rounded-md mb-4"
+        className="w-full h-10 bg-white dark:bg-white dark:text-black border rounded-md mb-4 shadow-2xs"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
@@ -80,10 +82,10 @@ export const SearchableList = () => {
             <DuaPreviewCard
               dua={dua}
               query={query}
-              shownAttributes={["title", "source", "reference"]}
+              shownAttributes={["id", "title", "source", "reference"]}
               classNames={{
                 card: "py-3",
-                header: "px-4 gap-0",
+                header: "px-0 gap-0",
                 content: "p-0",
               }}
             />

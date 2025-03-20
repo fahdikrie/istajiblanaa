@@ -1,12 +1,27 @@
 ---
 import { SearchableList } from "@/components/searchable-list";
+import { MenuBar } from "@/components/menu-bar";
+import { ThemeToggle } from "@/components/theme-toggle";
+import { Button } from "./ui/button";
 ---
 
 <html lang="id">
   <head>
     <title>Daftar Doa</title>
   </head>
-  <body class="bg-gray-50">
-    <SearchableList client:only />
+  <body class="bg-white dark:bg-black">
+    <header class="flex items-center justify-between p-4">
+      <Button
+        client:load
+        className="h-9 w-9 bg-slate-100 dark:bg-slate-100 hover:bg-slate-100 text-lg"
+      >
+        🤲
+      </Button>
+      <MenuBar client:only />
+      <ThemeToggle client:load />
+    </header>
+    <section>
+      <SearchableList client:only />
+    </section>
   </body>
 </html>
