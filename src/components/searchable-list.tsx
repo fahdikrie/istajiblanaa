@@ -8,10 +8,8 @@ import { DuaPreviewCard } from "./dua-preview-card";
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
 
-  // Contoh data
   const duaList: any[] = DUAA;
 
-  // Mencari doa berdasarkan prioritas field
   const searchDua = (
     dua: any,
     query: string,
@@ -21,29 +19,24 @@ export const SearchableList = () => {
     const normalizedQuery = normalizeText(query);
     if (normalizedQuery.length === 0) return { matches: true };
 
-    // Prioritas 1: title_id
     if (normalizeText(dua.title.title_id).includes(normalizedQuery)) {
       return { matches: true, matchField: "title_id" };
     }
 
-    // Prioritas 2: arabic
     if (normalizeText(dua.arabic).includes(normalizedQuery)) {
       return { matches: true, matchField: "arabic" };
     }
 
-    // Prioritas 3: translation_id
     if (
       normalizeText(dua.translation.translation_id).includes(normalizedQuery)
     ) {
       return { matches: true, matchField: "translation_id" };
     }
 
-    // Prioritas 4: transliteration
     if (normalizeText(dua.transliteration).includes(normalizedQuery)) {
       return { matches: true, matchField: "transliteration" };
     }
 
-    // Prioritas 5: categories_id (cek semua kategori)
     if (
       dua.categories.categories_id.some((cat: string | null | undefined) =>
         normalizeText(cat).includes(normalizedQuery),
@@ -63,11 +56,7 @@ export const SearchableList = () => {
         });
 
   return (
-    <div className="max-w-2xl mx-auto p-4">
-      {/* <h1 className="text-2xl text-gray-800 font-bold ">
-        Kumpulan Doa Ma'tsuur
-      </h1> */}
-
+    <>
       <Input
         type="text"
         placeholder="Cari doa..."
@@ -94,6 +83,6 @@ export const SearchableList = () => {
           <p className="text-gray-500 text-center p-8">Tidak ditemukan</p>
         )}
       </div>
-    </div>
+    </>
   );
 };

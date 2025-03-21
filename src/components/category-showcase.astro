@@ -1,0 +1,44 @@
+---
+import { cn } from "@/lib/utils";
+import { Card } from "./ui/card";
+
+const cardClassname =
+  "p-2 pt-10 h-[130px] gap-1 shadow-2xs cursor-pointer border-gray-100 dark:border-black flex flex-col justify-end";
+---
+
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+  <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
+    <h3 class="font-bold dark:text-green-950">The Essentials 🎒</h3>
+    <p class="font-light text-xs text-gray-500 dark:text-green-800">
+      Kumpulan doa-doa pilihan. Dapat dibaca di setiap waktu mustajab.
+    </p>
+  </Card>
+  <Card className={cn(cardClassname, "hidden md:flex")}>
+    <h3 class="font-bold">Doa dari Al-Qur'an</h3>
+    <p class="font-light text-xs text-gray-500">
+      Doa-doa yang disebut di dalam Al-Qur'an.
+    </p>
+  </Card>
+  <Card className={cn(cardClassname, "hidden md:flex")}>
+    <h3 class="font-bold">Doa dari As-Sunnah</h3>
+    <p class="font-light text-xs text-gray-500">
+      Doa-doa yang diajarkan oleh Rasulullah ﷺ.
+    </p>
+  </Card>
+  <Card className={cn(cardClassname)}>
+    <h3 class="font-bold">Ketika Kesulitan <br /> Melanda ☔️</h3>
+    <p class="font-light text-xs text-gray-500">
+      Doa yang dapat dibaca ketika ditimpa kesulitan.
+    </p>
+  </Card>
+  <Card className={cn(cardClassname)}>
+    <h3 class="font-bold">Doa Untuk <br /> Negeri 🇮🇩</h3>
+    <p class="font-light text-xs text-gray-500">
+      Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
+    </p>
+  </Card>
+  <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
+    <h3 class="font-bold dark:text-gray-950">Seluruh Kategori</h3>
+    <p class="font-light text-xs text-gray-500">Lihat semua kategori.</p>
+  </Card>
+</div>
