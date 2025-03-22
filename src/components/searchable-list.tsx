@@ -25,6 +25,7 @@ const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "title", label: "Judul" },
   { key: "arabic", label: "Text Arab" },
   { key: "transliteration", label: "Transliterasi" },
+  { key: "translation", label: "Terjemahan" },
   { key: "categories", label: "Kategori" },
   { key: "source", label: "Sumber" },
   { key: "reference", label: "Referensi" },
@@ -108,8 +109,8 @@ export const SearchableList = () => {
           <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-2xs  ">
             <EyeIcon className="text-gray-400 w-5 h-5" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-40">
-            <DropdownMenuLabel className="text-gray-500">
+          <DropdownMenuContent className="w-60">
+            <DropdownMenuLabel className="text-gray-500 dark:text-zinc-300">
               Atur tampilan doa
             </DropdownMenuLabel>
             {SHOWN_ATTRIBUTES_OPTIONS.map(({ key, label }, index) => {
@@ -139,7 +140,11 @@ export const SearchableList = () => {
         </DropdownMenu>
       </div>
 
-      <div className="space-y-2 mt-4">
+      <p className="text-xs mt-6 text-gray-500 dark:text-zinc-400 ">
+        Menampilkan {filteredDuas?.length} Doa
+      </p>
+
+      <div className="space-y-4 mt-2">
         {filteredDuas.length > 0 ? (
           filteredDuas.map((dua, index) => (
             <DuaPreviewCard

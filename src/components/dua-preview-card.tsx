@@ -119,14 +119,14 @@ const DuaPreviewCard = ({
             <div>
               {/* Source */}
               {showAttribute("source") ? (
-                <div className="text-xs text-gray-500 dark:text-zinc-400">
+                <div className="text-sm text-gray-500 dark:text-zinc-400">
                   <p>{dua.source}</p>
                 </div>
               ) : null}
 
               {/* Reference */}
               {showAttribute("reference") ? (
-                <div className="text-xs text-gray-500 dark:text-zinc-400">
+                <div className="text-sm text-gray-500 dark:text-zinc-400">
                   <p>{dua.reference}</p>
                 </div>
               ) : null}
@@ -148,7 +148,7 @@ const DuaPreviewCard = ({
                 <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
                   Kategori:
                 </p>
-                <div className="flex flex-wrap">
+                <div className="flex flex-wrap dark:text-gray-800">
                   {renderCategories(dua.categories.categories_id, query)}
                 </div>
               </div>
