@@ -1,0 +1,48 @@
+---
+import type { GetStaticPaths } from "astro";
+import { ListPage } from "@/components/list-page";
+import Layout from "@/layouts/layout.astro";
+
+import { slugify } from "@/lib/string";
+
+import type { Dua, TokenizedCategory } from "@/types/dua";
+
+import DUAA from "data/duaa.json";
+import TOKENIZED_CATEGORIES from "data/generated/4_tokenized-categories.json";
+
+export interface DuaDetailStaticPath {
+  params: {
+    id: number;
+  };
+  props: {
+    dua: Dua;
+  };
+}
+
+export const getStaticPaths = (() => {
+  const paths: DuaDetailStaticPath[] = [];
+
+  DUAA.map((dua, index) => {
+    if (!dua.id) {
+      return;
+    }
+
+    paths.push({
+      params: {
+        id: dua.id,
+      },
+      props: {
+        dua: dua,
+      },
+    });
+  });
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { dua } = Astro.props;
+---
+
+<Layout>
+  {dua.title.title_en}
+</Layout>

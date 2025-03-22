@@ -31,3 +31,10 @@ export interface Dua {
     note_en: string;
   };
 }
+
+export interface TokenizedCategory {
+  id: number;
+  category_id: string;
+  category_en: string;
+  count: number;
+}

@@ -192,6 +192,7 @@ export const SearchableList = () => {
               <DropdownMenuCheckboxItem
                 key={`key-${index}`}
                 checked={shownAttributes.includes(key)}
+                onSelect={(e) => e.preventDefault()}
                 onCheckedChange={(checked) => {
                   if (shownAttributes.length === 1 && checked === false) {
                     toast("Pilih minimal satu atribut");
@@ -250,11 +251,7 @@ export const SearchableList = () => {
               dua={dua}
               query={query}
               shownAttributes={shownAttributes}
-              classNames={{
-                card: "py-3",
-                header: "px-0 gap-0",
-                content: "p-0",
-              }}
+              className="py-3"
             />
           ))
         ) : (
