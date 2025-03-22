@@ -14,11 +14,20 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "./ui/button";
-import { EyeIcon } from "lucide-react";
+import { EyeIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import type { Dua } from "@/types/dua";
 import { toast } from "sonner";
 import { persistentAtom } from "@nanostores/persistent";
 import { useStore } from "@nanostores/react";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "id", label: "Nomor" },
@@ -34,8 +43,11 @@ const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "note", label: "Keterangan" },
 ];
 
+const ITEMS_PER_PAGE = 10;
+
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const shownAttributesAtom = persistentAtom<Array<keyof Dua>>(
     "shownAttributes",
@@ -95,58 +107,154 @@ export const SearchableList = () => {
           return searchDua(dua, query).matches;
         });
 
+  // Calculate pagination values
+  const totalItems = filteredDuas.length;
+  const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+  // Reset to page 1 when search query changes
+  const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
+    setCurrentPage(1);
+  };
+
+  // Get current page items
+  const getCurrentPageItems = () => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    return filteredDuas.slice(startIndex, endIndex);
+  };
+
+  const paginatedItems = getCurrentPageItems();
+
+  // Handle pagination navigation
+  const goToPrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  // Generate page numbers to display for full pagination
+  const getPageNumbers = () => {
+    const pageNumbers = [];
+    const maxVisiblePages = 5;
+
+    if (totalPages <= maxVisiblePages) {
+      // Show all pages if not too many
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      // Show some pages with ellipsis
+      if (currentPage <= 3) {
+        // Near start
+        for (let i = 1; i <= 4; i++) {
+          pageNumbers.push(i);
+        }
+        pageNumbers.push("ellipsis");
+        pageNumbers.push(totalPages);
+      } else if (currentPage >= totalPages - 2) {
+        // Near end
+        pageNumbers.push(1);
+        pageNumbers.push("ellipsis");
+        for (let i = totalPages - 3; i <= totalPages; i++) {
+          pageNumbers.push(i);
+        }
+      } else {
+        // Middle
+        pageNumbers.push(1);
+        pageNumbers.push("ellipsis");
+        for (let i = currentPage - 1; i <= currentPage + 1; i++) {
+          pageNumbers.push(i);
+        }
+        pageNumbers.push("ellipsis");
+        pageNumbers.push(totalPages);
+      }
+    }
+
+    return pageNumbers;
+  };
+
   return (
     <>
       <div className="w-full flex items-center gap-x-1">
         <Input
           type="text"
           placeholder="Cari doa..."
-          className="flex-1 h-10 bg-white dark:bg-white dark:text-black border rounded-md shadow-2xs  "
+          className="flex-1 h-10 bg-white dark:bg-white dark:text-black border rounded-md shadow-2xs"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleQueryChange}
         />
         <DropdownMenu modal={false}>
-          <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-2xs  ">
+          <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-2xs">
             <EyeIcon className="text-gray-400 w-5 h-5" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-60">
             <DropdownMenuLabel className="text-gray-500 dark:text-zinc-300">
               Atur tampilan doa
             </DropdownMenuLabel>
-            {SHOWN_ATTRIBUTES_OPTIONS.map(({ key, label }, index) => {
-              console.log("key", key, shownAttributes.includes(key));
-              return (
-                <DropdownMenuCheckboxItem
-                  key={`key-${index}`}
-                  checked={shownAttributes.includes(key)}
-                  onCheckedChange={(checked) => {
-                    if (shownAttributes.length === 1 && checked === false) {
-                      toast("Pilih minimal satu atribut");
-                      return;
-                    }
+            {SHOWN_ATTRIBUTES_OPTIONS.map(({ key, label }, index) => (
+              <DropdownMenuCheckboxItem
+                key={`key-${index}`}
+                checked={shownAttributes.includes(key)}
+                onCheckedChange={(checked) => {
+                  if (shownAttributes.length === 1 && checked === false) {
+                    toast("Pilih minimal satu atribut");
+                    return;
+                  }
 
-                    shownAttributesAtom.set(
-                      checked
-                        ? [...shownAttributes, key]
-                        : shownAttributes.filter((attr) => attr !== key),
-                    );
-                  }}
-                >
-                  {label}
-                </DropdownMenuCheckboxItem>
-              );
-            })}
+                  shownAttributesAtom.set(
+                    checked
+                      ? [...shownAttributes, key]
+                      : shownAttributes.filter((attr) => attr !== key),
+                  );
+                }}
+              >
+                {label}
+              </DropdownMenuCheckboxItem>
+            ))}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
 
-      <p className="text-xs mt-6 text-gray-500 dark:text-zinc-400 ">
-        Menampilkan {filteredDuas?.length} Doa
-      </p>
+      {/* Top section with mini pagination */}
+      <div className="flex items-center justify-between mt-6">
+        <p className="text-xs text-gray-500 dark:text-zinc-400">
+          Menampilkan {paginatedItems.length} dari {filteredDuas.length} Doa
+        </p>
 
+        {totalPages > 1 && (
+          <div className="flex items-center text-xs gap-2">
+            <span
+              className={`cursor-pointer ${currentPage === 1 ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
+              onClick={goToPrevPage}
+            >
+              <ChevronLeftIcon className="w-4 h-4 inline" />
+            </span>
+
+            <span className="text-gray-700 dark:text-zinc-300">
+              {currentPage} / {totalPages}
+            </span>
+
+            <span
+              className={`cursor-pointer ${currentPage === totalPages ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
+              onClick={goToNextPage}
+            >
+              <ChevronRightIcon className="w-4 h-4 inline" />
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Content list */}
       <div className="space-y-4 mt-2">
         {filteredDuas.length > 0 ? (
-          filteredDuas.map((dua, index) => (
+          paginatedItems.map((dua, index) => (
             <DuaPreviewCard
               key={`${dua.title.title_id}-${index}`}
               dua={dua}
@@ -163,6 +271,65 @@ export const SearchableList = () => {
           <p className="text-gray-500 text-center p-8">Tidak ditemukan</p>
         )}
       </div>
+
+      {/* Bottom section with full pagination */}
+      {totalPages > 1 && (
+        <div className="mt-6 mb-10">
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (currentPage > 1) setCurrentPage(currentPage - 1);
+                  }}
+                  className={
+                    currentPage === 1 ? "pointer-events-none opacity-50" : ""
+                  }
+                />
+              </PaginationItem>
+
+              {getPageNumbers().map((page, index) =>
+                page === "ellipsis" ? (
+                  <PaginationItem key={`ellipsis-${index}`}>
+                    <PaginationEllipsis />
+                  </PaginationItem>
+                ) : (
+                  <PaginationItem key={`page-${page}`}>
+                    <PaginationLink
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setCurrentPage(page as number);
+                      }}
+                      isActive={currentPage === page}
+                    >
+                      {page}
+                    </PaginationLink>
+                  </PaginationItem>
+                ),
+              )}
+
+              <PaginationItem>
+                <PaginationNext
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (currentPage < totalPages)
+                      setCurrentPage(currentPage + 1);
+                  }}
+                  className={
+                    currentPage === totalPages
+                      ? "pointer-events-none opacity-50"
+                      : ""
+                  }
+                />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
+        </div>
+      )}
     </>
   );
 };
