@@ -1,6 +1,8 @@
-import { useState } from "react";
+"use client";
+import { useState, useEffect } from "react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AnimatePresence, motion, usePresenceData, wrap } from "motion/react";
 import DUAA from "data/duaa.json";
 import { highlightMatch, normalizeText } from "@/utils/string";
 import { DuaPreviewCard } from "./dua-preview-card";
@@ -45,9 +47,77 @@ const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
 
 const ITEMS_PER_PAGE = 10;
 
+// PageContent component for AnimatePresence
+const PageContent = ({ items, query, shownAttributes, direction }) => {
+  const presenceDirection = usePresenceData();
+
+  // Use presenceDirection if available (during exit animations), otherwise use the provided direction
+  const animationDirection =
+    presenceDirection !== undefined ? presenceDirection : direction;
+
+  return (
+    <motion.div
+      className="space-y-4 dark:space-y-6 w-full"
+      initial={{ opacity: 0, x: animationDirection * 50 }}
+      animate={{
+        opacity: 1,
+        x: 0,
+        transition: {
+          type: "spring",
+          stiffness: 300,
+          damping: 30,
+          duration: 0.3,
+        },
+      }}
+      exit={{
+        opacity: 0,
+        x: animationDirection * -50,
+        transition: {
+          duration: 0.2,
+        },
+      }}
+    >
+      {items.length > 0 ? (
+        items.map((dua, index) => (
+          <DuaPreviewCard
+            key={`${dua.title.title_id}-${index}`}
+            dua={dua}
+            query={query}
+            shownAttributes={shownAttributes}
+            className="py-3"
+          />
+        ))
+      ) : (
+        <p className="text-gray-500 text-center p-8">Tidak ditemukan</p>
+      )}
+    </motion.div>
+  );
+};
+
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  const [direction, setDirection] = useState(1);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  // Minimum swipe distance (in px)
+  const minSwipeDistance = 50;
+
+  // Check if device is mobile
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIfMobile();
+    window.addEventListener("resize", checkIfMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIfMobile);
+    };
+  }, []);
 
   const shownAttributesAtom = persistentAtom<Array<keyof Dua>>(
     "shownAttributes",
@@ -125,12 +195,14 @@ export const SearchableList = () => {
 
   const goToPrevPage = () => {
     if (currentPage > 1) {
+      setDirection(-1);
       setCurrentPage(currentPage - 1);
     }
   };
 
   const goToNextPage = () => {
     if (currentPage < totalPages) {
+      setDirection(1);
       setCurrentPage(currentPage + 1);
     }
   };
@@ -168,6 +240,33 @@ export const SearchableList = () => {
     }
 
     return pageNumbers;
+  };
+
+  // Touch handlers for swipe
+  const onTouchStart = (e) => {
+    if (!isMobile) return;
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    if (!isMobile) return;
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!isMobile) return;
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe && currentPage < totalPages) {
+      goToNextPage();
+    } else if (isRightSwipe && currentPage > 1) {
+      goToPrevPage();
+    }
   };
 
   return (
@@ -221,46 +320,90 @@ export const SearchableList = () => {
 
         {totalPages > 1 && (
           <div className="flex items-center text-xs gap-2">
-            <span
+            <motion.span
               className={`cursor-pointer ${currentPage === 1 ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
               onClick={goToPrevPage}
+              whileTap={{ scale: 0.9 }}
             >
               <ChevronLeftIcon className="w-4 h-4 inline" />
-            </span>
+            </motion.span>
 
             <span className="text-gray-700 dark:text-zinc-300">
               {currentPage} / {totalPages}
             </span>
 
-            <span
+            <motion.span
               className={`cursor-pointer ${currentPage === totalPages ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
               onClick={goToNextPage}
+              whileTap={{ scale: 0.9 }}
             >
               <ChevronRightIcon className="w-4 h-4 inline" />
-            </span>
+            </motion.span>
           </div>
         )}
       </div>
 
-      {/* Content list */}
-      <div className="space-y-4 dark:space-y-6 mt-4">
-        {filteredDuas.length > 0 ? (
-          paginatedItems.map((dua, index) => (
-            <DuaPreviewCard
-              key={`${dua.title.title_id}-${index}`}
-              dua={dua}
-              query={query}
-              shownAttributes={shownAttributes}
-              className="py-3"
-            />
-          ))
-        ) : (
-          <p className="text-gray-500 text-center p-8">Tidak ditemukan</p>
+      {/* Content list with swipe functionality */}
+      <div
+        className="mt-4 relative overflow-hidden"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
+        {isMobile && totalPages > 1 && (
+          <div className="absolute top-1/2 left-0 w-full flex justify-between items-center z-10 pointer-events-none px-2">
+            {currentPage > 1 && (
+              <motion.div
+                className="bg-gray-100/60 dark:bg-gray-800/60 p-2 rounded-full"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: touchEnd && touchStart - touchEnd < -20 ? 0.7 : 0,
+                }}
+              >
+                <ChevronLeftIcon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+              </motion.div>
+            )}
+
+            {currentPage < totalPages && (
+              <motion.div
+                className="bg-gray-100/60 dark:bg-gray-800/60 p-2 rounded-full ml-auto"
+                initial={{ opacity: 0 }}
+                animate={{
+                  opacity: touchEnd && touchStart - touchEnd > 20 ? 0.7 : 0,
+                }}
+              >
+                <ChevronRightIcon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
+              </motion.div>
+            )}
+          </div>
         )}
+
+        <AnimatePresence initial={false} mode="wait" custom={direction}>
+          <PageContent
+            key={currentPage}
+            items={paginatedItems}
+            query={query}
+            shownAttributes={shownAttributes}
+            direction={direction}
+          />
+        </AnimatePresence>
       </div>
 
-      {/* Bottom section with full pagination */}
-      {totalPages > 1 && (
+      {/* Swipe hint for mobile */}
+      {isMobile && totalPages > 1 && (
+        <div className="text-xs text-gray-400 text-center mt-4 mb-2">
+          {currentPage < totalPages && currentPage > 1 ? (
+            <span>Geser ke kiri/kanan untuk navigasi</span>
+          ) : currentPage === 1 ? (
+            <span>Geser ke kiri untuk lanjut</span>
+          ) : (
+            <span>Geser ke kanan untuk kembali</span>
+          )}
+        </div>
+      )}
+
+      {/* Bottom section with full pagination (shown on desktop) */}
+      {totalPages > 1 && !isMobile && (
         <div className="mt-6 mb-10">
           <Pagination>
             <PaginationContent>
@@ -269,7 +412,10 @@ export const SearchableList = () => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    if (currentPage > 1) setCurrentPage(currentPage - 1);
+                    if (currentPage > 1) {
+                      setDirection(-1);
+                      setCurrentPage(currentPage - 1);
+                    }
                   }}
                   className={
                     currentPage === 1 ? "pointer-events-none opacity-50" : ""
@@ -288,6 +434,7 @@ export const SearchableList = () => {
                       href="#"
                       onClick={(e) => {
                         e.preventDefault();
+                        setDirection((page as number) > currentPage ? 1 : -1);
                         setCurrentPage(page as number);
                       }}
                       isActive={currentPage === page}
@@ -303,8 +450,10 @@ export const SearchableList = () => {
                   href="#"
                   onClick={(e) => {
                     e.preventDefault();
-                    if (currentPage < totalPages)
+                    if (currentPage < totalPages) {
+                      setDirection(1);
                       setCurrentPage(currentPage + 1);
+                    }
                   }}
                   className={
                     currentPage === totalPages
