@@ -1,7 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useMotionValue, useTransform, motion, animate } from "motion/react";
 import DUAA from "data/duaa.json";
 import { highlightMatch, normalizeText } from "@/utils/string";
 import { DuaPreviewCard } from "./dua-preview-card";
@@ -49,26 +48,6 @@ const ITEMS_PER_PAGE = 10;
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [isMobile, setIsMobile] = useState(false);
-  const contentRef = useRef(null);
-
-  // Motion values for swipe functionality
-  const x = useMotionValue(0);
-  const dragThreshold = 100; // Threshold to trigger page change
-
-  // Check if device is mobile
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
-  }, []);
 
   const shownAttributesAtom = persistentAtom<Array<keyof Dua>>(
     "shownAttributes",
@@ -191,34 +170,6 @@ export const SearchableList = () => {
     return pageNumbers;
   };
 
-  // Handle the end of drag event for swipe navigation
-  const handleDragEnd = (_: any, info: any) => {
-    if (!isMobile) return;
-
-    const { offset } = info;
-
-    if (offset.x < -dragThreshold && currentPage < totalPages) {
-      // Swipe left - go to next page
-      goToNextPage();
-    } else if (offset.x > dragThreshold && currentPage > 1) {
-      // Swipe right - go to previous page
-      goToPrevPage();
-    }
-
-    // Animate back to center
-    animate(x, 0, { type: "spring", stiffness: 300, damping: 30 });
-  };
-
-  // Visual feedback on drag
-  const opacity = useTransform(x, [-150, 0, 150], [0.5, 1, 0.5]);
-
-  const scale = useTransform(x, [-150, 0, 150], [0.95, 1, 0.95]);
-
-  // Style for swipe hints
-  const leftArrowOpacity = useTransform(x, [-10, 50, 150], [0, 0.3, 0.7]);
-
-  const rightArrowOpacity = useTransform(x, [-150, -50, 10], [0.7, 0.3, 0]);
-
   return (
     <>
       <div className="w-full flex items-center gap-x-1">
@@ -291,71 +242,25 @@ export const SearchableList = () => {
         )}
       </div>
 
-      {/* Content list with swipe functionality */}
-      <div className="relative mt-4">
-        {isMobile && totalPages > 1 && (
-          <>
-            <motion.div
-              className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/20 dark:bg-black/20 p-3 rounded-r-lg"
-              style={{ opacity: leftArrowOpacity }}
-              initial={{ opacity: 0 }}
-            >
-              <ChevronLeftIcon className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-            </motion.div>
-
-            <motion.div
-              className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/20 dark:bg-black/20 p-3 rounded-l-lg"
-              style={{ opacity: rightArrowOpacity }}
-              initial={{ opacity: 0 }}
-            >
-              <ChevronRightIcon className="w-6 h-6 text-gray-700 dark:text-gray-300" />
-            </motion.div>
-          </>
+      {/* Content list */}
+      <div className="space-y-4 dark:space-y-6 mt-4">
+        {filteredDuas.length > 0 ? (
+          paginatedItems.map((dua, index) => (
+            <DuaPreviewCard
+              key={`${dua.title.title_id}-${index}`}
+              dua={dua}
+              query={query}
+              shownAttributes={shownAttributes}
+              className="py-3"
+            />
+          ))
+        ) : (
+          <p className="text-gray-500 text-center p-8">Tidak ditemukan</p>
         )}
-
-        <motion.div
-          ref={contentRef}
-          className="space-y-4 dark:space-y-6"
-          style={{
-            x,
-            opacity: isMobile ? opacity : 1,
-            scale: isMobile ? scale : 1,
-          }}
-          drag={isMobile && totalPages > 1 ? "x" : false}
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragEnd={handleDragEnd}
-        >
-          {filteredDuas.length > 0 ? (
-            paginatedItems.map((dua, index) => (
-              <DuaPreviewCard
-                key={`${dua.title.title_id}-${index}`}
-                dua={dua}
-                query={query}
-                shownAttributes={shownAttributes}
-                className="py-3"
-              />
-            ))
-          ) : (
-            <p className="text-gray-500 text-center p-8">Tidak ditemukan</p>
-          )}
-        </motion.div>
       </div>
 
-      {/* Swipe hint for mobile */}
-      {isMobile && totalPages > 1 && (
-        <div className="text-xs text-gray-400 text-center mt-4 mb-2">
-          {currentPage < totalPages && currentPage > 1 ? (
-            <span>Geser ke kiri/kanan untuk navigasi</span>
-          ) : currentPage === 1 ? (
-            <span>Geser ke kiri untuk lanjut</span>
-          ) : (
-            <span>Geser ke kanan untuk kembali</span>
-          )}
-        </div>
-      )}
-
-      {/* Bottom section with full pagination (shown on desktop) */}
-      {totalPages > 1 && !isMobile && (
+      {/* Bottom section with full pagination */}
+      {totalPages > 1 && (
         <div className="mt-6 mb-10">
           <Pagination>
             <PaginationContent>
