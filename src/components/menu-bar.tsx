@@ -109,13 +109,12 @@ const MenuBar = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <a href="/docs">
-            <NavigationMenuLink
-              className={cn(navigationMenuTriggerStyle(), "bg-transparent")}
-            >
-              Documentation
-            </NavigationMenuLink>
-          </a>
+          <NavigationMenuLink
+            href="/docs"
+            className={cn(navigationMenuTriggerStyle(), "bg-transparent")}
+          >
+            Documentation
+          </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>
     </NavigationMenu>

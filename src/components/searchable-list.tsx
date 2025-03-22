@@ -17,6 +17,8 @@ import { Button } from "./ui/button";
 import { EyeIcon } from "lucide-react";
 import type { Dua } from "@/types/dua";
 import { toast } from "sonner";
+import { persistentAtom } from "@nanostores/persistent";
+import { useStore } from "@nanostores/react";
 
 const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "id", label: "Nomor" },
@@ -33,12 +35,17 @@ const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
 
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
-  const [shownAttributes, setShownAttributes] = useState<Array<keyof Dua>>([
-    "id",
-    "title",
-    "source",
-    "reference",
-  ]);
+
+  const shownAttributesAtom = persistentAtom<Array<keyof Dua>>(
+    "shownAttributes",
+    ["id", "title", "source", "reference"],
+    {
+      encode: JSON.stringify,
+      decode: JSON.parse,
+    },
+  );
+
+  const shownAttributes = useStore(shownAttributesAtom);
 
   const duaList: any[] = DUAA;
 
@@ -105,34 +112,38 @@ export const SearchableList = () => {
             <DropdownMenuLabel className="text-gray-500">
               Atur tampilan doa
             </DropdownMenuLabel>
-            {SHOWN_ATTRIBUTES_OPTIONS.map(({ key, label }) => (
-              <DropdownMenuCheckboxItem
-                key={key}
-                checked={shownAttributes.includes(key)}
-                onCheckedChange={(checked) => {
-                  if (shownAttributes.length === 1) {
-                    toast("Pilih minimal satu atribut");
-                    return;
-                  }
+            {SHOWN_ATTRIBUTES_OPTIONS.map(({ key, label }, index) => {
+              console.log("key", key, shownAttributes.includes(key));
+              return (
+                <DropdownMenuCheckboxItem
+                  key={`key-${index}`}
+                  checked={shownAttributes.includes(key)}
+                  onCheckedChange={(checked) => {
+                    if (shownAttributes.length === 1 && checked === false) {
+                      toast("Pilih minimal satu atribut");
+                      return;
+                    }
 
-                  setShownAttributes((prev) =>
-                    checked
-                      ? [...prev, key]
-                      : prev.filter((attr) => attr !== key),
-                  );
-                }}
-              >
-                {label}
-              </DropdownMenuCheckboxItem>
-            ))}
+                    shownAttributesAtom.set(
+                      checked
+                        ? [...shownAttributes, key]
+                        : shownAttributes.filter((attr) => attr !== key),
+                    );
+                  }}
+                >
+                  {label}
+                </DropdownMenuCheckboxItem>
+              );
+            })}
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
 
       <div className="space-y-2 mt-4">
         {filteredDuas.length > 0 ? (
-          filteredDuas.map((dua) => (
+          filteredDuas.map((dua, index) => (
             <DuaPreviewCard
+              key={`${dua.title.title_id}-${index}`}
               dua={dua}
               query={query}
               shownAttributes={shownAttributes}
