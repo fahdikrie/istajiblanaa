@@ -32,7 +32,7 @@ import {
 const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "id", label: "Nomor" },
   { key: "title", label: "Judul" },
-  { key: "arabic", label: "Text Arab" },
+  { key: "arabic", label: "Teks Bahasa Arab" },
   { key: "transliteration", label: "Transliterasi" },
   { key: "translation", label: "Terjemahan" },
   { key: "categories", label: "Kategori" },
@@ -107,17 +107,14 @@ export const SearchableList = () => {
           return searchDua(dua, query).matches;
         });
 
-  // Calculate pagination values
   const totalItems = filteredDuas.length;
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
 
-  // Reset to page 1 when search query changes
   const handleQueryChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
     setCurrentPage(1);
   };
 
-  // Get current page items
   const getCurrentPageItems = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -126,7 +123,6 @@ export const SearchableList = () => {
 
   const paginatedItems = getCurrentPageItems();
 
-  // Handle pagination navigation
   const goToPrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
@@ -139,34 +135,28 @@ export const SearchableList = () => {
     }
   };
 
-  // Generate page numbers to display for full pagination
   const getPageNumbers = () => {
     const pageNumbers = [];
     const maxVisiblePages = 5;
 
     if (totalPages <= maxVisiblePages) {
-      // Show all pages if not too many
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
       }
     } else {
-      // Show some pages with ellipsis
       if (currentPage <= 3) {
-        // Near start
         for (let i = 1; i <= 4; i++) {
           pageNumbers.push(i);
         }
         pageNumbers.push("ellipsis");
         pageNumbers.push(totalPages);
       } else if (currentPage >= totalPages - 2) {
-        // Near end
         pageNumbers.push(1);
         pageNumbers.push("ellipsis");
         for (let i = totalPages - 3; i <= totalPages; i++) {
           pageNumbers.push(i);
         }
       } else {
-        // Middle
         pageNumbers.push(1);
         pageNumbers.push("ellipsis");
         for (let i = currentPage - 1; i <= currentPage + 1; i++) {
@@ -252,7 +242,7 @@ export const SearchableList = () => {
       </div>
 
       {/* Content list */}
-      <div className="space-y-4 mt-2">
+      <div className="space-y-4 dark:space-y-6 mt-4">
         {filteredDuas.length > 0 ? (
           paginatedItems.map((dua, index) => (
             <DuaPreviewCard

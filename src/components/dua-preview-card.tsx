@@ -71,7 +71,7 @@ const DuaPreviewCard = ({
     <Card
       key={dua.id}
       className={cn(
-        "overflow-hidden border-gray-100 dark:border-zinc-100 shadow-none p-4 dark:bg-black",
+        "overflow-hidden border-gray-100 dark:border-black shadow-none p-4 dark:p-0 dark:rounded-none dark:bg-black",
         classNames?.card,
       )}
     >

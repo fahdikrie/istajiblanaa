@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { MenuBar } from "@/components/menu-bar";
+import { MobileMenu } from "@/components/mobile-menu";
 import { Toaster } from "@/components/ui/sonner";
 import "../styles/global.css";
 ---
@@ -10,30 +11,47 @@ import "../styles/global.css";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Duaa</title>
   </head>
   <body>
     <header
-      class="fixed backdrop-blur-lg w-screen flex items-center justify-between p-4"
+      class="fixed backdrop-blur-lg w-full flex items-center justify-between p-4 z-40"
     >
-      <Button
-        client:load
-        className="h-9 w-9 bg-slate-100 dark:bg-slate-100 hover:bg-slate-100 text-lg"
-      >
-        🤲
-      </Button>
-      <MenuBar client:only />
-      <ThemeToggle client:load />
+      <div class="flex items-center gap-2">
+        <Button
+          client:load
+          className="h-9 w-9 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-lg"
+        >
+          🤲
+        </Button>
+        <span class="font-semibold text-lg hidden sm:block">Duaa</span>
+      </div>
+
+      <!-- Desktop menu: hidden on mobile, visible on md and up -->
+      <div class="hidden md:block">
+        <MenuBar client:load />
+      </div>
+
+      <div class="flex items-center gap-2">
+        <ThemeToggle client:load />
+        <!-- Mobile menu: visible on mobile, hidden on md and up -->
+        <div class="md:hidden">
+          <MobileMenu client:load />
+        </div>
+      </div>
     </header>
-    <slot />
+
+    <main class="pt-16">
+      <slot />
+    </main>
     <Toaster client:load />
   </body>
 </html>
 
-<script is:inline>
+<script>
   const getThemePreference = () => {
     if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
