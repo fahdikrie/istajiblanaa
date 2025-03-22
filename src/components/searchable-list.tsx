@@ -4,9 +4,41 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import DUAA from "data/duaa.json";
 import { highlightMatch, normalizeText } from "@/utils/string";
 import { DuaPreviewCard } from "./dua-preview-card";
+import {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { Button } from "./ui/button";
+import { EyeIcon } from "lucide-react";
+import type { Dua } from "@/types/dua";
+import { toast } from "sonner";
+
+const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
+  { key: "id", label: "Nomor" },
+  { key: "title", label: "Judul" },
+  { key: "arabic", label: "Text Arab" },
+  { key: "transliteration", label: "Transliterasi" },
+  { key: "categories", label: "Kategori" },
+  { key: "source", label: "Sumber" },
+  { key: "reference", label: "Referensi" },
+  { key: "occasion", label: "Kondisi/Sebab" },
+  { key: "benefits", label: "Manfaat" },
+  { key: "note", label: "Keterangan" },
+];
 
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
+  const [shownAttributes, setShownAttributes] = useState<Array<keyof Dua>>([
+    "id",
+    "title",
+    "source",
+    "reference",
+  ]);
 
   const duaList: any[] = DUAA;
 
@@ -57,21 +89,53 @@ export const SearchableList = () => {
 
   return (
     <>
-      <Input
-        type="text"
-        placeholder="Cari doa..."
-        className="w-full h-10 bg-white dark:bg-white dark:text-black border rounded-md mb-4 shadow-2xs"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
+      <div className="w-full flex items-center gap-x-1">
+        <Input
+          type="text"
+          placeholder="Cari doa..."
+          className="flex-1 h-10 bg-white dark:bg-white dark:text-black border rounded-md shadow-2xs  "
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <DropdownMenu modal={false}>
+          <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-2xs  ">
+            <EyeIcon className="text-gray-400 w-5 h-5" />
+          </DropdownMenuTrigger>
+          <DropdownMenuContent className="w-40">
+            <DropdownMenuLabel className="text-gray-500">
+              Atur tampilan doa
+            </DropdownMenuLabel>
+            {SHOWN_ATTRIBUTES_OPTIONS.map(({ key, label }) => (
+              <DropdownMenuCheckboxItem
+                key={key}
+                checked={shownAttributes.includes(key)}
+                onCheckedChange={(checked) => {
+                  if (shownAttributes.length === 1) {
+                    toast("Pilih minimal satu atribut");
+                    return;
+                  }
 
-      <div className="space-y-2">
+                  setShownAttributes((prev) =>
+                    checked
+                      ? [...prev, key]
+                      : prev.filter((attr) => attr !== key),
+                  );
+                }}
+              >
+                {label}
+              </DropdownMenuCheckboxItem>
+            ))}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
+
+      <div className="space-y-2 mt-4">
         {filteredDuas.length > 0 ? (
           filteredDuas.map((dua) => (
             <DuaPreviewCard
               dua={dua}
               query={query}
-              shownAttributes={["id", "title", "source", "reference"]}
+              shownAttributes={shownAttributes}
               classNames={{
                 card: "py-3",
                 header: "px-0 gap-0",

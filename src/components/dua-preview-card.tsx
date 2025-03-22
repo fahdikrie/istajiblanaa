@@ -90,7 +90,9 @@ const DuaPreviewCard = ({
             : null}
         </CardTitle>
         {showContent() ? (
-          <CardContent className={cn(classNames?.content)}>
+          <CardContent
+            className={cn("mt-2 flex flex-col gap-y-4", classNames?.content)}
+          >
             {/* Arabic */}
             {showAttribute("arabic") ? (
               <div className="text-right font-serif">
@@ -114,23 +116,25 @@ const DuaPreviewCard = ({
               </p>
             ) : null}
 
-            {/* Source */}
-            {showAttribute("source") ? (
-              <div className="pt-1 text-xs text-gray-500 dark:text-zinc-400">
-                <p>{dua.source}</p>
-              </div>
-            ) : null}
+            <div>
+              {/* Source */}
+              {showAttribute("source") ? (
+                <div className="text-xs text-gray-500 dark:text-zinc-400">
+                  <p>{dua.source}</p>
+                </div>
+              ) : null}
 
-            {/* Reference */}
-            {showAttribute("reference") ? (
-              <div className="pt-1 text-xs text-gray-500 dark:text-zinc-400">
-                <p>{dua.reference}</p>
-              </div>
-            ) : null}
+              {/* Reference */}
+              {showAttribute("reference") ? (
+                <div className="text-xs text-gray-500 dark:text-zinc-400">
+                  <p>{dua.reference}</p>
+                </div>
+              ) : null}
+            </div>
 
             {/* Note */}
             {showAttribute("note") && dua.note.note_id ? (
-              <div className="pt-1 text-xs text-gray-500 dark:text-zinc-400">
+              <div className="text-xs text-gray-500 dark:text-zinc-400">
                 <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
                   Keterangan:
                 </p>
@@ -140,7 +144,7 @@ const DuaPreviewCard = ({
 
             {/* Categories */}
             {showAttribute("categories") ? (
-              <div className="pt-2">
+              <div className="">
                 <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
                   Kategori:
                 </p>
