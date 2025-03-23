@@ -23,20 +23,6 @@ const DuaPreviewCard = ({
     return shownAttributes.includes(attribute);
   };
 
-  const showContent = () => {
-    return (
-      showAttribute("arabic") ||
-      showAttribute("translation") ||
-      showAttribute("transliteration") ||
-      showAttribute("categories") ||
-      showAttribute("source") ||
-      showAttribute("reference") ||
-      showAttribute("occasion") ||
-      showAttribute("benefits") ||
-      showAttribute("note")
-    );
-  };
-
   const renderCategories = (categories: string[], query: string) => {
     return categories.map((category, index) => {
       const normalizedCategory = normalizeText(category);
