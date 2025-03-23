@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 
+import { useHasScrolledPastAnchor } from "@/hooks/use-has-scrolled-past-anchor";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 import type { Dua } from "@/types/dua";
@@ -34,23 +35,7 @@ export interface ListPageProps {
 const ListPage = ({ category, duas, isNested }: ListPageProps) => {
   const isMobile = useIsMobile();
 
-  const [showFloatingButton, setShowFloatingButton] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 140) {
-        setShowFloatingButton(true);
-      } else {
-        setShowFloatingButton(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const hasScrolledPastAnchor = useHasScrolledPastAnchor(140);
 
   const navItems = useMemo(() => {
     return duas.map((dua) => ({
@@ -91,7 +76,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
         </section>
       </SidebarInset>
       <AnimatePresence>
-        {isMobile && showFloatingButton && (
+        {isMobile && hasScrolledPastAnchor && (
           <motion.div
             className="fixed bottom-18 right-18 z-50"
             initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -99,9 +84,9 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3 }}
           >
-            <Button className="rounded-full w-14 h-14 fixed">
+            <div className="rounded-full w-14 h-14 fixed flex items-center justify-center bg-accent">
               <SidebarTrigger className="scale-x-[-1] [&>svg]:size-6!" />
-            </Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

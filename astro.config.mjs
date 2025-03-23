@@ -12,7 +12,27 @@ export default defineConfig({
   integrations: [
     react(),
     AstroPWA({
-      /* your pwa options */
+      includeAssets: ["favicon.svg"],
+      manifest: {
+        name: "Istajiblanaa | Dua from al-Qur'an and as-Sunnah",
+        short_name: "Istajiblanaa",
+        theme_color: "#000000",
+        background_color: "#000000",
+        display: "standalone",
+        start_url: "/",
+        icons: [
+          {
+            src: "/favicon.svg",
+            sizes: "192x192",
+            type: "image/svg+xml",
+          },
+          {
+            src: "/favicon.svg",
+            sizes: "512x512",
+            type: "image/svg+xml",
+          },
+        ],
+      },
     }),
   ],
 });

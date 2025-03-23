@@ -61,9 +61,11 @@ export const AppSidebar = ({
                 <a
                   key={`${item.id}-${item.title}`}
                   href={item.url}
-                  className="text-sm font-light flex items-center justify-center p-2 border-b-1 gap-x-2"
+                  className="text-sm font-light flex items-center justify-center p-2 border-b-1 gap-x-1"
                 >
-                  <span className="text-gray-400 text-xs">{index + 1}.</span>
+                  <span className="w-[24px] text-center text-gray-400 text-xs">
+                    {index + 1}.
+                  </span>
                   <div className="flex-1">{item.title}</div>
                 </a>
               ))}

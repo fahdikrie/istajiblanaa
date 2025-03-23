@@ -75,6 +75,8 @@ export const getStaticPaths = (() => {
 const { category, duas } = Astro.props;
 ---
 
+<title>{category} | Istajiblanaa</title>
+
 <Layout>
   <ListPage category={category} duas={duas} client:only="react" />
 </Layout>
