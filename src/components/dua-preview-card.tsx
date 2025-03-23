@@ -52,7 +52,7 @@ const DuaPreviewCard = ({
     });
   };
   return (
-    <a href={`/dua/${dua.id}-${slugify(dua.title.title_id)}`}>
+    <a className="group" href={`/dua/${dua.id}-${slugify(dua.title.title_id)}`}>
       <Card
         id={id}
         key={dua.id}
@@ -70,7 +70,7 @@ const DuaPreviewCard = ({
 
         {/* Title */}
         {showAttribute("title") ? (
-          <h6 className="font-medium text-lg">
+          <h6 className="font-medium text-lg group-hover:underline">
             {highlightMatch(dua.title.title_id, query)}
           </h6>
         ) : null}

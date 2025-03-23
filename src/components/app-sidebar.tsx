@@ -66,7 +66,7 @@ export const AppSidebar = ({
                   <span className="w-[24px] text-center text-gray-400 text-xs">
                     {index + 1}.
                   </span>
-                  <div className="flex-1">{item.title}</div>
+                  <div className="flex-1 hover:underline">{item.title}</div>
                 </a>
               ))}
             </SidebarMenu>

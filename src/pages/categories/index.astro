@@ -1,0 +1,76 @@
+---
+import Layout from "@/layouts/layout.astro";
+import { Card } from "@/components/ui/card";
+
+import { cn } from "@/lib/utils";
+import { slugify } from "@/utils/string";
+
+import TOKENIZED_CATEGORIES from "data/generated/4_tokenized-categories.json";
+
+const sortedCategories = TOKENIZED_CATEGORIES.sort((a, b) => {
+  if (a.category_id < b.category_id) {
+    return -1;
+  }
+
+  if (a.category_id > b.category_id) {
+    return 1;
+  }
+
+  return 0;
+});
+
+const cardClassname =
+  "p-2 pt-10 h-[130px] gap-1 shadow-2xs cursor-pointer border-gray-100 dark:border-black flex flex-col justify-end";
+---
+
+<Layout>
+  <section class="pt-5 md:pt-10 px-4 max-w-2xl mx-auto">
+    <h1 class="text-xl font-bold">Kategori Khusus</h1>
+
+    <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
+      <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
+        <h3 class="font-bold dark:text-green-950">The Essentials 🎒</h3>
+        <p class="font-light text-xs text-gray-500 dark:text-green-800">
+          Kumpulan doa-doa pilihan. Dapat dibaca di setiap waktu mustajab.
+        </p>
+      </Card>
+      <a href="/list/doa-dari-al-quran" class="hidden md:flex">
+        <Card className={cn(cardClassname)}>
+          <h3 class="font-bold">Doa dari Al-Qur'an</h3>
+          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+            Doa-doa yang disebut di dalam Al-Qur'an.
+          </p>
+        </Card>
+      </a>
+      <a href="/list/doa-dari-as-sunnah" class="hidden md:flex">
+        <Card className={cn(cardClassname)}>
+          <h3 class="font-bold">Doa dari As-Sunnah</h3>
+          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+            Doa-doa yang diajarkan oleh Rasulullah ﷺ.
+          </p>
+        </Card>
+      </a>
+    </div>
+  </section>
+
+  <section class="mt-10 px-4 max-w-2xl mx-auto mb-20">
+    <h1 class="text-xl font-bold">Kategori Umum</h1>
+
+    <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
+      {
+        sortedCategories.map((category) => (
+          <a href={`/list/category/${slugify(category.category_id)}`}>
+            <Card className={cn(cardClassname, "overflow-hidden")}>
+              <h3 class="text-sm font-medium line-clamp-3">
+                {category.category_id}
+              </h3>
+              <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+                ({category.count} doa)
+              </p>
+            </Card>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

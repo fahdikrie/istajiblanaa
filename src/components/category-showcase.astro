@@ -20,8 +20,8 @@ const cardClassname =
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
         Doa-doa yang disebut di dalam Al-Qur'an.
       </p>
-    </Card></a
-  >
+    </Card>
+  </a>
   <a href="/list/doa-dari-as-sunnah" class="hidden md:flex">
     <Card className={cn(cardClassname)}>
       <h3 class="font-bold">Doa dari As-Sunnah</h3>
@@ -30,20 +30,29 @@ const cardClassname =
       </p>
     </Card>
   </a>
-  <Card className={cn(cardClassname)}>
-    <h3 class="font-bold">Perlindungan dari <br /> Hal Buruk ☔️</h3>
-    <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-      Agar terhindar dari kesedihan, kesulitan, dan kesempitan.
-    </p>
-  </Card>
-  <Card className={cn(cardClassname)}>
-    <h3 class="font-bold">Doa Untuk <br /> Negeri 🇮🇩</h3>
-    <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-      Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
-    </p>
-  </Card>
-  <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
-    <h3 class="font-bold dark:text-gray-950">Seluruh Kategori</h3>
-    <p class="font-light text-xs text-gray-500">Lihat semua kategori.</p>
-  </Card>
+  <a
+    href="/list/category/perlindungan-dari-hal-hal-buruk"
+    class="hidden md:flex"
+  >
+    <Card className={cn(cardClassname)}>
+      <h3 class="font-bold">Perlindungan dari <br /> Hal Buruk ☔️</h3>
+      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+        Agar terhindar dari kesedihan, kesulitan, dan kesempitan.
+      </p>
+    </Card>
+  </a>
+  <a href="/list/category/kebaikan-untuk-negeri" class="hidden md:flex">
+    <Card className={cn(cardClassname)}>
+      <h3 class="font-bold">Doa Untuk <br /> Negeri 🇮🇩</h3>
+      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+        Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
+      </p>
+    </Card>
+  </a>
+  <a href="/categories">
+    <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
+      <h3 class="font-bold dark:text-gray-950">Seluruh Kategori</h3>
+      <p class="font-light text-xs text-gray-500">Lihat semua kategori.</p>
+    </Card>
+  </a>
 </div>
