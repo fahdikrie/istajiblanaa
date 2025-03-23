@@ -1,11 +1,11 @@
 ---
 import type { GetStaticPaths } from "astro";
-import { ListPage } from "@/components/list-page";
-import Layout from "@/layouts/layout.astro";
 
-import { slugify } from "@/lib/string";
+import Layout from "@/layouts/layout.astro";
+import { ListPage } from "@/components/list-page";
 
 import type { Dua, TokenizedCategory } from "@/types/dua";
+import { slugify } from "@/utils/string";
 
 import DUAA from "data/duaa.json";
 import TOKENIZED_CATEGORIES from "data/generated/4_tokenized-categories.json";

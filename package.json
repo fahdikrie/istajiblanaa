@@ -42,6 +42,7 @@
     "typescript": "^5.8.2"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@typescript-eslint/parser": "^8.27.0",
     "eslint": "^9.23.0",
     "eslint-plugin-astro": "^1.3.1",
@@ -50,7 +51,7 @@
     "lint-staged": "^15.4.3",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-astro-organize-imports": "^0.4.11"
+    "prettier-plugin-organize-imports": "^4.1.0"
   },
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx,astro}": "eslint --fix",

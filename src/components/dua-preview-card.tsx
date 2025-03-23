@@ -1,7 +1,8 @@
-import type { Dua } from "@/types/dua";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { highlightMatch, normalizeText } from "@/utils/string";
+import { Card } from "@/components/ui/card";
+
 import { cn } from "@/lib/utils";
+import type { Dua } from "@/types/dua";
+import { highlightMatch, normalizeText } from "@/utils/string";
 
 export interface DuaPreviewCardProps {
   dua: Dua;

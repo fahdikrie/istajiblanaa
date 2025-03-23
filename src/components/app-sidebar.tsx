@@ -1,11 +1,9 @@
 import * as React from "react";
-import { GalleryVerticalEnd } from "lucide-react";
 
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
-  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,

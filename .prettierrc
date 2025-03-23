@@ -1,12 +1,29 @@
 {
   "plugins": [
     "prettier-plugin-astro",
-    "prettier-plugin-astro-organize-imports"
+    "@ianvs/prettier-plugin-sort-imports",
+    "prettier-plugin-organize-imports"
   ],
   "overrides": [
     {
       "files": "*.astro",
       "options": { "parser": "astro" }
     }
-  ]
+  ],
+  "importOrder": [
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@/layouts/(.*)$",
+    "^@/components/ui/(.*)$",
+    "^@/components/(.*)$",
+    "",
+    "^@/(types|utils|lib)/(.*)$",
+    "",
+    "data/(.*)$",
+    "",
+    "^(?!.*[.]css$)[./].*$",
+    ".css$",
+    ""
+  ],
+  "importOrderCaseSensitive": true
 }

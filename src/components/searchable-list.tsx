@@ -1,26 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AnimatePresence, motion, usePresenceData, wrap } from "motion/react";
-import DUAA from "data/duaa.json";
-import { highlightMatch, normalizeText } from "@/utils/string";
-import { DuaPreviewCard } from "./dua-preview-card";
+
+import { persistentAtom } from "@nanostores/persistent";
+import { useStore } from "@nanostores/react";
+import { ChevronLeftIcon, ChevronRightIcon, EyeIcon } from "lucide-react";
+import { AnimatePresence, motion, usePresenceData } from "motion/react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+
+import { DuaPreviewCard } from "@/components/dua-preview-card";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "./ui/button";
-import { EyeIcon, ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import type { Dua } from "@/types/dua";
-import { toast } from "sonner";
-import { persistentAtom } from "@nanostores/persistent";
-import { useStore } from "@nanostores/react";
+import { Input } from "@/components/ui/input";
 import {
   Pagination,
   PaginationContent,
@@ -30,6 +25,11 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+
+import type { Dua } from "@/types/dua";
+import { normalizeText } from "@/utils/string";
+
+import DUAA from "data/duaa.json";
 
 const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "id", label: "Nomor" },
