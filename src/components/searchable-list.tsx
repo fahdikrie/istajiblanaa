@@ -6,7 +6,6 @@ import { ListContent } from "@/components/list-content";
 import { MiniPagination } from "@/components/mini-pagination";
 import { SearchInput } from "@/components/search-input";
 
-import { useIsMobile } from "@/hooks/use-mobile";
 import { usePagination } from "@/hooks/use-pagination";
 import { useSearch } from "@/hooks/use-search";
 import { useSwipe } from "@/hooks/use-swipe";
