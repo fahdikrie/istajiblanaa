@@ -24,7 +24,7 @@ export const ListContent = ({
 
   return (
     <motion.div
-      className="space-y-4 dark:space-y-6 w-full scroll-smooth"
+      className="space-y-4 flex flex-col w-full scroll-smooth"
       initial={{ opacity: 0, x: animationDirection * 50 }}
       animate={{
         opacity: 1,

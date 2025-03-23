@@ -2,6 +2,7 @@
 import type { GetStaticPaths } from "astro";
 
 import Layout from "@/layouts/layout.astro";
+import { DetailPage } from "@/components/detail-page";
 
 import type { Dua } from "@/types/dua";
 
@@ -41,5 +42,5 @@ const { dua } = Astro.props;
 ---
 
 <Layout>
-  {dua.title.title_en}
+  <DetailPage dua={dua} />
 </Layout>

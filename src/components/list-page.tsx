@@ -65,7 +65,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
       <AppSidebar navItems={navItems} isNested={isNested} />
       <SidebarInset className="overflow-hidden md:h-[calc(100svh-69px)]">
         <header className="flex h-16 shrink-0 items-center gap-2 border-b">
-          <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row-reverse md:flex-row gap-2 px-3">
+          <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row-reverse md:flex-row gap-2 px-4">
             <SidebarTrigger className={isMobile ? "scale-x-[-1]" : ""} />
             <Separator
               orientation="vertical"
@@ -74,7 +74,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  <BreadcrumbLink href="/">Beranda</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator className="hidden md:block" />
                 <BreadcrumbItem>
@@ -85,7 +85,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
           </div>
         </header>
         <section className="p-4 overflow-auto">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             <SearchableList duas={duas} />
           </div>
         </section>
