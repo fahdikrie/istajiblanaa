@@ -1,13 +1,11 @@
-"use client";
-
+import { useIsMobile } from "@/hooks/use-mobile";
 import { persistentAtom } from "@nanostores/persistent";
 import { useStore } from "@nanostores/react";
 import { ChevronLeftIcon, ChevronRightIcon, EyeIcon } from "lucide-react";
 import { AnimatePresence, motion, usePresenceData } from "motion/react";
-import { useEffect, useState } from "react";
+import { useState, type TouchEvent } from "react";
 import { toast } from "sonner";
 
-import { DuaPreviewCard } from "@/components/dua-preview-card";
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -25,6 +23,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import { DuaPreviewCard } from "@/components/dua-preview-card";
 
 import type { Dua } from "@/types/dua";
 import { normalizeText } from "@/utils/string";
@@ -47,11 +46,19 @@ const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
 
 const ITEMS_PER_PAGE = 10;
 
-// PageContent component for AnimatePresence
-const PageContent = ({ items, query, shownAttributes, direction }) => {
+const PageContent = ({
+  items,
+  query,
+  shownAttributes,
+  direction,
+}: {
+  items: Dua[];
+  query: string;
+  shownAttributes: Array<keyof Dua>;
+  direction: number;
+}) => {
   const presenceDirection = usePresenceData();
 
-  // Use presenceDirection if available (during exit animations), otherwise use the provided direction
   const animationDirection =
     presenceDirection !== undefined ? presenceDirection : direction;
 
@@ -97,27 +104,13 @@ const PageContent = ({ items, query, shownAttributes, direction }) => {
 export const SearchableList = () => {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [isMobile, setIsMobile] = useState(false);
+
+  const isMobile = useIsMobile();
   const [direction, setDirection] = useState(1);
-  const [touchStart, setTouchStart] = useState(null);
-  const [touchEnd, setTouchEnd] = useState(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // Minimum swipe distance (in px)
-  const minSwipeDistance = 50;
-
-  // Check if device is mobile
-  useEffect(() => {
-    const checkIfMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
-    checkIfMobile();
-    window.addEventListener("resize", checkIfMobile);
-
-    return () => {
-      window.removeEventListener("resize", checkIfMobile);
-    };
-  }, []);
+  const minSwipeDistance = 75;
 
   const shownAttributesAtom = persistentAtom<Array<keyof Dua>>(
     "shownAttributes",
@@ -243,13 +236,13 @@ export const SearchableList = () => {
   };
 
   // Touch handlers for swipe
-  const onTouchStart = (e) => {
+  const onTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     if (!isMobile) return;
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  const onTouchMove = (e) => {
+  const onTouchMove = (e: TouchEvent<HTMLDivElement>) => {
     if (!isMobile) return;
     setTouchEnd(e.targetTouches[0].clientX);
   };
@@ -357,7 +350,10 @@ export const SearchableList = () => {
                 className="bg-gray-100/60 dark:bg-gray-800/60 p-2 rounded-full"
                 initial={{ opacity: 0 }}
                 animate={{
-                  opacity: touchEnd && touchStart - touchEnd < -20 ? 0.7 : 0,
+                  opacity:
+                    touchStart && touchEnd && touchStart - touchEnd < -20
+                      ? 0.7
+                      : 0,
                 }}
               >
                 <ChevronLeftIcon className="w-6 h-6 text-gray-800 dark:text-gray-200" />
@@ -369,7 +365,10 @@ export const SearchableList = () => {
                 className="bg-gray-100/60 dark:bg-gray-800/60 p-2 rounded-full ml-auto"
                 initial={{ opacity: 0 }}
                 animate={{
-                  opacity: touchEnd && touchStart - touchEnd > 20 ? 0.7 : 0,
+                  opacity:
+                    touchStart && touchEnd && touchStart - touchEnd > 20
+                      ? 0.7
+                      : 0,
                 }}
               >
                 <ChevronRightIcon className="w-6 h-6 text-gray-800 dark:text-gray-200" />

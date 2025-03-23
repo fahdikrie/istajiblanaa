@@ -2,7 +2,7 @@
   "plugins": [
     "prettier-plugin-astro",
     "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-organize-imports"
+    "prettier-plugin-unused-imports-configurable"
   ],
   "overrides": [
     {
