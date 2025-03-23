@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 
+import { useIsMobile } from "@/hooks/use-mobile";
+
 import type { Dua } from "@/types/dua";
 import { slugify } from "@/utils/string";
 
@@ -28,8 +30,11 @@ export interface ListPageProps {
 }
 
 const ListPage = ({ category, duas, isNested }: ListPageProps) => {
+  const isMobile = useIsMobile();
+
   const navItems = useMemo(() => {
     return duas.map((dua) => ({
+      id: dua.id,
       title: dua.title.title_id,
       url: `#${slugify(dua.title.title_id)}`,
     }));
@@ -41,7 +46,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
       <SidebarInset className="overflow-hidden md:h-[calc(100svh-69px)]">
         <header className="flex h-16 shrink-0 items-center gap-2 border-b">
           <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row-reverse md:flex-row gap-2 px-3">
-            <SidebarTrigger />
+            <SidebarTrigger className={isMobile ? "scale-x-[-1]" : ""} />
             <Separator
               orientation="vertical"
               className="mr-2 h-4 hidden md:block"
