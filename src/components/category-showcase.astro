@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { Card } from "./ui/card";
 
 const cardClassname =
-  "p-2 pt-10 h-[130px] gap-1 shadow-2xs cursor-pointer border-gray-100 dark:border-black flex flex-col justify-end";
+  "p-2 pt-10 h-[130px] gap-1 shadow-none cursor-pointer border-gray-100 dark:border-black flex flex-col justify-end";
 ---
 
 <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -30,10 +30,7 @@ const cardClassname =
       </p>
     </Card>
   </a>
-  <a
-    href="/list/category/perlindungan-dari-hal-hal-buruk"
-    class="hidden md:flex"
-  >
+  <a href="/list/category/perlindungan-dari-hal-hal-buruk">
     <Card className={cn(cardClassname)}>
       <h3 class="font-bold">Perlindungan dari <br /> Hal Buruk ☔️</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
@@ -41,7 +38,7 @@ const cardClassname =
       </p>
     </Card>
   </a>
-  <a href="/list/category/kebaikan-untuk-negeri" class="hidden md:flex">
+  <a href="/list/category/kebaikan-untuk-negeri">
     <Card className={cn(cardClassname)}>
       <h3 class="font-bold">Doa Untuk <br /> Negeri 🇮🇩</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">

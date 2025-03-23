@@ -57,12 +57,12 @@ export const SearchInput = ({
       <Input
         type="text"
         placeholder={placeholder}
-        className="flex-1 h-10 bg-white dark:bg-white dark:text-black border rounded-md shadow-2xs"
+        className="flex-1 h-10 bg-white dark:bg-white dark:text-black border rounded-md shadow-none"
         value={query}
         onChange={onQueryChange}
       />
       <DropdownMenu modal={false}>
-        <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-2xs">
+        <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-none">
           <EyeIcon className="text-gray-400 w-5 h-5" />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-60">

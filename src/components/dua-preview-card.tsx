@@ -52,97 +52,100 @@ const DuaPreviewCard = ({
     });
   };
   return (
-    <a className="group" href={`/dua/${dua.id}-${slugify(dua.title.title_id)}`}>
-      <Card
-        id={id}
-        key={dua.id}
-        className={cn(
-          "flex flex-col gap-y-4 p-4 border-gray-100 dark:border-inherit shadow-none bg-white dark:bg-inherit",
-          className,
-        )}
-      >
-        {/* ID */}
-        {showAttribute("id") ? (
-          <div className="text-xs font-semibold text-gray-500 dark:text-zinc-400 -mb-4">
-            <p>No. {dua.id}</p>
-          </div>
-        ) : null}
+    <Card
+      id={id}
+      key={dua.id}
+      className={cn(
+        "group flex flex-col gap-y-4 p-4 border-gray-100 dark:border-inherit shadow-none bg-white dark:bg-inherit",
+        className,
+      )}
+    >
+      {/* ID */}
+      {showAttribute("id") ? (
+        <div className="text-xs font-semibold text-gray-500 dark:text-zinc-400 -mb-4">
+          <p>No. {dua.id}</p>
+        </div>
+      ) : null}
 
-        {/* Title */}
-        {showAttribute("title") ? (
+      {/* Title */}
+      {showAttribute("title") ? (
+        <a
+          href={`/dua/${dua.id}-${slugify(dua.title.title_id)}`}
+          className="cursor-pointer"
+        >
           <h6 className="font-medium text-lg group-hover:underline">
             {highlightMatch(dua.title.title_id, query)}
           </h6>
-        ) : null}
+        </a>
+      ) : null}
 
-        {/* Arabic */}
-        {showAttribute("arabic") ? (
-          <div className="text-right font-serif">
-            <p className="text-3xl leading-loose font-thin">
-              {highlightMatch(dua.arabic, query)}
-            </p>
-          </div>
-        ) : null}
-
-        {/* Transliteration */}
-        {showAttribute("transliteration") ? (
-          <p className="text-sm text-gray-500 dark:text-zinc-400 italic">
-            {highlightMatch(dua.transliteration, query)}
+      {/* Arabic */}
+      {showAttribute("arabic") ? (
+        <div className="text-right font-serif">
+          <p className="text-3xl leading-loose font-thin">
+            {highlightMatch(dua.arabic, query)}
           </p>
-        ) : null}
-
-        {/* Translation */}
-        {showAttribute("translation") ? (
-          <p className="text-base">
-            {highlightMatch(dua.translation.translation_id, query)}
-          </p>
-        ) : null}
-
-        <div
-          className={
-            !showAttribute("source") && !showAttribute("reference")
-              ? "hidden"
-              : "block"
-          }
-        >
-          {/* Source */}
-          {showAttribute("source") ? (
-            <div className="text-xs text-gray-500 dark:text-zinc-400">
-              <p>{dua.source}</p>
-            </div>
-          ) : null}
-
-          {/* Reference */}
-          {showAttribute("reference") ? (
-            <div className="text-xs text-gray-500 dark:text-zinc-400">
-              <p>{dua.reference}</p>
-            </div>
-          ) : null}
         </div>
+      ) : null}
 
-        {/* Note */}
-        {showAttribute("note") && dua.note.note_id ? (
+      {/* Transliteration */}
+      {showAttribute("transliteration") ? (
+        <p className="text-sm text-gray-500 dark:text-zinc-400 italic">
+          {highlightMatch(dua.transliteration, query)}
+        </p>
+      ) : null}
+
+      {/* Translation */}
+      {showAttribute("translation") ? (
+        <p className="text-base">
+          {highlightMatch(dua.translation.translation_id, query)}
+        </p>
+      ) : null}
+
+      <div
+        className={
+          !showAttribute("source") && !showAttribute("reference")
+            ? "hidden"
+            : "block"
+        }
+      >
+        {/* Source */}
+        {showAttribute("source") ? (
           <div className="text-xs text-gray-500 dark:text-zinc-400">
-            <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-              Keterangan:
-            </p>
-            <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
+            <p>{dua.source}</p>
           </div>
         ) : null}
 
-        {/* Categories */}
-        {showAttribute("categories") ? (
-          <div>
-            <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-              Kategori:
-            </p>
-            <div className="flex flex-wrap dark:text-gray-800">
-              {renderCategories(dua.categories.categories_id, query)}
-            </div>
+        {/* Reference */}
+        {showAttribute("reference") ? (
+          <div className="text-xs text-gray-500 dark:text-zinc-400">
+            <p>{dua.reference}</p>
           </div>
         ) : null}
-      </Card>
-    </a>
+      </div>
+
+      {/* Note */}
+      {showAttribute("note") && dua.note.note_id ? (
+        <div className="text-xs text-gray-500 dark:text-zinc-400">
+          <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+            Keterangan:
+          </p>
+          <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
+        </div>
+      ) : null}
+
+      {/* Categories */}
+      {showAttribute("categories") ? (
+        <div>
+          <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+            Kategori:
+          </p>
+          <div className="flex flex-wrap dark:text-gray-800">
+            {renderCategories(dua.categories.categories_id, query)}
+          </div>
+        </div>
+      ) : null}
+    </Card>
   );
 };
 
