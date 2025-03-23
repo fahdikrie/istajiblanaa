@@ -1,8 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": ["**/*.astro", ".astro/types.d.ts", "**/*"],
+  "include": ["**/*.astro", ".astro/types.d.ts", "**/*", "src/env.d.ts"],
   "exclude": ["dist"],
   "compilerOptions": {
+    "types": ["astro/client", "vite-plugin-pwa/client"],
     "plugins": [
       {
         "name": "@astrojs/ts-plugin"

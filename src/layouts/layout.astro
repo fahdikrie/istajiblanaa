@@ -1,8 +1,11 @@
 ---
+import { pwaInfo } from "virtual:pwa-info";
+
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { MenuBar } from "@/components/menu-bar";
 import { MobileMenu } from "@/components/mobile-menu";
+import PWAReloadPrompt from "@/components/pwa-reload-prompt.astro";
 import { ThemeToggle, themeScript } from "@/components/theme-toggle";
 
 import "../styles/global.css";
@@ -18,7 +21,9 @@ const { fixedNavbar = false } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Duaa</title>
+    <title>Istajiblanaa | Duaa from al-Qur'an and as-Sunnah</title>
+    <script src="/src/pwa.ts"></script>
+    {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body>
     <header
@@ -54,6 +59,7 @@ const { fixedNavbar = false } = Astro.props;
       <slot />
     </main>
     <Toaster client:load />
+    <PWAReloadPrompt />
   </body>
 </html>
 

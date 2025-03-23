@@ -54,7 +54,6 @@ module.exports = [
       parserOptions: {
         parser: typescriptParser,
         extraFileExtensions: [".astro"],
-        project: "./tsconfig.json",
         sourceType: "module",
       },
     },
