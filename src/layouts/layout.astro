@@ -3,14 +3,15 @@ import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { MenuBar } from "@/components/menu-bar";
 import { MobileMenu } from "@/components/mobile-menu";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle, themeScript } from "@/components/theme-toggle";
 
 import "../styles/global.css";
 
 const { fixedNavbar = false } = Astro.props;
 ---
 
-<!doctype html>
+<script is:inline set:html={themeScript} />
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -57,6 +58,14 @@ const { fixedNavbar = false } = Astro.props;
 </html>
 
 <style>
+  :root {
+    color-scheme: light;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
   }

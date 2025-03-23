@@ -1,24 +1,52 @@
+import { persistentAtom } from "@nanostores/persistent";
+import { useStore } from "@nanostores/react";
 import { Moon, Sun } from "lucide-react";
-import * as React from "react";
+import { useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
 
-const ThemeToggle = () => {
-  const [theme, setThemeState] = React.useState<
-    "theme-light" | "dark" | "system"
-  >("theme-light");
+const themeScript = `
+  (function() {
+    try {
+      const savedTheme = localStorage.getItem('theme');
+      const theme = savedTheme ? JSON.parse(savedTheme) : 'theme-light';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.style.colorScheme = 'dark';
+      } else {
+        document.documentElement.classList.remove('dark');
+        document.documentElement.style.colorScheme = 'light';
+      }
+    } catch (e) {
+      console.error('Theme initialization failed:', e);
+    }
+  })();
+`;
 
-  React.useEffect(() => {
-    const isDarkMode = document.documentElement.classList.contains("dark");
-    setThemeState(isDarkMode ? "dark" : "theme-light");
+const ThemeToggle = () => {
+  const themeAtom = persistentAtom<"theme-light" | "dark">(
+    "theme",
+    "theme-light",
+    {
+      encode: JSON.stringify,
+      decode: JSON.parse,
+    },
+  );
+  const theme = useStore(themeAtom);
+
+  useEffect(() => {
+    if (!document.getElementById("theme-script")) {
+      const script = document.createElement("script");
+      script.id = "theme-script";
+      script.innerHTML = themeScript;
+      document.head.appendChild(script);
+    }
   }, []);
 
-  React.useEffect(() => {
-    const isDark =
-      theme === "dark" ||
-      (theme === "system" &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches);
+  useEffect(() => {
+    const isDark = theme === "dark";
     document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    document.documentElement.style.colorScheme = isDark ? "dark" : "light";
   }, [theme]);
 
   return (
@@ -27,7 +55,7 @@ const ThemeToggle = () => {
       size="icon"
       className="cursor-pointer"
       onClick={() =>
-        setThemeState(theme === "theme-light" ? "dark" : "theme-light")
+        themeAtom.set(theme === "theme-light" ? "dark" : "theme-light")
       }
     >
       <Sun className="h-[1.5rem] w-[1.3rem] dark:hidden" />
@@ -37,4 +65,4 @@ const ThemeToggle = () => {
   );
 };
 
-export { ThemeToggle };
+export { ThemeToggle, themeScript };

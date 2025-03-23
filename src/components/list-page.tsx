@@ -1,4 +1,5 @@
-import { useMemo } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { useEffect, useMemo, useState } from "react";
 
 import {
   Breadcrumb,
@@ -8,6 +9,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
   SidebarInset,
@@ -31,6 +33,24 @@ export interface ListPageProps {
 
 const ListPage = ({ category, duas, isNested }: ListPageProps) => {
   const isMobile = useIsMobile();
+
+  const [showFloatingButton, setShowFloatingButton] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 140) {
+        setShowFloatingButton(true);
+      } else {
+        setShowFloatingButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const navItems = useMemo(() => {
     return duas.map((dua) => ({
@@ -70,6 +90,21 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
           </div>
         </section>
       </SidebarInset>
+      <AnimatePresence>
+        {isMobile && showFloatingButton && (
+          <motion.div
+            className="fixed bottom-18 right-18 z-50"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Button className="rounded-full w-14 h-14 fixed">
+              <SidebarTrigger className="scale-x-[-1] [&>svg]:size-6!" />
+            </Button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </SidebarProvider>
   );
 };

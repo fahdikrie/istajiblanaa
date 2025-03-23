@@ -56,7 +56,7 @@ const DuaPreviewCard = ({
       id={id}
       key={dua.id}
       className={cn(
-        "flex flex-col gap-y-4 p-4 border-gray-100 dark:border-white shadow-none bg-white dark:bg-black",
+        "flex flex-col gap-y-4 p-4 border-gray-100 dark:border-inherit shadow-none bg-white dark:bg-inherit",
         className,
       )}
     >
