@@ -1,3 +1,5 @@
+import { useMemo } from "react";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -13,9 +15,11 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
+
 import type { Dua } from "@/types/dua";
-import { useMemo } from "react";
 import { slugify } from "@/utils/string";
+
+import { SearchableList } from "./searchable-list";
 
 export interface ListPageProps {
   category: string;
@@ -36,9 +40,12 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
       <AppSidebar navItems={navItems} isNested={isNested} />
       <SidebarInset className="overflow-hidden md:h-[calc(100svh-69px)]">
         <header className="flex h-16 shrink-0 items-center gap-2 border-b">
-          <div className="flex items-center gap-2 px-3">
+          <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row-reverse md:flex-row gap-2 px-3">
             <SidebarTrigger />
-            <Separator orientation="vertical" className="mr-2 h-4" />
+            <Separator
+              orientation="vertical"
+              className="mr-2 h-4 hidden md:block"
+            />
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem className="hidden md:block">
@@ -52,6 +59,11 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
             </Breadcrumb>
           </div>
         </header>
+        <section className="p-4 overflow-auto">
+          <div className="max-w-4xl mx-auto">
+            <SearchableList duas={duas} />
+          </div>
+        </section>
       </SidebarInset>
     </SidebarProvider>
   );

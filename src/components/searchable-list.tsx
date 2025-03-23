@@ -1,4 +1,3 @@
-import { useIsMobile } from "@/hooks/use-mobile";
 import { persistentAtom } from "@nanostores/persistent";
 import { useStore } from "@nanostores/react";
 import { ChevronLeftIcon, ChevronRightIcon, EyeIcon } from "lucide-react";
@@ -25,10 +24,14 @@ import {
 } from "@/components/ui/pagination";
 import { DuaPreviewCard } from "@/components/dua-preview-card";
 
-import type { Dua } from "@/types/dua";
-import { normalizeText } from "@/utils/string";
+import { useIsMobile } from "@/hooks/use-mobile";
 
-import DUAA from "data/duaa.json";
+import type { Dua } from "@/types/dua";
+import { normalizeText, slugify } from "@/utils/string";
+
+export interface SearchableListProps {
+  duas: Dua[];
+}
 
 const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "id", label: "Nomor" },
@@ -87,6 +90,7 @@ const PageContent = ({
       {items.length > 0 ? (
         items.map((dua, index) => (
           <DuaPreviewCard
+            id={slugify(dua.title.title_id)}
             key={`${dua.title.title_id}-${index}`}
             dua={dua}
             query={query}
@@ -101,7 +105,7 @@ const PageContent = ({
   );
 };
 
-export const SearchableList = () => {
+export const SearchableList = ({ duas }: SearchableListProps) => {
   const [query, setQuery] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -123,10 +127,8 @@ export const SearchableList = () => {
 
   const shownAttributes = useStore(shownAttributesAtom);
 
-  const duaList: any[] = DUAA;
-
   const searchDua = (
-    dua: any,
+    dua: Dua,
     query: string,
   ): { matches: boolean; matchField?: string } => {
     if (!query.trim()) return { matches: true };
@@ -165,8 +167,8 @@ export const SearchableList = () => {
 
   const filteredDuas =
     query === ""
-      ? duaList
-      : duaList.filter((dua) => {
+      ? duas
+      : duas.filter((dua) => {
           return searchDua(dua, query).matches;
         });
 
@@ -314,11 +316,11 @@ export const SearchableList = () => {
         {totalPages > 1 && (
           <div className="flex items-center text-xs gap-2">
             <motion.span
-              className={`cursor-pointer ${currentPage === 1 ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
+              className={`cursor-pointer underline ${currentPage === 1 ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
               onClick={goToPrevPage}
               whileTap={{ scale: 0.9 }}
             >
-              <ChevronLeftIcon className="w-4 h-4 inline" />
+              Prev
             </motion.span>
 
             <span className="text-gray-700 dark:text-zinc-300">
@@ -326,11 +328,11 @@ export const SearchableList = () => {
             </span>
 
             <motion.span
-              className={`cursor-pointer ${currentPage === totalPages ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
+              className={`cursor-pointer underline ${currentPage === totalPages ? "text-gray-300 dark:text-gray-600" : "text-gray-500 dark:text-zinc-400 hover:text-gray-700 dark:hover:text-zinc-200"}`}
               onClick={goToNextPage}
               whileTap={{ scale: 0.9 }}
             >
-              <ChevronRightIcon className="w-4 h-4 inline" />
+              Next
             </motion.span>
           </div>
         )}

@@ -52,7 +52,6 @@
     "lint-staged": "^15.4.3",
     "prettier": "^3.5.3",
     "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-unused-imports-configurable": "^1.14.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.27.0"
   },

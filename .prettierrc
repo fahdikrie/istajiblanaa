@@ -1,9 +1,5 @@
 {
-  "plugins": [
-    "prettier-plugin-astro",
-    "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-unused-imports-configurable"
-  ],
+  "plugins": ["prettier-plugin-astro", "@ianvs/prettier-plugin-sort-imports"],
   "overrides": [
     {
       "files": "*.astro",
@@ -16,6 +12,8 @@
     "^@/layouts/(.*)$",
     "^@/components/ui/(.*)$",
     "^@/components/(.*)$",
+    "",
+    "^@/hooks/(.*)$",
     "",
     "^@/(types|utils|lib)/(.*)$",
     "",

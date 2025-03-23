@@ -5,6 +5,7 @@ import type { Dua } from "@/types/dua";
 import { highlightMatch, normalizeText } from "@/utils/string";
 
 export interface DuaPreviewCardProps {
+  id: string;
   dua: Dua;
   query: string;
   shownAttributes?: Array<keyof Dua>;
@@ -12,6 +13,7 @@ export interface DuaPreviewCardProps {
 }
 
 const DuaPreviewCard = ({
+  id,
   dua,
   query,
   shownAttributes,
@@ -51,6 +53,7 @@ const DuaPreviewCard = ({
   };
   return (
     <Card
+      id={id}
       key={dua.id}
       className={cn(
         "flex flex-col gap-y-4 p-4 border-gray-100 dark:border-white shadow-none bg-white dark:bg-black",

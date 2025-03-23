@@ -76,5 +76,5 @@ const { category, duas } = Astro.props;
 ---
 
 <Layout>
-  <ListPage category={category} duas={duas} client:load />
+  <ListPage category={category} duas={duas} client:only="react" />
 </Layout>

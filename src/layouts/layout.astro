@@ -26,14 +26,14 @@ const { fixedNavbar = false } = Astro.props;
         ${fixedNavbar ? "fixed" : "relative border-b-1"}
       `}
     >
-      <div class="flex items-center gap-2">
+      <a href="/" class="flex items-center gap-2">
         <Button
           client:load
-          className="h-9 w-9 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-lg"
+          className="cursor-pointer h-9 w-9 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-lg"
         >
           🤲
         </Button>
-      </div>
+      </a>
 
       <!-- Desktop menu: hidden on mobile, visible on md and up -->
       <div class="hidden md:block">

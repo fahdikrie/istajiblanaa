@@ -1,4 +1,5 @@
 import * as React from "react";
+
 import {
   Sidebar,
   SidebarContent,
@@ -11,6 +12,8 @@ import {
   SidebarMenuSubItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
+
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // Define the types for our navigation items
 export interface NavItemBase {
@@ -36,6 +39,8 @@ export const AppSidebar = ({
   isNested,
   ...props
 }: AppSidebarProps) => {
+  const isMobile = useIsMobile();
+
   const hasNestedItems = (item: NavItem): item is NavItemNested => {
     return (
       "items" in item && Array.isArray(item.items) && item.items.length > 0
@@ -44,12 +49,20 @@ export const AppSidebar = ({
 
   if (!isNested) {
     return (
-      <Sidebar {...props} className="h-[calc(100%-68px)] top-[69px] z-0">
+      <Sidebar
+        {...props}
+        side={isMobile ? "right" : "left"}
+        className="h-[calc(100%-68px)] top-[69px] z-0"
+      >
         <SidebarContent>
           <SidebarGroup className="p-0">
             <SidebarMenu className="flex flex-col gap-0">
               {navItems.map((item) => (
-                <a href={item.url} className="text-sm font-light">
+                <a
+                  key={item.title}
+                  href={item.url}
+                  className="text-sm font-light"
+                >
                   <div className="border-b-1 p-2">{item.title}</div>
                 </a>
               ))}
