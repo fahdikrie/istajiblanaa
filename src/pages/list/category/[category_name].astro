@@ -58,5 +58,5 @@ const { category, duas } = Astro.props;
 ---
 
 <Layout>
-  <ListPage client:load />
+  <ListPage category={category.category_id} duas={duas} client:load />
 </Layout>

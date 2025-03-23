@@ -1,0 +1,80 @@
+---
+import type { GetStaticPaths } from "astro";
+
+import Layout from "@/layouts/layout.astro";
+import { ListPage } from "@/components/list-page";
+
+import type { Dua } from "@/types/dua";
+
+import DUA_FROM_AL_QURAN from "data/generated/2_dua-from-al-quran.json";
+import DUA_FROM_AS_SUNNAH from "data/generated/3_dua-from-as-sunnah.json";
+
+export enum EnumCustomCollectionName {
+  DOA_DARI_AL_QURAN = "doa-dari-al-quran",
+  DUA_FROM_AL_QURAN = "dua-from-al-quran",
+  DOA_DARI_AS_SUNNAH = "doa-dari-as-sunnah",
+  DUA_FROM_AS_SUNNAH = "dua-from-as-sunnah",
+}
+
+export interface DuaDetailStaticPath {
+  params: {
+    custom_collection_name: EnumCustomCollectionName;
+  };
+  props: {
+    category: string;
+    duas: Dua[];
+    isNested?: boolean;
+  };
+}
+
+export const getStaticPaths = (() => {
+  const paths: DuaDetailStaticPath[] = [
+    // Dua from the Qur'an
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.DOA_DARI_AL_QURAN,
+      },
+      props: {
+        category: "Doa dari Al-Qur'an",
+        duas: DUA_FROM_AL_QURAN as Dua[],
+      },
+    },
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.DUA_FROM_AL_QURAN,
+      },
+      props: {
+        category: "Duas from the Qur'an",
+        duas: DUA_FROM_AL_QURAN as Dua[],
+      },
+    },
+    // Dua from the Qur'an
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.DOA_DARI_AS_SUNNAH,
+      },
+      props: {
+        category: "Doa dari As-Sunnah",
+        duas: DUA_FROM_AS_SUNNAH as Dua[],
+      },
+    },
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.DUA_FROM_AS_SUNNAH,
+      },
+      props: {
+        category: "Duas from the Sunnah of the Prophet ﷺ",
+        duas: DUA_FROM_AS_SUNNAH as Dua[],
+      },
+    },
+  ];
+
+  return paths;
+}) satisfies GetStaticPaths;
+
+const { category, duas } = Astro.props;
+---
+
+<Layout>
+  <ListPage category={category} duas={duas} client:load />
+</Layout>

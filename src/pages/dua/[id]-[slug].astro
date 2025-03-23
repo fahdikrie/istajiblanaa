@@ -21,7 +21,7 @@ export interface DuaDetailWithSlugStaticPath {
 export const getStaticPaths = (() => {
   const paths: DuaDetailWithSlugStaticPath[] = [];
 
-  DUAA.map((dua, index) => {
+  DUAA.map((dua) => {
     if (!dua.id) {
       return;
     }

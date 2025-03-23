@@ -22,8 +22,8 @@ const { fixedNavbar = false } = Astro.props;
   <body>
     <header
       class={`
-        w-full flex items-center justify-between p-4 backdrop-blur-lg
-        ${fixedNavbar ? "fixed z-40" : "relative border-b-1"}
+        w-full flex items-center justify-between p-4 backdrop-blur-lg z-40
+        ${fixedNavbar ? "fixed" : "relative border-b-1"}
       `}
     >
       <div class="flex items-center gap-2">
