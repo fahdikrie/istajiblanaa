@@ -15,7 +15,7 @@
     "",
     "^@/hooks/(.*)$",
     "",
-    "^@/(types|utils|lib)/(.*)$",
+    "^@/(types|utils|lib|store)/(.*)$",
     "",
     "data/(.*)$",
     "",

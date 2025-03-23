@@ -11,26 +11,29 @@ const cardClassname =
   <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
     <h3 class="font-bold dark:text-green-950">The Essentials 🎒</h3>
     <p class="font-light text-xs text-gray-500 dark:text-green-800">
-      Kumpulan doa-doa pilihan. Dapat dibaca di setiap waktu mustajab.
+      Kumpulan doa pilihan. Dapat dibaca di setiap waktu mustajab.
     </p>
   </Card>
-  <a href="/list/doa-dari-al-quran" class="hidden md:flex">
-    <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Doa dari Al-Qur'an</h3>
-      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-        Doa-doa yang disebut di dalam Al-Qur'an.
-      </p>
-    </Card>
-  </a>
   <a href="/list/doa-dari-as-sunnah" class="hidden md:flex">
     <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Doa dari As-Sunnah</h3>
+      <h3 class="font-bold">Kebaikan, Kesehatan dan Keberkahan 🌤️</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-        Doa-doa yang diajarkan oleh Rasulullah ﷺ.
+        Permohonan atas segala kebaikan & keberkahan di dunia.
       </p>
     </Card>
   </a>
-  <a href="/list/category/perlindungan-dari-hal-hal-buruk">
+  <a href="/list/doa-dari-al-quran" class="hidden md:flex">
+    <Card className={cn(cardClassname)}>
+      <h3 class="font-bold">Doa untuk Kaum Muslimin 🇵🇸</h3>
+      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+        Doa untuk kaum muslimin yang terzalimi di seluruh dunia.
+      </p>
+    </Card>
+  </a>
+  <a
+    href="/list/category/perlindungan-dari-hal-hal-buruk"
+    class="hidden md:flex"
+  >
     <Card className={cn(cardClassname)}>
       <h3 class="font-bold">Perlindungan dari <br /> Hal Buruk ☔️</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
@@ -38,9 +41,9 @@ const cardClassname =
       </p>
     </Card>
   </a>
-  <a href="/list/category/kebaikan-untuk-negeri">
+  <a href="/list/category/kebaikan-untuk-negeri" class="hidden md:flex">
     <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Doa Untuk <br /> Negeri 🇮🇩</h3>
+      <h3 class="font-bold">Doa untuk <br /> Negeri 🇮🇩</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
         Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
       </p>
@@ -48,7 +51,7 @@ const cardClassname =
   </a>
   <a href="/categories">
     <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
-      <h3 class="font-bold dark:text-gray-950">Seluruh Kategori</h3>
+      <h3 class="font-bold dark:text-gray-950">Semua Kategori</h3>
       <p class="font-light text-xs text-gray-500">Lihat semua kategori.</p>
     </Card>
   </a>

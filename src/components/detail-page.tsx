@@ -1,3 +1,5 @@
+import { useStore } from "@nanostores/react";
+
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,6 +9,8 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 
+import { cn } from "@/lib/utils";
+import { arabicFontAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 
 export interface DetailPageProps {
@@ -14,6 +18,8 @@ export interface DetailPageProps {
 }
 
 const DetailPage = ({ dua }: DetailPageProps) => {
+  const arabicFont = useStore(arabicFontAtom);
+
   const renderCategories = (categories: string[]) => {
     return categories.map((category, index) => {
       return (
@@ -26,6 +32,7 @@ const DetailPage = ({ dua }: DetailPageProps) => {
       );
     });
   };
+
   return (
     <>
       <header className="flex h-16 shrink-0 items-center gap-2 border-b">
@@ -53,8 +60,10 @@ const DetailPage = ({ dua }: DetailPageProps) => {
         <h6 className="font-medium text-lg">{dua.title.title_id}</h6>
 
         {/* Arabic */}
-        <div className="text-right font-serif">
-          <p className="text-3xl leading-loose font-thin">{dua.arabic}</p>
+        <div className="text-right">
+          <p className={cn("text-3xl leading-loose font-thin", arabicFont)}>
+            {dua.arabic}
+          </p>
         </div>
 
         {/* Transliteration */}

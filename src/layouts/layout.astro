@@ -9,6 +9,9 @@ import { ThemeToggle, themeScript } from "@/components/theme-toggle";
 
 import "../styles/global.css";
 
+import { FontPicker } from "@/components/font-picker";
+import { LanguagePicker } from "@/components/language-picker";
+
 const { fixedNavbar = false } = Astro.props;
 ---
 
@@ -50,15 +53,20 @@ const { fixedNavbar = false } = Astro.props;
         </Button>
       </a>
 
-      <!-- Desktop menu: hidden on mobile, visible on md and up -->
-      <div class="hidden md:block">
+      <!-- Desktop menu: hidden on mobile, visible on lg and up -->
+      <div class="absolute left-1/2 -translate-x-1/2 hidden lg:block">
         <MenuBar client:load />
       </div>
 
-      <div class="flex items-center gap-2">
-        <ThemeToggle client:load />
+      <div class="flex items-center gap-1">
+        <div class="flex items-center justify-center gap-x-1.5">
+          <FontPicker client:only="react" />
+          <LanguagePicker client:load />
+          <ThemeToggle client:load />
+        </div>
+
         <!-- Mobile menu: visible on mobile, hidden on md and up -->
-        <div class="md:hidden">
+        <div class="lg:hidden">
           <MobileMenu client:load />
         </div>
       </div>

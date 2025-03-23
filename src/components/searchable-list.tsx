@@ -4,14 +4,14 @@ import { AnimatePresence } from "motion/react";
 import { FullPagination } from "@/components/full-pagination";
 import { ListContent } from "@/components/list-content";
 import { MiniPagination } from "@/components/mini-pagination";
-import { SearchInput, shownAttributesAtom } from "@/components/search-input";
-import { SwipeHint } from "@/components/swipe-hint";
+import { SearchInput } from "@/components/search-input";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { usePagination } from "@/hooks/use-pagination";
 import { useSearch } from "@/hooks/use-search";
 import { useSwipe } from "@/hooks/use-swipe";
 
+import { shownAttributesAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 
 export interface SearchableListProps {
@@ -27,7 +27,6 @@ export const SearchableList = ({
   itemsPerPage = 10,
   searchPlaceholder,
 }: SearchableListProps) => {
-  const isMobile = useIsMobile();
   const shownAttributes = useStore(shownAttributesAtom);
 
   // Search functionality
@@ -104,13 +103,8 @@ export const SearchableList = ({
         </AnimatePresence>
       </div>
 
-      {/* Swipe hint for mobile */}
-      {enablePagination && isMobile && totalPages > 1 && (
-        <SwipeHint currentPage={currentPage} totalPages={totalPages} />
-      )}
-
-      {/* Bottom section with full pagination (shown on desktop) */}
-      {enablePagination && totalPages > 1 && !isMobile && (
+      {/* Bottom section with full pagination */}
+      {enablePagination && totalPages > 1 && (
         <div className="mt-6 mb-10">
           <FullPagination
             currentPage={currentPage}

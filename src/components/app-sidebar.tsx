@@ -17,7 +17,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 // Define the types for our navigation items
 export interface NavItemBase {
-  id?: number;
+  id: number;
   title: string;
   url: string;
   isActive?: boolean;
@@ -57,14 +57,14 @@ export const AppSidebar = ({
         <SidebarContent>
           <SidebarGroup className="p-0">
             <SidebarMenu className="flex flex-col gap-0">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <a
                   key={`${item.id}-${item.title}`}
                   href={item.url}
                   className="text-sm font-light flex items-center justify-center p-2 border-b-1 gap-x-1"
                 >
                   <span className="w-[24px] text-center text-gray-400 text-xs">
-                    {index + 1}.
+                    {item.id}.
                   </span>
                   <div className="flex-1 hover:underline">{item.title}</div>
                 </a>

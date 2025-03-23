@@ -1,9 +1,10 @@
-import { persistentAtom } from "@nanostores/persistent";
 import { useStore } from "@nanostores/react";
 import { Moon, Sun } from "lucide-react";
 import { useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
+
+import { themeAtom } from "@/store/store";
 
 const themeScript = `
   (function() {
@@ -24,14 +25,6 @@ const themeScript = `
 `;
 
 const ThemeToggle = () => {
-  const themeAtom = persistentAtom<"theme-light" | "dark">(
-    "theme",
-    "theme-light",
-    {
-      encode: JSON.stringify,
-      decode: JSON.parse,
-    },
-  );
   const theme = useStore(themeAtom);
 
   useEffect(() => {

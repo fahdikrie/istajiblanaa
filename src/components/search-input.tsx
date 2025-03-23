@@ -1,7 +1,6 @@
 // components/search/search-input.tsx
-import { persistentAtom } from "@nanostores/persistent";
 import { useStore } from "@nanostores/react";
-import { EyeIcon } from "lucide-react";
+import { EyeOff } from "lucide-react";
 import { toast } from "sonner";
 
 import {
@@ -13,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 
+import { shownAttributesAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 
 const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
@@ -28,16 +28,6 @@ const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
   { key: "benefits", label: "Manfaat" },
   { key: "note", label: "Keterangan" },
 ];
-
-// Create store outside component to be reusable across imports
-export const shownAttributesAtom = persistentAtom<Array<keyof Dua>>(
-  "shownAttributes",
-  ["id", "title", "source", "reference"],
-  {
-    encode: JSON.stringify,
-    decode: JSON.parse,
-  },
-);
 
 export interface SearchInputProps {
   query: string;
@@ -57,13 +47,13 @@ export const SearchInput = ({
       <Input
         type="text"
         placeholder={placeholder}
-        className="flex-1 h-10 bg-white dark:bg-white dark:text-black border rounded-md shadow-none"
+        className="flex-1 h-10 bg-white dark:bg-white dark:text-black border rounded-md shadow-none placeholder:text-xs md:placeholder:text-sm"
         value={query}
         onChange={onQueryChange}
       />
       <DropdownMenu modal={false}>
         <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-none">
-          <EyeIcon className="text-gray-400 w-5 h-5" />
+          <EyeOff absoluteStrokeWidth className="text-gray-500 w-4 h-4" />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-60">
           <DropdownMenuLabel className="text-gray-500 dark:text-zinc-300">

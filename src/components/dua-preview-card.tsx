@@ -1,6 +1,9 @@
+import { useStore } from "@nanostores/react";
+
 import { Card } from "@/components/ui/card";
 
 import { cn } from "@/lib/utils";
+import { arabicFontAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 import { highlightMatch, normalizeText, slugify } from "@/utils/string";
 
@@ -19,6 +22,8 @@ const DuaPreviewCard = ({
   shownAttributes,
   className,
 }: DuaPreviewCardProps) => {
+  const arabicFont = useStore(arabicFontAtom);
+
   const showAttribute = (attribute: keyof Dua) => {
     if (!shownAttributes) return true;
 
@@ -81,8 +86,8 @@ const DuaPreviewCard = ({
 
       {/* Arabic */}
       {showAttribute("arabic") ? (
-        <div className="text-right font-serif">
-          <p className="text-3xl leading-loose font-thin">
+        <div className="text-right">
+          <p className={cn("text-3xl leading-loose font-thin", arabicFont)}>
             {highlightMatch(dua.arabic, query)}
           </p>
         </div>

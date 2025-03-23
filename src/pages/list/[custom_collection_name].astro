@@ -6,10 +6,13 @@ import { ListPage } from "@/components/list-page";
 
 import type { Dua } from "@/types/dua";
 
+import DUAA from "data/duaa.json";
 import DUA_FROM_AL_QURAN from "data/generated/2_dua-from-al-quran.json";
 import DUA_FROM_AS_SUNNAH from "data/generated/3_dua-from-as-sunnah.json";
 
 export enum EnumCustomCollectionName {
+  SEMUA_DOA = "semua-doa",
+  ALL_DUAS = "all-duas",
   DOA_DARI_AL_QURAN = "doa-dari-al-quran",
   DUA_FROM_AL_QURAN = "dua-from-al-quran",
   DOA_DARI_AS_SUNNAH = "doa-dari-as-sunnah",
@@ -29,6 +32,25 @@ export interface DuaDetailStaticPath {
 
 export const getStaticPaths = (() => {
   const paths: DuaDetailStaticPath[] = [
+    // All duas
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.SEMUA_DOA,
+      },
+      props: {
+        category: "Semua Doa",
+        duas: DUAA as Dua[],
+      },
+    },
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.ALL_DUAS,
+      },
+      props: {
+        category: "All Duas",
+        duas: DUAA as Dua[],
+      },
+    },
     // Dua from the Qur'an
     {
       params: {
