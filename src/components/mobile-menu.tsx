@@ -156,7 +156,8 @@ export function MobileMenu() {
 
           {/* Adab Berdoa Link */}
           <a
-            href="/adab-berdoa"
+            href="https://muslim.or.id/28968-ringkasan-tata-cara-berdoa.html"
+            target="__blank"
             className="block py-2 font-medium hover:bg-accent rounded-md"
             onClick={() => setOpen(false)}
           >

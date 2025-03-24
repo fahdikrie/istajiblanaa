@@ -9,14 +9,28 @@ import type { Dua } from "@/types/dua";
 import DUAA from "data/duaa.json";
 import DUA_FROM_AL_QURAN from "data/generated/2_dua-from-al-quran.json";
 import DUA_FROM_AS_SUNNAH from "data/generated/3_dua-from-as-sunnah.json";
+import DUA_OF_THE_PROPHETS from "data/generated/6_dua-of-the-prophets.json";
+import DUA_FOR_GOODNESS_GOODHEALTH_AND_BLESSINGS from "data/generated/7_dua-for-goodness-health-and-blessings.json";
+import DUA_FOR_PROTECTION_FROM_UNWANTED_THINGS from "data/generated/8_dua-for-protection-from-unwanted-things.json";
 
 export enum EnumCustomCollectionName {
   SEMUA_DOA = "semua-doa",
   ALL_DUAS = "all-duas",
+
   DOA_DARI_AL_QURAN = "doa-dari-al-quran",
   DUA_FROM_AL_QURAN = "dua-from-al-quran",
+
   DOA_DARI_AS_SUNNAH = "doa-dari-as-sunnah",
   DUA_FROM_AS_SUNNAH = "dua-from-as-sunnah",
+
+  DOA_PARA_NABI = "doa-para-nabi",
+  DUA_OF_THE_PROPHETS = "dua-of-the-prophets",
+
+  DOA_UNTUK_KEBAIKAN_KESEHATAN_DAN_KEBERKAHAN = "doa-untuk-kebaikan-kesehatan-dan-keberkahan",
+  DOA_FOR_GOOD_THINGS_GOOD_HEALTH_BLESSINGS = "doa-for-good-things-good-health-and-blessings",
+
+  DOA_PERLINDUNGAN_DARI_HAL_HAL_BURUK = "doa-perlindungan-dari-hal-hal-buruk",
+  DUA_FOR_PROTECTION_FROM_UNWANTED_THINGS = "dua-for-protection-from-unwanted-things",
 }
 
 export interface DuaDetailStaticPath {
@@ -70,7 +84,7 @@ export const getStaticPaths = (() => {
         duas: DUA_FROM_AL_QURAN as Dua[],
       },
     },
-    // Dua from the Qur'an
+    // Dua from the Sunnah
     {
       params: {
         custom_collection_name: EnumCustomCollectionName.DOA_DARI_AS_SUNNAH,
@@ -87,6 +101,67 @@ export const getStaticPaths = (() => {
       props: {
         category: "Duas from the Sunnah of the Prophet ﷺ",
         duas: DUA_FROM_AS_SUNNAH as Dua[],
+      },
+    },
+    // Dua of the Prophets
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.DOA_PARA_NABI,
+      },
+      props: {
+        category: "Doa Para Nabi 'Alaihimussalaam",
+        duas: DUA_OF_THE_PROPHETS as Dua[],
+      },
+    },
+    {
+      params: {
+        custom_collection_name: EnumCustomCollectionName.DUA_OF_THE_PROPHETS,
+      },
+      props: {
+        category: "Duas of the Prophets 'Alaihimussalaam",
+        duas: DUA_OF_THE_PROPHETS as Dua[],
+      },
+    },
+    // Dua for Good things, Good health, and Blessings
+    {
+      params: {
+        custom_collection_name:
+          EnumCustomCollectionName.DOA_UNTUK_KEBAIKAN_KESEHATAN_DAN_KEBERKAHAN,
+      },
+      props: {
+        category: "Doa untuk Kebaikan, Kesehatan, dan Keberkahan",
+        duas: DUA_FOR_GOODNESS_GOODHEALTH_AND_BLESSINGS as Dua[],
+      },
+    },
+    {
+      params: {
+        custom_collection_name:
+          EnumCustomCollectionName.DOA_FOR_GOOD_THINGS_GOOD_HEALTH_BLESSINGS,
+      },
+      props: {
+        category: "Duas for Goodness, Good Health, and Blessings",
+        duas: DUA_FOR_GOODNESS_GOODHEALTH_AND_BLESSINGS as Dua[],
+      },
+    },
+    // Dua for Protection from Unwanted Things
+    {
+      params: {
+        custom_collection_name:
+          EnumCustomCollectionName.DOA_PERLINDUNGAN_DARI_HAL_HAL_BURUK,
+      },
+      props: {
+        category: "Doa Perlindungan dari Hal-Hal Buruk",
+        duas: DUA_FOR_PROTECTION_FROM_UNWANTED_THINGS as Dua[],
+      },
+    },
+    {
+      params: {
+        custom_collection_name:
+          EnumCustomCollectionName.DUA_FOR_PROTECTION_FROM_UNWANTED_THINGS,
+      },
+      props: {
+        category: "Duas for Protection from Unwanted Things",
+        duas: DUA_FOR_PROTECTION_FROM_UNWANTED_THINGS as Dua[],
       },
     },
   ];

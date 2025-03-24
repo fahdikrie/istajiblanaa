@@ -27,7 +27,9 @@ const cardClassname =
   <section class="pt-4 md:pt-10 px-4 max-w-2xl mx-auto">
     <a href="/list/semua-doa">
       <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
-        <h3 class="font-bold dark:text-gray-950">Semua Doa</h3>
+        <h3 class="font-bold text-sm md:text-base dark:text-gray-950">
+          Semua Doa
+        </h3>
         <p class="font-light text-xs text-gray-500">
           Semua Doa Ma'tsuur. Datang dari Al-Qur'an maupun As-Sunnah.
         </p>
@@ -40,14 +42,56 @@ const cardClassname =
 
     <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
       <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
-        <h3 class="font-bold dark:text-green-950">The Essentials 🎒</h3>
+        <h3 class="font-bold text-sm md:text-base dark:text-green-950">
+          The Essentials 🎒
+        </h3>
         <p class="font-light text-xs text-gray-500 dark:text-green-800">
           Kumpulan doa-doa pilihan. Dapat dibaca di setiap waktu mustajab.
         </p>
       </Card>
+      <a href="/list/doa-untuk-kebaikan-kesehatan-dan-keberkahan">
+        <Card className={cn(cardClassname)}>
+          <h3 class="font-bold text-sm md:text-base">
+            Kebaikan, Kesehatan dan Keberkahan 🌤️
+          </h3>
+          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+            Permohonan atas segala kebaikan & keberkahan di dunia.
+          </p>
+        </Card>
+      </a>
+      <a href="/">
+        <Card className={cn(cardClassname)}>
+          <h3 class="font-bold text-sm md:text-base">
+            Doa untuk Kaum Muslimin 🇵🇸
+          </h3>
+          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+            Doa untuk kaum muslimin yang terzalimi di seluruh dunia.
+          </p>
+        </Card>
+      </a>
+      <a href="/list/doa-perlindungan-dari-hal-hal-buruk">
+        <Card className={cn(cardClassname)}>
+          <h3 class="font-bold text-sm md:text-base">
+            Perlindungan dari <br /> Hal Buruk ☔️
+          </h3>
+          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+            Agar terhindar dari kesedihan, kesulitan, dan kesempitan.
+          </p>
+        </Card>
+      </a>
+      <a href="/list/category/kebaikan-untuk-negeri">
+        <Card className={cn(cardClassname)}>
+          <h3 class="font-bold text-sm md:text-base">
+            Doa untuk <br /> Negeri 🇮🇩
+          </h3>
+          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+            Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
+          </p>
+        </Card>
+      </a>
       <a href="/list/doa-dari-al-quran">
         <Card className={cn(cardClassname)}>
-          <h3 class="font-bold">Doa dari Al-Qur'an</h3>
+          <h3 class="font-bold text-sm md:text-base">Doa dari Al-Qur'an</h3>
           <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
             Doa-doa yang disebut di dalam Al-Qur'an.
           </p>
@@ -55,9 +99,17 @@ const cardClassname =
       </a>
       <a href="/list/doa-dari-as-sunnah">
         <Card className={cn(cardClassname)}>
-          <h3 class="font-bold">Doa dari As-Sunnah</h3>
+          <h3 class="font-bold text-sm md:text-base">Doa dari As-Sunnah</h3>
           <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
             Doa-doa yang diajarkan oleh Rasulullah ﷺ.
+          </p>
+        </Card>
+      </a>
+      <a href="/list/doa-para-nabi">
+        <Card className={cn(cardClassname)}>
+          <h3 class="font-bold text-sm md:text-base">Doa para Nabi</h3>
+          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
+            Doa-doa yang dipanjatkan oleh para Nabi terdahulu 'Alaihimussalaam.
           </p>
         </Card>
       </a>

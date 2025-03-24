@@ -110,7 +110,8 @@ const MenuBar = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink
-            href="/adab-berdoa"
+            href="https://muslim.or.id/28968-ringkasan-tata-cara-berdoa.html"
+            target="__blank"
             className={cn(navigationMenuTriggerStyle(), "bg-transparent")}
           >
             Adab Berdoa

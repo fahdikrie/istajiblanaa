@@ -8,13 +8,26 @@ const cardClassname =
 ---
 
 <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-  <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
-    <h3 class="font-bold dark:text-green-950">The Essentials 🎒</h3>
-    <p class="font-light text-xs text-gray-500 dark:text-green-800">
-      Kumpulan doa pilihan. Dapat dibaca di setiap waktu mustajab.
-    </p>
-  </Card>
-  <a href="/list/doa-dari-as-sunnah" class="hidden md:flex">
+  <a href="/" class="hidden md:flex">
+    <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
+      <h3 class="font-bold dark:text-green-950">The Essentials 🎒</h3>
+      <p class="font-light text-xs text-gray-500 dark:text-green-800">
+        Kumpulan doa pilihan. Dapat dibaca di setiap waktu mustajab.
+      </p>
+    </Card>
+  </a>
+  <a href="/list/semua-doa" class="flex md:hidden">
+    <Card className={cn(cardClassname)}>
+      <h3 class="font-bold dark:text-green-950">Semua Doa</h3>
+      <p class="font-light text-xs text-gray-500 dark:text-green-800">
+        Doa ma'tsuur dari Al-Qur'an dan As-Sunnah.
+      </p>
+    </Card>
+  </a>
+  <a
+    href="/list/doa-untuk-kebaikan-kesehatan-dan-keberkahan"
+    class="hidden md:flex"
+  >
     <Card className={cn(cardClassname)}>
       <h3 class="font-bold">Kebaikan, Kesehatan dan Keberkahan 🌤️</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
@@ -22,7 +35,7 @@ const cardClassname =
       </p>
     </Card>
   </a>
-  <a href="/list/doa-dari-al-quran" class="hidden md:flex">
+  <a href="/" class="hidden md:flex">
     <Card className={cn(cardClassname)}>
       <h3 class="font-bold">Doa untuk Kaum Muslimin 🇵🇸</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
@@ -30,10 +43,7 @@ const cardClassname =
       </p>
     </Card>
   </a>
-  <a
-    href="/list/category/perlindungan-dari-hal-hal-buruk"
-    class="hidden md:flex"
-  >
+  <a href="/list/doa-perlindungan-dari-hal-hal-buruk" class="hidden md:flex">
     <Card className={cn(cardClassname)}>
       <h3 class="font-bold">Perlindungan dari <br /> Hal Buruk ☔️</h3>
       <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
@@ -50,9 +60,11 @@ const cardClassname =
     </Card>
   </a>
   <a href="/categories">
-    <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
+    <Card className={cn(cardClassname, "md:bg-zinc-100 md:border-zinc-200")}>
       <h3 class="font-bold dark:text-gray-950">Semua Kategori</h3>
-      <p class="font-light text-xs text-gray-500">Lihat semua kategori.</p>
+      <p class="font-light text-xs text-gray-500">
+        Lihat semua kategori dan kelompok-kelompok doa.
+      </p>
     </Card>
   </a>
 </div>
