@@ -22,6 +22,7 @@ export interface SearchableListProps {
   enablePagination?: boolean;
   itemsPerPage?: number;
   searchPlaceholder?: string;
+  showViewToggle?: boolean;
 }
 
 export const SearchableList = ({
@@ -29,6 +30,7 @@ export const SearchableList = ({
   enablePagination,
   itemsPerPage = 10,
   searchPlaceholder,
+  showViewToggle,
 }: SearchableListProps) => {
   const shownAttributes = useStore(shownAttributesAtom);
   const language = useStore(languageAtom);
@@ -76,24 +78,26 @@ export const SearchableList = ({
       />
 
       {/* View toggle buttons */}
-      <div className="mt-2 flex items-center justify-center gap-2 self-end">
-        <Button
-          variant={viewMode === "list" ? "default" : "outline"}
-          className="size-10 w-24"
-          onClick={() => setViewMode("list")}
-          title="Tampilan Daftar"
-        >
-          <LayoutList className="size-4" />
-        </Button>
-        <Button
-          variant={viewMode === "carousel" ? "default" : "outline"}
-          className="size-10 w-24"
-          onClick={() => setViewMode("carousel")}
-          title="Tampilan Satu-Satu"
-        >
-          <GalleryThumbnails className="size-4" />
-        </Button>
-      </div>
+      {showViewToggle ? (
+        <div className="mt-2 flex items-center justify-center gap-2 self-end">
+          <Button
+            variant={viewMode === "list" ? "default" : "outline"}
+            className="size-10 w-24"
+            onClick={() => setViewMode("list")}
+            title="Tampilan Daftar"
+          >
+            <LayoutList className="size-4" />
+          </Button>
+          <Button
+            variant={viewMode === "carousel" ? "default" : "outline"}
+            className="size-10 w-24"
+            onClick={() => setViewMode("carousel")}
+            title="Tampilan Satu-Satu"
+          >
+            <GalleryThumbnails className="size-4" />
+          </Button>
+        </div>
+      ) : null}
 
       {/* Top section with mini pagination */}
       <div className="flex items-center justify-between mt-6">

@@ -82,7 +82,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
         </header>
         <section className="p-4 overflow-auto">
           <div className="max-w-2xl mx-auto">
-            <SearchableList duas={duas} />
+            <SearchableList duas={duas} showViewToggle />
           </div>
         </section>
       </SidebarInset>
