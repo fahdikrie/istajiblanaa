@@ -25,3 +25,8 @@ export const arabicFontAtom = persistentAtom<
 >("arabicFont", "font-amiri");
 
 export const languageAtom = persistentAtom<"id" | "en">("language", "id");
+
+export const savedDuasAtom = persistentAtom<Array<number>>("savedDuaIds", [], {
+  encode: JSON.stringify,
+  decode: JSON.parse,
+});

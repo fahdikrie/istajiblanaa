@@ -1,9 +1,18 @@
 import { useStore } from "@nanostores/react";
+import { Bookmark, BookmarkCheck, ExternalLink, Eye, Link } from "lucide-react";
+import { toast } from "sonner";
 
+import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import { cn } from "@/lib/utils";
-import { arabicFontAtom, languageAtom } from "@/store/store";
+import { arabicFontAtom, languageAtom, savedDuasAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 import { highlightMatch, normalizeText, slugify } from "@/utils/string";
 
@@ -13,6 +22,7 @@ export interface DuaPreviewCardProps {
   query: string;
   shownAttributes?: Array<keyof Dua>;
   className?: string;
+  onPreview?: (dua: Dua) => void;
 }
 
 const DuaPreviewCard = ({
@@ -21,9 +31,13 @@ const DuaPreviewCard = ({
   query,
   shownAttributes,
   className,
+  onPreview,
 }: DuaPreviewCardProps) => {
   const arabicFont = useStore(arabicFontAtom);
   const language = useStore(languageAtom);
+  const savedDuas = useStore(savedDuasAtom);
+
+  const isDuaSaved = savedDuas.includes(dua.id);
 
   const showAttribute = (attribute: keyof Dua) => {
     if (!shownAttributes) return true;
@@ -67,95 +81,190 @@ const DuaPreviewCard = ({
       );
     });
   };
+
+  const handleToggleSave = () => {
+    if (isDuaSaved) {
+      savedDuasAtom.set(savedDuas.filter((id) => id !== dua.id));
+      toast("Doa dihapus dari penyimpanan");
+    } else {
+      savedDuasAtom.set([...savedDuas, dua.id]);
+      toast("Doa berhasil disimpan");
+    }
+  };
+
+  const handleCopyLink = () => {
+    const url = `${window.location.origin}/dua/${dua.id}-${slugify(title)}`;
+    navigator.clipboard.writeText(url);
+
+    toast("Tautan berhasil disalin");
+  };
+
+  const detailPageUrl = `/dua/${dua.id}-${slugify(title)}`;
+
   return (
     <Card
       id={id}
       key={dua.id}
       className={cn(
-        "group flex flex-col gap-y-4 p-4 border-gray-100 dark:border-inherit shadow-none bg-white dark:bg-inherit",
+        "group  p-4 border-gray-100 dark:border-inherit shadow-none bg-white dark:bg-inherit",
         className,
       )}
     >
-      {/* ID */}
-      {showAttribute("id") ? (
-        <div className="text-xs font-semibold text-gray-500 dark:text-zinc-400 -mb-4">
-          <p>No. {dua.id}</p>
-        </div>
-      ) : null}
-
-      {/* Title */}
-      {showAttribute("title") ? (
-        <a href={`/dua/${dua.id}-${slugify(title)}`} className="cursor-pointer">
-          <h6 className="font-medium text-lg group-hover:underline">
-            {highlightMatch(dua.title[`title_${language}`], query)}
-          </h6>
-        </a>
-      ) : null}
-
-      {/* Arabic */}
-      {showAttribute("arabic") ? (
-        <div className="text-right">
-          <p className={cn("text-3xl leading-loose font-thin", arabicFont)}>
-            {highlightMatch(dua.arabic, query)}
-          </p>
-        </div>
-      ) : null}
-
-      {/* Transliteration */}
-      {showAttribute("transliteration") ? (
-        <p className="text-sm text-gray-500 dark:text-zinc-400 italic">
-          {highlightMatch(dua.transliteration, query)}
-        </p>
-      ) : null}
-
-      {/* Translation */}
-      {showAttribute("translation") ? (
-        <p className="text-base">{highlightMatch(translation, query)}</p>
-      ) : null}
-
-      <div
-        className={
-          !showAttribute("source") && !showAttribute("reference")
-            ? "hidden"
-            : "block"
-        }
-      >
-        {/* Source */}
-        {showAttribute("source") ? (
-          <div className="text-xs text-gray-500 dark:text-zinc-400">
-            <p>{dua.source}</p>
+      <div className="flex flex-col gap-y-4">
+        {/* ID */}
+        {showAttribute("id") ? (
+          <div className="text-xs font-semibold text-gray-500 dark:text-zinc-400 -mb-4">
+            <p>No. {dua.id}</p>
           </div>
         ) : null}
 
-        {/* Reference */}
-        {showAttribute("reference") ? (
+        {/* Title */}
+        {showAttribute("title") ? (
+          <a href={detailPageUrl} className="cursor-pointer">
+            <h6 className="font-medium text-lg group-hover:underline">
+              {highlightMatch(dua.title[`title_${language}`], query)}
+            </h6>
+          </a>
+        ) : null}
+
+        {/* Arabic */}
+        {showAttribute("arabic") ? (
+          <div className="text-right">
+            <p className={cn("text-3xl leading-loose font-thin", arabicFont)}>
+              {highlightMatch(dua.arabic, query)}
+            </p>
+          </div>
+        ) : null}
+
+        {/* Transliteration */}
+        {showAttribute("transliteration") ? (
+          <p className="text-sm text-gray-500 dark:text-zinc-400 italic">
+            {highlightMatch(dua.transliteration, query)}
+          </p>
+        ) : null}
+
+        {/* Translation */}
+        {showAttribute("translation") ? (
+          <p className="text-base">{highlightMatch(translation, query)}</p>
+        ) : null}
+
+        <div
+          className={
+            !showAttribute("source") && !showAttribute("reference")
+              ? "hidden"
+              : "block"
+          }
+        >
+          {/* Source */}
+          {showAttribute("source") ? (
+            <div className="text-xs text-gray-500 dark:text-zinc-400">
+              <p>{dua.source}</p>
+            </div>
+          ) : null}
+
+          {/* Reference */}
+          {showAttribute("reference") ? (
+            <div className="text-xs text-gray-500 dark:text-zinc-400">
+              <p>{dua.reference}</p>
+            </div>
+          ) : null}
+        </div>
+
+        {/* Note */}
+        {showAttribute("note") && dua.note.note_id ? (
           <div className="text-xs text-gray-500 dark:text-zinc-400">
-            <p>{dua.reference}</p>
+            <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+              Keterangan:
+            </p>
+            <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
+          </div>
+        ) : null}
+
+        {/* Categories */}
+        {showAttribute("categories") ? (
+          <div>
+            <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+              Kategori:
+            </p>
+            <div className="flex flex-wrap dark:text-gray-800">
+              {renderCategories(categories, query)}
+            </div>
           </div>
         ) : null}
       </div>
 
-      {/* Note */}
-      {showAttribute("note") && dua.note.note_id ? (
-        <div className="text-xs text-gray-500 dark:text-zinc-400">
-          <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-            Keterangan:
-          </p>
-          <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
-        </div>
-      ) : null}
+      {/* Shortcuts */}
+      <div className="flex items-center justify-end gap-2 pt-2 mt-2 border-t border-gray-100 dark:border-zinc-800">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={handleToggleSave}
+                aria-label={isDuaSaved ? "Remove from saved" : "Save dua"}
+              >
+                {isDuaSaved ? (
+                  <BookmarkCheck className="h-4 w-4 text-primary" />
+                ) : (
+                  <Bookmark className="h-4 w-4" />
+                )}
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{isDuaSaved ? "Saved" : "Save"}</p>
+            </TooltipContent>
+          </Tooltip>
 
-      {/* Categories */}
-      {showAttribute("categories") ? (
-        <div>
-          <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-            Kategori:
-          </p>
-          <div className="flex flex-wrap dark:text-gray-800">
-            {renderCategories(categories, query)}
-          </div>
-        </div>
-      ) : null}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={handleCopyLink}
+                aria-label="Copy link"
+              >
+                <Link className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Copy Link</p>
+            </TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8"
+                onClick={() => onPreview?.(dua)}
+                aria-label="Preview dua"
+              >
+                <Eye className="h-4 w-4" />
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Preview</p>
+            </TooltipContent>
+          </Tooltip>
+
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
+                <a href={detailPageUrl} aria-label="Go to dua detail page">
+                  <ExternalLink className="h-4 w-4" />
+                </a>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Detail Page</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </div>
     </Card>
   );
 };

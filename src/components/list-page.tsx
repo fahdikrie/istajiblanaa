@@ -56,8 +56,6 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
       .filter((dua) => !!dua);
   }, [language]);
 
-  console.log("navItems", navItems);
-
   return (
     <SidebarProvider className="min-h-[unset]">
       <AppSidebar navItems={navItems} isNested={isNested} />
