@@ -15,7 +15,6 @@ import {
 
 import { useIsMobile } from "@/hooks/use-mobile";
 
-// Define the types for our navigation items
 export interface NavItemBase {
   id: number;
   title: string;

@@ -10,7 +10,7 @@ import { usePagination } from "@/hooks/use-pagination";
 import { useSearch } from "@/hooks/use-search";
 import { useSwipe } from "@/hooks/use-swipe";
 
-import { shownAttributesAtom } from "@/store/store";
+import { languageAtom, shownAttributesAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 
 export interface SearchableListProps {
@@ -27,9 +27,10 @@ export const SearchableList = ({
   searchPlaceholder,
 }: SearchableListProps) => {
   const shownAttributes = useStore(shownAttributesAtom);
+  const language = useStore(languageAtom);
 
   // Search functionality
-  const { query, filteredItems, handleQueryChange } = useSearch(duas);
+  const { query, filteredItems, handleQueryChange } = useSearch(duas, language);
 
   // Pagination logic
   const {

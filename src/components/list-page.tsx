@@ -1,3 +1,4 @@
+import { useStore } from "@nanostores/react";
 import { AnimatePresence, motion } from "motion/react";
 import { useMemo } from "react";
 
@@ -20,6 +21,7 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { useHasScrolledPastAnchor } from "@/hooks/use-has-scrolled-past-anchor";
 import { useIsMobile } from "@/hooks/use-mobile";
 
+import { languageAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 import { slugify } from "@/utils/string";
 
@@ -33,16 +35,28 @@ export interface ListPageProps {
 
 const ListPage = ({ category, duas, isNested }: ListPageProps) => {
   const isMobile = useIsMobile();
+  const language = useStore(languageAtom);
 
   const hasScrolledPastAnchor = useHasScrolledPastAnchor(140);
 
   const navItems = useMemo(() => {
-    return duas.map((dua) => ({
-      id: dua.id,
-      title: dua.title.title_id,
-      url: `#${slugify(dua.title.title_id)}`,
-    }));
-  }, []);
+    const generateTitle = (dua: Dua) =>
+      language === "id" ? dua.title.title_id : dua.title.title_en;
+
+    return duas
+      .map((dua) => {
+        if (!dua.id) return;
+
+        return {
+          id: dua.id,
+          title: generateTitle(dua),
+          url: `#${slugify(generateTitle(dua))}`,
+        };
+      })
+      .filter((dua) => !!dua);
+  }, [language]);
+
+  console.log("navItems", navItems);
 
   return (
     <SidebarProvider className="min-h-[unset]">

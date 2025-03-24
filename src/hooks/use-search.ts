@@ -1,10 +1,9 @@
-// hooks/use-search.ts
 import { useState } from "react";
 
 import type { Dua } from "@/types/dua";
 import { normalizeText } from "@/utils/string";
 
-export const useSearch = (duas: Dua[]) => {
+export const useSearch = (duas: Dua[], language: "id" | "en") => {
   const [query, setQuery] = useState("");
 
   const searchDua = (
@@ -13,21 +12,29 @@ export const useSearch = (duas: Dua[]) => {
   ): { matches: boolean; matchField?: string } => {
     if (!query.trim()) return { matches: true };
 
+    const title = language === "id" ? dua.title.title_id : dua.title.title_en;
+    const translation =
+      language === "id"
+        ? dua.translation.translation_id
+        : dua.translation.translation_en;
+    const categories =
+      language === "id"
+        ? dua.categories.categories_id
+        : dua.categories.categories_en;
+
     const normalizedQuery = normalizeText(query);
     if (normalizedQuery.length === 0) return { matches: true };
 
-    if (normalizeText(dua.title.title_id).includes(normalizedQuery)) {
-      return { matches: true, matchField: "title_id" };
+    if (normalizeText(title).includes(normalizedQuery)) {
+      return { matches: true, matchField: "title" };
     }
 
     if (normalizeText(dua.arabic).includes(normalizedQuery)) {
       return { matches: true, matchField: "arabic" };
     }
 
-    if (
-      normalizeText(dua.translation.translation_id).includes(normalizedQuery)
-    ) {
-      return { matches: true, matchField: "translation_id" };
+    if (normalizeText(translation).includes(normalizedQuery)) {
+      return { matches: true, matchField: "translation" };
     }
 
     if (normalizeText(dua.transliteration).includes(normalizedQuery)) {
@@ -35,11 +42,11 @@ export const useSearch = (duas: Dua[]) => {
     }
 
     if (
-      dua.categories.categories_id.some((cat: string | null | undefined) =>
+      categories.some((cat: string | null | undefined) =>
         normalizeText(cat).includes(normalizedQuery),
       )
     ) {
-      return { matches: true, matchField: "categories_id" };
+      return { matches: true, matchField: "categories" };
     }
 
     return { matches: false };

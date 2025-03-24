@@ -3,7 +3,7 @@ import { useStore } from "@nanostores/react";
 import { Card } from "@/components/ui/card";
 
 import { cn } from "@/lib/utils";
-import { arabicFontAtom } from "@/store/store";
+import { arabicFontAtom, languageAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 import { highlightMatch, normalizeText, slugify } from "@/utils/string";
 
@@ -23,12 +23,23 @@ const DuaPreviewCard = ({
   className,
 }: DuaPreviewCardProps) => {
   const arabicFont = useStore(arabicFontAtom);
+  const language = useStore(languageAtom);
 
   const showAttribute = (attribute: keyof Dua) => {
     if (!shownAttributes) return true;
 
     return shownAttributes.includes(attribute);
   };
+
+  const title = language === "id" ? dua.title.title_id : dua.title.title_en;
+  const translation =
+    language === "id"
+      ? dua.translation.translation_id
+      : dua.translation.translation_en;
+  const categories =
+    language === "id"
+      ? dua.categories.categories_id
+      : dua.categories.categories_en;
 
   const renderCategories = (categories: string[], query: string) => {
     return categories.map((category, index) => {
@@ -74,12 +85,9 @@ const DuaPreviewCard = ({
 
       {/* Title */}
       {showAttribute("title") ? (
-        <a
-          href={`/dua/${dua.id}-${slugify(dua.title.title_id)}`}
-          className="cursor-pointer"
-        >
+        <a href={`/dua/${dua.id}-${slugify(title)}`} className="cursor-pointer">
           <h6 className="font-medium text-lg group-hover:underline">
-            {highlightMatch(dua.title.title_id, query)}
+            {highlightMatch(dua.title[`title_${language}`], query)}
           </h6>
         </a>
       ) : null}
@@ -102,9 +110,7 @@ const DuaPreviewCard = ({
 
       {/* Translation */}
       {showAttribute("translation") ? (
-        <p className="text-base">
-          {highlightMatch(dua.translation.translation_id, query)}
-        </p>
+        <p className="text-base">{highlightMatch(translation, query)}</p>
       ) : null}
 
       <div
@@ -146,7 +152,7 @@ const DuaPreviewCard = ({
             Kategori:
           </p>
           <div className="flex flex-wrap dark:text-gray-800">
-            {renderCategories(dua.categories.categories_id, query)}
+            {renderCategories(categories, query)}
           </div>
         </div>
       ) : null}

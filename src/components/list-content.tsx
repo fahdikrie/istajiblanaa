@@ -1,7 +1,9 @@
+import { useStore } from "@nanostores/react";
 import { motion, usePresenceData } from "motion/react";
 
 import { DuaPreviewCard } from "@/components/dua-preview-card";
 
+import { languageAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 import { slugify } from "@/utils/string";
 
@@ -18,9 +20,13 @@ export const ListContent = ({
   shownAttributes,
   direction,
 }: ListContentProps) => {
+  const language = useStore(languageAtom);
   const presenceDirection = usePresenceData();
   const animationDirection =
     presenceDirection !== undefined ? presenceDirection : direction;
+
+  const generateTitle = (dua: Dua) =>
+    language === "id" ? dua.title.title_id : dua.title.title_en;
 
   return (
     <motion.div
@@ -47,8 +53,8 @@ export const ListContent = ({
       {items.length > 0 ? (
         items.map((dua, index) => (
           <DuaPreviewCard
-            id={slugify(dua.title.title_id)}
-            key={`${dua.title.title_id}-${index}`}
+            id={slugify(generateTitle(dua))}
+            key={`${generateTitle(dua)}-${index}`}
             dua={dua}
             query={query}
             shownAttributes={shownAttributes}
