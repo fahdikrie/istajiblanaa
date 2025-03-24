@@ -43,6 +43,6 @@ const { dua } = Astro.props;
 
 <title>{dua.title.title_id} | Istajiblanaa</title>
 
-<Layout client:load>
+<Layout>
   <DetailPage dua={dua} client:only="react" />
 </Layout>
