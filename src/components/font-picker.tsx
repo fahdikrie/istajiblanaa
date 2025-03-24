@@ -1,3 +1,5 @@
+"use client";
+
 import { useStore } from "@nanostores/react";
 import { CaseSensitive } from "lucide-react";
 
@@ -11,7 +13,7 @@ import {
 
 import { arabicFontAtom } from "@/store/store";
 
-export function FontPicker() {
+const FontPicker = () => {
   const arabicFont = useStore(arabicFontAtom);
 
   return (
@@ -34,4 +36,6 @@ export function FontPicker() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};
+
+export { FontPicker };

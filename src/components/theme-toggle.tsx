@@ -1,3 +1,5 @@
+"use client";
+
 import { useStore } from "@nanostores/react";
 import { Moon, Sun } from "lucide-react";
 import { useEffect } from "react";

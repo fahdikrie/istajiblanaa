@@ -1,3 +1,5 @@
+"use client";
+
 import { useStore } from "@nanostores/react";
 import { Filter } from "lucide-react";
 import { toast } from "sonner";

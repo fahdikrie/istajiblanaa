@@ -1,3 +1,5 @@
+"use client";
+
 import { Globe } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -10,7 +12,7 @@ import {
 
 import { languageAtom } from "@/store/store";
 
-export function LanguagePicker() {
+const LanguagePicker = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -28,4 +30,6 @@ export function LanguagePicker() {
       </DropdownMenuContent>
     </DropdownMenu>
   );
-}
+};
+
+export { LanguagePicker };
