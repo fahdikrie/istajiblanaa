@@ -1,5 +1,6 @@
 "use client";
 
+import { useStore } from "@nanostores/react";
 import * as React from "react";
 
 import {
@@ -13,46 +14,31 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import { cn } from "@/lib/utils";
+import { languageAtom } from "@/store/store";
+import { slugify } from "@/utils/string";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
+import TOKENIZED_CATEGORIES_SORTED_BY_MOST_COUNT from "data/generated/5_tokenized-categories-sorted-by-most-count.json";
 
 const MenuBar = () => {
+  const language = useStore(languageAtom);
+
+  const data = TOKENIZED_CATEGORIES_SORTED_BY_MOST_COUNT.slice(0, 5).map(
+    (category) => {
+      const categoryTitle =
+        language === "id" ? category.category_id : category.category_en;
+      const description =
+        language === "id"
+          ? `(${category.count} doa)`
+          : `(${category.count} dua)`;
+
+      return {
+        title: categoryTitle,
+        href: `/list/category/${slugify(categoryTitle)}`,
+        description: description,
+      };
+    },
+  );
+
   return (
     <NavigationMenu className="flex items-center justify-center mx-auto">
       <NavigationMenuList>
@@ -101,8 +87,9 @@ const MenuBar = () => {
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {data.map((component) => (
                 <ListItem
+                  className="flex flex-col justify-end h-20"
                   key={component.title}
                   title={component.title}
                   href={component.href}
@@ -110,6 +97,14 @@ const MenuBar = () => {
                   {component.description}
                 </ListItem>
               ))}
+              <ListItem
+                className="flex flex-col justify-end h-20 bg-zinc-100 border-zinc-200 dark:text-gray-950 hover:bg-zinc-100"
+                key="Semua Kategori"
+                title="Semua Kategori"
+                href="/categories"
+              >
+                Lihat semua kategori.
+              </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
@@ -141,7 +136,9 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
+          <div className="text-sm font-medium leading-none line-clamp-2">
+            {title}
+          </div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
