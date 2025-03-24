@@ -1,6 +1,7 @@
 "use client";
 
-import { Menu } from "lucide-react";
+import { useStore } from "@nanostores/react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
 import {
@@ -10,48 +11,37 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
-const components: { title: string; href: string; description: string }[] = [
-  {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
-  },
-  {
-    title: "Hover Card",
-    href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
-  },
-  {
-    title: "Progress",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
-    description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
-  },
-  {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
-    description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
-  },
-];
+import { languageAtom } from "@/store/store";
+import { slugify } from "@/utils/string";
+
+import TOKENIZED_CATEGORIES_SORTED_BY_MOST_COUNT from "data/generated/5_tokenized-categories-sorted-by-most-count.json";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const language = useStore(languageAtom);
+
+  const categoryData = TOKENIZED_CATEGORIES_SORTED_BY_MOST_COUNT.slice(
+    0,
+    5,
+  ).map((category) => {
+    const categoryTitle =
+      language === "id" ? category.category_id : category.category_en;
+    const description =
+      language === "id" ? `(${category.count} doa)` : `(${category.count} dua)`;
+
+    return {
+      title: categoryTitle,
+      href: `/list/category/${slugify(categoryTitle)}`,
+      description: description,
+    };
+  });
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -61,97 +51,116 @@ export function MobileMenu() {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="right" className="w-full sm:w-80 pt-10">
-        <div className="mt-6 space-y-6">
-          {/* Getting Started Section */}
+      <SheetContent
+        side="right"
+        className="w-full sm:w-80 p-0 [&>button:first-child]:hidden!"
+      >
+        <div className="flex justify-end p-4">
+          <SheetClose asChild>
+            <Button variant="ghost" size="icon">
+              <X className="h-5 w-5" />
+              <span className="sr-only">Close menu</span>
+            </Button>
+          </SheetClose>
+        </div>
+
+        <div className="space-y-4 px-4 overflow-auto pb-10">
+          {/* Doa dan Dzikir Section */}
           <Accordion type="single" collapsible>
-            <AccordionItem value="getting-started">
+            <AccordionItem value="doa-dzikir">
               <AccordionTrigger className="text-base font-medium">
-                Getting started
+                Doa dan Dzikir
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-4 pl-4 pt-2">
-                  <div className="space-y-2">
-                    <a
-                      href="/"
-                      className="block rounded-md p-2 hover:bg-accent"
-                      onClick={() => setOpen(false)}
-                    >
-                      <div className="font-medium">shadcn/ui</div>
-                      <p className="text-sm text-muted-foreground">
-                        Beautifully designed components
-                      </p>
-                    </a>
-                    <a
-                      href="/docs"
-                      className="block rounded-md p-2 hover:bg-accent"
-                      onClick={() => setOpen(false)}
-                    >
-                      <div className="font-medium">Introduction</div>
-                      <p className="text-sm text-muted-foreground">
-                        Re-usable components built using Radix UI and Tailwind
-                        CSS.
-                      </p>
-                    </a>
-                    <a
-                      href="/docs/installation"
-                      className="block rounded-md p-2 hover:bg-accent"
-                      onClick={() => setOpen(false)}
-                    >
-                      <div className="font-medium">Installation</div>
-                      <p className="text-sm text-muted-foreground">
-                        How to install dependencies and structure your app.
-                      </p>
-                    </a>
-                    <a
-                      href="/docs/primitives/typography"
-                      className="block rounded-md p-2 hover:bg-accent"
-                      onClick={() => setOpen(false)}
-                    >
-                      <div className="font-medium">Typography</div>
-                      <p className="text-sm text-muted-foreground">
-                        Styles for headings, paragraphs, lists...etc
-                      </p>
-                    </a>
-                  </div>
+                <div className="space-y-3 pl-4 pt-2">
+                  <a
+                    href="/list/semua-doa"
+                    className="block rounded-md p-2 hover:bg-accent"
+                    onClick={() => setOpen(false)}
+                  >
+                    <div className="font-medium">Doa Ma'tsuur</div>
+                    <p className="text-sm text-muted-foreground">
+                      Kumpulan doa yang diambil dari Al-Qur'an dan As-Sunnah.
+                    </p>
+                  </a>
+                  <a
+                    href="/list/doa-dari-al-quran"
+                    className="block rounded-md p-2 hover:bg-accent"
+                    onClick={() => setOpen(false)}
+                  >
+                    <div className="font-medium">Doa dari Al-Qur'an</div>
+                    <p className="text-sm text-muted-foreground">
+                      Doa-doa yang disebut di dalam Al-Qur'an.
+                    </p>
+                  </a>
+                  <a
+                    href="/list/doa-dari-as-sunnah"
+                    className="block rounded-md p-2 hover:bg-accent"
+                    onClick={() => setOpen(false)}
+                  >
+                    <div className="font-medium">Doa dari As-Sunnah</div>
+                    <p className="text-sm text-muted-foreground">
+                      Doa-doa yang diajarkan oleh Rasulullah ﷺ.
+                    </p>
+                  </a>
+                  <a
+                    href="/"
+                    className="block rounded-md p-2 hover:bg-accent"
+                    onClick={() => setOpen(false)}
+                  >
+                    <div className="font-medium">Doa Ghairu Ma'tsuur</div>
+                    <p className="text-sm text-muted-foreground">
+                      Doa selain yang datang dari Al-Qur'an dan As-Sunnah.
+                    </p>
+                  </a>
                 </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
-          {/* Components Section */}
+          {/* Kategori Section */}
           <Accordion type="single" collapsible>
-            <AccordionItem value="components">
+            <AccordionItem value="kategori">
               <AccordionTrigger className="text-base font-medium">
-                Components
+                Kategori
               </AccordionTrigger>
               <AccordionContent>
-                <div className="space-y-2 pl-4 pt-2">
-                  {components.map((component) => (
+                <div className="space-y-3 pl-4 pt-2">
+                  {categoryData.map((category) => (
                     <a
-                      key={component.title}
-                      href={component.href}
+                      key={category.title}
+                      href={category.href}
                       className="block rounded-md p-2 hover:bg-accent"
                       onClick={() => setOpen(false)}
                     >
-                      <div className="font-medium">{component.title}</div>
-                      <p className="text-sm text-muted-foreground line-clamp-2">
-                        {component.description}
+                      <div className="font-medium">{category.title}</div>
+                      <p className="text-sm text-muted-foreground">
+                        {category.description}
                       </p>
                     </a>
                   ))}
+                  <a
+                    href="/categories"
+                    className="block rounded-md p-2 bg-zinc-100 border-zinc-200 dark:text-gray-950 hover:bg-zinc-200"
+                    onClick={() => setOpen(false)}
+                  >
+                    <div className="font-medium">Semua Kategori</div>
+                    <p className="text-sm text-muted-foreground">
+                      Lihat semua kategori.
+                    </p>
+                  </a>
                 </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
-          {/* Documentation Link */}
+          {/* Adab Berdoa Link */}
           <a
-            href="/docs"
-            className="block px-4 py-2 font-medium hover:bg-accent rounded-md"
+            href="/adab-berdoa"
+            className="block py-2 font-medium hover:bg-accent rounded-md"
             onClick={() => setOpen(false)}
           >
-            Documentation
+            Adab Berdoa
           </a>
         </div>
       </SheetContent>
