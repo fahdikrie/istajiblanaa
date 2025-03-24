@@ -55,6 +55,7 @@ const DuaPreviewCard = ({
     language === "id"
       ? dua.translation.translation_id
       : dua.translation.translation_en;
+  const note = language === "id" ? dua.note.note_id : dua.note.note_en;
   const categories =
     language === "id"
       ? dua.categories.categories_id
@@ -214,15 +215,10 @@ const DuaPreviewCard = ({
         {showAttribute("note") && dua.note.note_id ? (
           <div className="text-xs text-gray-500 dark:text-zinc-400">
             <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-              Keterangan:
+              {language === "id" ? "Keterangan:" : "Note:"}
             </p>
             <p className="whitespace-pre-wrap">
-              {highlightMatchByField(
-                dua.note.note_id,
-                query,
-                "note",
-                searchFields,
-              )}
+              {highlightMatchByField(note, query, "note", searchFields)}
             </p>
           </div>
         ) : null}
@@ -231,7 +227,7 @@ const DuaPreviewCard = ({
         {showAttribute("categories") ? (
           <div>
             <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-              Kategori:
+              {language === "id" ? "Kategori:" : "Categories:"}
             </p>
             <div className="flex flex-wrap dark:text-gray-800">
               {renderCategories(categories, query)}

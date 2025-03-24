@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/breadcrumb";
 
 import { cn } from "@/lib/utils";
-import { arabicFontAtom } from "@/store/store";
+import { arabicFontAtom, languageAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 
 export interface DetailPageProps {
@@ -19,6 +19,7 @@ export interface DetailPageProps {
 
 const DetailPage = ({ dua }: DetailPageProps) => {
   const arabicFont = useStore(arabicFontAtom);
+  const language = useStore(languageAtom);
 
   const renderCategories = (categories: string[]) => {
     return categories.map((category, index) => {
@@ -32,6 +33,17 @@ const DetailPage = ({ dua }: DetailPageProps) => {
       );
     });
   };
+
+  const title = language === "id" ? dua.title.title_id : dua.title.title_en;
+  const translation =
+    language === "id"
+      ? dua.translation.translation_id
+      : dua.translation.translation_en;
+  const note = language === "id" ? dua.note.note_id : dua.note.note_en;
+  const categories =
+    language === "id"
+      ? dua.categories.categories_id
+      : dua.categories.categories_en;
 
   return (
     <>
@@ -57,7 +69,7 @@ const DetailPage = ({ dua }: DetailPageProps) => {
         </div>
 
         {/* Title */}
-        <h6 className="font-medium text-lg">{dua.title.title_id}</h6>
+        <h6 className="font-medium text-lg">{title}</h6>
 
         {/* Arabic */}
         <div className="text-right">
@@ -72,7 +84,7 @@ const DetailPage = ({ dua }: DetailPageProps) => {
         </p>
 
         {/* Translation */}
-        <p className="text-base">{dua.translation.translation_id}</p>
+        <p className="text-base">{translation}</p>
 
         <div>
           {/* Source */}
@@ -87,19 +99,22 @@ const DetailPage = ({ dua }: DetailPageProps) => {
         </div>
 
         {/* Note */}
-        <div className="text-xs text-gray-500 dark:text-zinc-400">
-          <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-            Keterangan:
-          </p>
-          <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
-        </div>
+        {note ? (
+          <div className="text-xs text-gray-500 dark:text-zinc-400">
+            <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+              {language === "id" ? "Keterangan:" : "Note:"}
+            </p>
+            <p className="whitespace-pre-wrap">{note}</p>
+          </div>
+        ) : null}
+
         {/* Categories */}
         <div>
           <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-            Kategori:
+            {language === "id" ? "Kategori:" : "Categories:"}
           </p>
           <div className="flex flex-wrap dark:text-gray-800">
-            {renderCategories(dua.categories.categories_id)}
+            {renderCategories(categories)}
           </div>
         </div>
       </section>

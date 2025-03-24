@@ -19,9 +19,12 @@ export interface CarouselViewProps {
 export const CarouselView = ({ duas, query }: CarouselViewProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0);
+
   const arabicFont = useStore(arabicFontAtom);
   const language = useStore(languageAtom);
+
   const presenceDirection = usePresenceData();
+
   const animationDirection =
     presenceDirection !== undefined ? presenceDirection : direction;
 
@@ -57,6 +60,19 @@ export const CarouselView = ({ duas, query }: CarouselViewProps) => {
       </span>
     ));
   };
+
+  const title =
+    language === "id" ? currentDua.title.title_id : currentDua.title.title_en;
+  const translation =
+    language === "id"
+      ? currentDua.translation.translation_id
+      : currentDua.translation.translation_en;
+  const note =
+    language === "id" ? currentDua.note.note_id : currentDua.note.note_en;
+  const categories =
+    language === "id"
+      ? currentDua.categories.categories_id
+      : currentDua.categories.categories_en;
 
   // If no duas match the search query
   if (duas.length === 0) {
@@ -133,11 +149,7 @@ export const CarouselView = ({ duas, query }: CarouselViewProps) => {
           </div>
 
           {/* Title */}
-          <h6 className="font-medium text-lg">
-            {language === "id"
-              ? currentDua.title.title_id
-              : currentDua.title.title_en}
-          </h6>
+          <h6 className="font-medium text-lg">{title}</h6>
 
           {/* Arabic */}
           <div className="text-right">
@@ -152,11 +164,7 @@ export const CarouselView = ({ duas, query }: CarouselViewProps) => {
           </p>
 
           {/* Translation */}
-          <p className="text-base">
-            {language === "id"
-              ? currentDua.translation.translation_id
-              : currentDua.translation.translation_en}
-          </p>
+          <p className="text-base">{translation}</p>
 
           <div>
             {/* Source */}
@@ -171,16 +179,14 @@ export const CarouselView = ({ duas, query }: CarouselViewProps) => {
           </div>
 
           {/* Note */}
-          <div className="text-xs text-gray-500 dark:text-zinc-400">
-            <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
-              Keterangan:
-            </p>
-            <p className="whitespace-pre-wrap">
-              {language === "id"
-                ? currentDua.note.note_id
-                : currentDua.note.note_en}
-            </p>
-          </div>
+          {note ? (
+            <div className="text-xs text-gray-500 dark:text-zinc-400">
+              <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+                Keterangan:
+              </p>
+              <p className="whitespace-pre-wrap">{}</p>
+            </div>
+          ) : null}
 
           {/* Categories */}
           <div>
@@ -188,11 +194,7 @@ export const CarouselView = ({ duas, query }: CarouselViewProps) => {
               Kategori:
             </p>
             <div className="flex flex-wrap dark:text-gray-800">
-              {renderCategories(
-                language === "id"
-                  ? currentDua.categories.categories_id
-                  : currentDua.categories.categories_en,
-              )}
+              {renderCategories(categories)}
             </div>
           </div>
         </motion.div>
