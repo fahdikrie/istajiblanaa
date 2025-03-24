@@ -2,6 +2,7 @@
 
 import { useStore } from "@nanostores/react";
 import { EyeOff } from "lucide-react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 import {
@@ -32,9 +33,20 @@ const SHOWN_ATTRIBUTES_OPTIONS: { key: keyof Dua; label: string }[] = [
 export const SelectDuaVisibility = () => {
   const shownAttributes = useStore(shownAttributesAtom);
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
-    <DropdownMenu modal={false}>
-      <DropdownMenuTrigger className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-none">
+    <DropdownMenu
+      modal={false}
+      open={dropdownOpen}
+      onOpenChange={(val) => setDropdownOpen(val)}
+    >
+      <DropdownMenuTrigger
+        className="w-10 h-10 bg-white flex items-center justify-center rounded-md border shadow-none"
+        onClick={() => {
+          setDropdownOpen((val) => !val);
+        }}
+      >
         <EyeOff absoluteStrokeWidth className="text-gray-500 w-4 h-4" />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-60">

@@ -1,6 +1,7 @@
 "use client";
 
 import { Globe } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,9 +14,19 @@ import {
 import { languageAtom } from "@/store/store";
 
 const LanguagePicker = () => {
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+    <DropdownMenu
+      open={dropdownOpen}
+      onOpenChange={(val) => setDropdownOpen(val)}
+    >
+      <DropdownMenuTrigger
+        asChild
+        onClick={() => {
+          setDropdownOpen((val) => !val);
+        }}
+      >
         <Button variant="ghost">
           <Globe className="size-3.5" />
         </Button>

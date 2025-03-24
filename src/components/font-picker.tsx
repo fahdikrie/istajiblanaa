@@ -2,6 +2,7 @@
 
 import { useStore } from "@nanostores/react";
 import { CaseSensitive } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -16,9 +17,19 @@ import { arabicFontAtom } from "@/store/store";
 const FontPicker = () => {
   const arabicFont = useStore(arabicFontAtom);
 
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
+    <DropdownMenu
+      open={dropdownOpen}
+      onOpenChange={(val) => setDropdownOpen(val)}
+    >
+      <DropdownMenuTrigger
+        asChild
+        onClick={() => {
+          setDropdownOpen((val) => !val);
+        }}
+      >
         <Button variant="outline" className="text-xs">
           <CaseSensitive className="w-4 h-4 mr-1" />{" "}
           {arabicFont === "font-amiri" ? "Amiri" : "Noto Sans Arabic"}
