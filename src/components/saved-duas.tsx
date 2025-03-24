@@ -2,7 +2,6 @@ import { useStore } from "@nanostores/react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
-import { DuaPreviewCard } from "@/components/dua-preview-card";
 
 import { savedDuasAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
