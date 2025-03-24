@@ -30,3 +30,12 @@ export const savedDuasAtom = persistentAtom<Array<number>>("savedDuaIds", [], {
   encode: JSON.stringify,
   decode: JSON.parse,
 });
+
+export const searchFieldsAtom = persistentAtom<Array<keyof Dua>>(
+  "searchFields",
+  ["title", "arabic", "transliteration", "translation", "categories"],
+  {
+    encode: JSON.stringify,
+    decode: JSON.parse,
+  },
+);

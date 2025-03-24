@@ -1,5 +1,5 @@
 import { useStore } from "@nanostores/react";
-import { Bookmark, BookmarkCheck, ExternalLink, Eye, Link } from "lucide-react";
+import { Bookmark, BookmarkCheck, ExternalLink, Link } from "lucide-react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -12,9 +12,14 @@ import {
 } from "@/components/ui/tooltip";
 
 import { cn } from "@/lib/utils";
-import { arabicFontAtom, languageAtom, savedDuasAtom } from "@/store/store";
+import {
+  arabicFontAtom,
+  languageAtom,
+  savedDuasAtom,
+  searchFieldsAtom,
+} from "@/store/store";
 import type { Dua } from "@/types/dua";
-import { highlightMatch, normalizeText, slugify } from "@/utils/string";
+import { highlightMatchByField, normalizeText, slugify } from "@/utils/string";
 
 export interface DuaPreviewCardProps {
   id: string;
@@ -31,11 +36,11 @@ const DuaPreviewCard = ({
   query,
   shownAttributes,
   className,
-  onPreview,
 }: DuaPreviewCardProps) => {
   const arabicFont = useStore(arabicFontAtom);
   const language = useStore(languageAtom);
   const savedDuas = useStore(savedDuasAtom);
+  const searchFields = useStore(searchFieldsAtom);
 
   const isDuaSaved = savedDuas.includes(dua.id);
 
@@ -60,13 +65,17 @@ const DuaPreviewCard = ({
       const normalizedCategory = normalizeText(category);
       const normalizedQuery = normalizeText(query);
 
-      if (query.trim() && normalizedCategory.includes(normalizedQuery)) {
+      if (
+        query.trim() &&
+        normalizedCategory.includes(normalizedQuery) &&
+        searchFields.includes("categories")
+      ) {
         return (
           <span
             key={index}
             className="inline-block bg-gray-100 rounded-full px-2 py-1 text-xs mr-2 mb-2"
           >
-            {highlightMatch(category, query)}
+            {highlightMatchByField(category, query, "categories", searchFields)}
           </span>
         );
       }
@@ -106,7 +115,7 @@ const DuaPreviewCard = ({
       id={id}
       key={dua.id}
       className={cn(
-        "group  p-4 border-gray-100 dark:border-inherit shadow-none bg-white dark:bg-inherit",
+        "group p-4 border-gray-100 dark:border-inherit shadow-none bg-white dark:bg-inherit",
         className,
       )}
     >
@@ -122,7 +131,12 @@ const DuaPreviewCard = ({
         {showAttribute("title") ? (
           <a href={detailPageUrl} className="cursor-pointer">
             <h6 className="font-medium text-lg group-hover:underline">
-              {highlightMatch(dua.title[`title_${language}`], query)}
+              {highlightMatchByField(
+                dua.title[`title_${language}`],
+                query,
+                "title",
+                searchFields,
+              )}
             </h6>
           </a>
         ) : null}
@@ -131,7 +145,7 @@ const DuaPreviewCard = ({
         {showAttribute("arabic") ? (
           <div className="text-right">
             <p className={cn("text-3xl leading-loose font-thin", arabicFont)}>
-              {highlightMatch(dua.arabic, query)}
+              {highlightMatchByField(dua.arabic, query, "arabic", searchFields)}
             </p>
           </div>
         ) : null}
@@ -139,13 +153,25 @@ const DuaPreviewCard = ({
         {/* Transliteration */}
         {showAttribute("transliteration") ? (
           <p className="text-sm text-gray-500 dark:text-zinc-400 italic">
-            {highlightMatch(dua.transliteration, query)}
+            {highlightMatchByField(
+              dua.transliteration,
+              query,
+              "transliteration",
+              searchFields,
+            )}
           </p>
         ) : null}
 
         {/* Translation */}
         {showAttribute("translation") ? (
-          <p className="text-base">{highlightMatch(translation, query)}</p>
+          <p className="text-base">
+            {highlightMatchByField(
+              translation,
+              query,
+              "translation",
+              searchFields,
+            )}
+          </p>
         ) : null}
 
         <div
@@ -158,14 +184,28 @@ const DuaPreviewCard = ({
           {/* Source */}
           {showAttribute("source") ? (
             <div className="text-xs text-gray-500 dark:text-zinc-400">
-              <p>{dua.source}</p>
+              <p>
+                {highlightMatchByField(
+                  dua.source,
+                  query,
+                  "source",
+                  searchFields,
+                )}
+              </p>
             </div>
           ) : null}
 
           {/* Reference */}
           {showAttribute("reference") ? (
             <div className="text-xs text-gray-500 dark:text-zinc-400">
-              <p>{dua.reference}</p>
+              <p>
+                {highlightMatchByField(
+                  dua.reference,
+                  query,
+                  "reference",
+                  searchFields,
+                )}
+              </p>
             </div>
           ) : null}
         </div>
@@ -176,7 +216,14 @@ const DuaPreviewCard = ({
             <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
               Keterangan:
             </p>
-            <p className="whitespace-pre-wrap">{dua.note.note_id}</p>
+            <p className="whitespace-pre-wrap">
+              {highlightMatchByField(
+                dua.note.note_id,
+                query,
+                "note",
+                searchFields,
+              )}
+            </p>
           </div>
         ) : null}
 
@@ -189,6 +236,25 @@ const DuaPreviewCard = ({
             <div className="flex flex-wrap dark:text-gray-800">
               {renderCategories(categories, query)}
             </div>
+          </div>
+        ) : null}
+
+        {/* Occasion */}
+        {showAttribute("occasion") && dua.occasion?.occasion_id ? (
+          <div className="text-xs text-gray-500 dark:text-zinc-400">
+            <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
+              Kondisi/Sebab:
+            </p>
+            <p className="whitespace-pre-wrap">
+              {highlightMatchByField(
+                language === "id"
+                  ? dua.occasion.occasion_id
+                  : dua.occasion.occasion_en,
+                query,
+                "occasion",
+                searchFields,
+              )}
+            </p>
           </div>
         ) : null}
       </div>
@@ -231,23 +297,6 @@ const DuaPreviewCard = ({
             </TooltipTrigger>
             <TooltipContent>
               <p>Copy Link</p>
-            </TooltipContent>
-          </Tooltip>
-
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="h-8 w-8"
-                onClick={() => onPreview?.(dua)}
-                aria-label="Preview dua"
-              >
-                <Eye className="h-4 w-4" />
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Preview</p>
             </TooltipContent>
           </Tooltip>
 

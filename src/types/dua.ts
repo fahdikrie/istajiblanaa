@@ -19,8 +19,8 @@ export interface Dua {
   source: string;
   reference: string;
   occasion: {
-    occassion_id: string;
-    occassion_en: string;
+    occasion_id: string;
+    occasion_en: string;
   };
   benefits: {
     benefits_id: string[];
