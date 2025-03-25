@@ -31,7 +31,6 @@ export const SelectSearchBy = () => {
 
   return (
     <DropdownMenu
-      modal={false}
       open={dropdownOpen}
       onOpenChange={(val) => setDropdownOpen(val)}
     >

@@ -37,7 +37,6 @@ export const SelectDuaVisibility = () => {
 
   return (
     <DropdownMenu
-      modal={false}
       open={dropdownOpen}
       onOpenChange={(val) => setDropdownOpen(val)}
     >
