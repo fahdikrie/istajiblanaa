@@ -23,6 +23,8 @@ export interface SearchableListProps {
   itemsPerPage?: number;
   searchPlaceholder?: string;
   showViewToggle?: boolean;
+  currentIndex: number;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const SearchableList = ({
@@ -31,6 +33,8 @@ export const SearchableList = ({
   itemsPerPage = 10,
   searchPlaceholder,
   showViewToggle,
+  currentIndex,
+  setCurrentIndex,
 }: SearchableListProps) => {
   const shownAttributes = useStore(shownAttributesAtom);
   const language = useStore(languageAtom);
@@ -82,7 +86,7 @@ export const SearchableList = ({
         <div className="mt-2 flex items-center justify-center gap-2 self-end">
           <Button
             variant={viewMode === "list" ? "default" : "outline"}
-            className="size-10 w-24"
+            className="size-10 w-24 shadow-none"
             onClick={() => setViewMode("list")}
             title="Tampilan Daftar"
           >
@@ -90,7 +94,7 @@ export const SearchableList = ({
           </Button>
           <Button
             variant={viewMode === "carousel" ? "default" : "outline"}
-            className="size-10 w-24"
+            className="size-10 w-24 shadow-none"
             onClick={() => setViewMode("carousel")}
             title="Tampilan Satu-Satu"
           >
@@ -137,7 +141,12 @@ export const SearchableList = ({
       ) : (
         // Carousel view
         <div className="mt-4">
-          <CarouselView duas={filteredItems} query={query} />
+          <CarouselView
+            duas={filteredItems}
+            query={query}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+          />
         </div>
       )}
 

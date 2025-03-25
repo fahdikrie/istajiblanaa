@@ -31,11 +31,13 @@ export type NavItem = NavItemBase | NavItemNested;
 export interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   navItems: NavItem[];
   isNested?: boolean;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const AppSidebar = ({
   navItems,
   isNested,
+  setCurrentIndex,
   ...props
 }: AppSidebarProps) => {
   const isMobile = useIsMobile();
@@ -56,11 +58,12 @@ export const AppSidebar = ({
         <SidebarContent>
           <SidebarGroup className="p-0">
             <SidebarMenu className="flex flex-col gap-0">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <a
                   key={`${item.id}-${item.title}`}
                   href={item.url}
                   className="text-sm font-light flex items-center justify-center p-2 border-b-1 gap-x-1"
+                  onClick={() => setCurrentIndex(index)}
                 >
                   <span className="w-[24px] text-center text-gray-400 text-xs">
                     {item.id}.

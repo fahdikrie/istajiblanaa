@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { AnimatePresence, motion } from "motion/react";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 import {
   Breadcrumb,
@@ -34,6 +34,9 @@ export interface ListPageProps {
 }
 
 const ListPage = ({ category, duas, isNested }: ListPageProps) => {
+  // For carousel view
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const isMobile = useIsMobile();
   const language = useStore(languageAtom);
 
@@ -58,7 +61,11 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
 
   return (
     <SidebarProvider className="min-h-[unset]">
-      <AppSidebar navItems={navItems} isNested={isNested} />
+      <AppSidebar
+        navItems={navItems}
+        isNested={isNested}
+        setCurrentIndex={setCurrentIndex}
+      />
       <SidebarInset className="overflow-hidden md:h-[calc(100svh-69px)]">
         <header className="flex h-16 shrink-0 items-center gap-2 border-b">
           <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row-reverse md:flex-row gap-2 px-4">
@@ -82,7 +89,12 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
         </header>
         <section className="p-4 overflow-auto">
           <div className="max-w-2xl mx-auto">
-            <SearchableList duas={duas} showViewToggle />
+            <SearchableList
+              duas={duas}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+              showViewToggle
+            />
           </div>
         </section>
       </SidebarInset>

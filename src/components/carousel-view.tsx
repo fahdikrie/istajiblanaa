@@ -14,10 +14,16 @@ import type { Dua } from "@/types/dua";
 export interface CarouselViewProps {
   duas: Dua[];
   query: string;
+  currentIndex: number;
+  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const CarouselView = ({ duas, query }: CarouselViewProps) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export const CarouselView = ({
+  duas,
+  query,
+  currentIndex,
+  setCurrentIndex,
+}: CarouselViewProps) => {
   const [direction, setDirection] = useState(0);
 
   const arabicFont = useStore(arabicFontAtom);
