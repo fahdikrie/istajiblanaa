@@ -23,8 +23,8 @@ export interface SearchableListProps {
   itemsPerPage?: number;
   searchPlaceholder?: string;
   showViewToggle?: boolean;
-  currentIndex: number;
-  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+  currentIndex?: number;
+  setCurrentIndex?: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const SearchableList = ({

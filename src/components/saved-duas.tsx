@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/react";
+import { useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -11,6 +12,8 @@ import MAPPED_DATA from "data/generated/1_mapped-data.json";
 import { SearchableList } from "./searchable-list";
 
 const SavedDuas = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const savedDuas = useStore(savedDuasAtom);
 
   const savedDuasData = savedDuas
@@ -39,7 +42,12 @@ const SavedDuas = () => {
       </div>
 
       <div className="space-y-4">
-        <SearchableList duas={savedDuasData} showViewToggle />
+        <SearchableList
+          duas={savedDuasData}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          showViewToggle
+        />
       </div>
     </div>
   );

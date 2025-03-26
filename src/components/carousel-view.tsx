@@ -14,15 +14,15 @@ import type { Dua } from "@/types/dua";
 export interface CarouselViewProps {
   duas: Dua[];
   query: string;
-  currentIndex: number;
-  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+  currentIndex?: number;
+  setCurrentIndex?: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const CarouselView = ({
   duas,
   query,
-  currentIndex,
-  setCurrentIndex,
+  currentIndex = 0,
+  setCurrentIndex = () => {},
 }: CarouselViewProps) => {
   const [direction, setDirection] = useState(0);
 
