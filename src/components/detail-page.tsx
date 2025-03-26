@@ -14,8 +14,11 @@ import {
   announcementBarAtom,
   arabicFontAtom,
   languageAtom,
+  savedDuasAtom,
 } from "@/store/store";
 import type { Dua } from "@/types/dua";
+
+import { DuaShortcuts } from "./dua-shortcuts";
 
 export interface DetailPageProps {
   dua: Dua;
@@ -25,6 +28,7 @@ const DetailPage = ({ dua }: DetailPageProps) => {
   const arabicFont = useStore(arabicFontAtom);
   const language = useStore(languageAtom);
   const eventBanner = useStore(announcementBarAtom);
+  const savedDuas = useStore(savedDuasAtom);
 
   const renderCategories = (categories: string[]) => {
     return categories.map((category, index) => {
@@ -129,6 +133,8 @@ const DetailPage = ({ dua }: DetailPageProps) => {
             {renderCategories(categories)}
           </div>
         </div>
+
+        <DuaShortcuts dua={dua} savedDuas={savedDuas} />
       </section>
     </>
   );

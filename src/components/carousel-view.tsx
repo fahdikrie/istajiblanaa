@@ -8,8 +8,10 @@ import { Button } from "@/components/ui/button";
 import { useSwipe } from "@/hooks/use-swipe";
 
 import { cn } from "@/lib/utils";
-import { arabicFontAtom, languageAtom } from "@/store/store";
+import { arabicFontAtom, languageAtom, savedDuasAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
+
+import { DuaShortcuts } from "./dua-shortcuts";
 
 export interface CarouselViewProps {
   duas: Dua[];
@@ -28,6 +30,7 @@ export const CarouselView = ({
 
   const arabicFont = useStore(arabicFontAtom);
   const language = useStore(languageAtom);
+  const savedDuas = useStore(savedDuasAtom);
 
   const presenceDirection = usePresenceData();
 
@@ -203,6 +206,8 @@ export const CarouselView = ({
               {renderCategories(categories)}
             </div>
           </div>
+
+          <DuaShortcuts dua={currentDua} savedDuas={savedDuas} />
         </motion.div>
       </div>
     </div>
