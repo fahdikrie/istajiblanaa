@@ -57,7 +57,7 @@ const DetailPage = ({ dua }: DetailPageProps) => {
   return (
     <>
       <header className="flex h-16 shrink-0 items-center gap-2 border-b">
-        <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row-reverse md:flex-row gap-2 px-4">
+        <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row gap-2 px-4">
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
