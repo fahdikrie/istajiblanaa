@@ -10,7 +10,11 @@ import {
 } from "@/components/ui/breadcrumb";
 
 import { cn } from "@/lib/utils";
-import { arabicFontAtom, languageAtom } from "@/store/store";
+import {
+  announcementBarAtom,
+  arabicFontAtom,
+  languageAtom,
+} from "@/store/store";
 import type { Dua } from "@/types/dua";
 
 export interface DetailPageProps {
@@ -20,6 +24,7 @@ export interface DetailPageProps {
 const DetailPage = ({ dua }: DetailPageProps) => {
   const arabicFont = useStore(arabicFontAtom);
   const language = useStore(languageAtom);
+  const eventBanner = useStore(announcementBarAtom);
 
   const renderCategories = (categories: string[]) => {
     return categories.map((category, index) => {
@@ -62,7 +67,14 @@ const DetailPage = ({ dua }: DetailPageProps) => {
           </Breadcrumb>
         </div>
       </header>
-      <section className="max-w-2xl min-h-[calc(100svh-133px)] mx-auto p-4 md:pt-10 md:px-10 border-x-1 shadow-xs overflow-auto flex flex-col gap-y-4 border-gray-100 dark:border-inherit bg-white dark:bg-inherit">
+      <section
+        className={cn(
+          "max-w-2xl mx-auto p-4 md:pt-10 md:px-10 border-x-1 shadow-xs overflow-auto flex flex-col gap-y-4 border-gray-100 dark:border-inherit bg-white dark:bg-inherit",
+          eventBanner?.isBannerVisible
+            ? "min-h-[calc(100svh-133px-36px)]"
+            : "min-h-[calc(100svh-133px)]",
+        )}
+      >
         {/* ID */}
         <div className="text-xs font-semibold text-gray-500 dark:text-zinc-400 -mb-4">
           <p>No. {dua.id}</p>

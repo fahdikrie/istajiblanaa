@@ -1,3 +1,5 @@
+"use client";
+
 import { useStore } from "@nanostores/react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -26,7 +28,7 @@ const SavedDuas = () => {
   };
 
   return (
-    <div className="space-y-6 max-w-2xl mx-0">
+    <div className="pt-4 space-y-6 max-w-2xl mx-0">
       <div className="max-w-2xl flex justify-between items-center">
         <p className="text-sm text-gray-500 dark:text-zinc-400">
           {savedDuas.length} {savedDuas.length === 1 ? "dua" : "duas"} saved

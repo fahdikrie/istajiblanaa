@@ -9,8 +9,6 @@ export const useSearch = (duas: Dua[], language: "id" | "en") => {
   const [query, setQuery] = useState("");
   const searchFields = useStore(searchFieldsAtom);
 
-  console.log("searchFields", searchFields);
-
   const searchDua = (
     dua: Dua,
     query: string,

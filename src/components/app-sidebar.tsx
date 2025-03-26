@@ -1,3 +1,4 @@
+import { useStore } from "@nanostores/react";
 import * as React from "react";
 
 import {
@@ -14,6 +15,9 @@ import {
 } from "@/components/ui/sidebar";
 
 import { useIsMobile } from "@/hooks/use-mobile";
+
+import { cn } from "@/lib/utils";
+import { announcementBarAtom } from "@/store/store";
 
 export interface NavItemBase {
   id: number;
@@ -42,6 +46,8 @@ export const AppSidebar = ({
 }: AppSidebarProps) => {
   const isMobile = useIsMobile();
 
+  const eventBanner = useStore(announcementBarAtom);
+
   const hasNestedItems = (item: NavItem): item is NavItemNested => {
     return (
       "items" in item && Array.isArray(item.items) && item.items.length > 0
@@ -53,7 +59,12 @@ export const AppSidebar = ({
       <Sidebar
         {...props}
         side={isMobile ? "right" : "left"}
-        className="h-[calc(100%-68px)] top-[69px] z-0"
+        className={cn(
+          eventBanner?.isBannerVisible
+            ? "h-[calc(100%-68px-36px)] top-[calc(69px+36px)]"
+            : "h-[calc(100%-68px)] top-[69px]",
+          "z-0",
+        )}
       >
         <SidebarContent>
           <SidebarGroup className="p-0">

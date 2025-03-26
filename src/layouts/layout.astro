@@ -1,17 +1,13 @@
 ---
 import { pwaInfo } from "virtual:pwa-info";
 
-import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
-import { MenuBar } from "@/components/menu-bar";
-import { MobileMenu } from "@/components/mobile-menu";
-import { SavedDuaButton } from "@/components/saved-dua-button";
-import { ThemeToggle, themeScript } from "@/components/theme-toggle";
+import { themeScript } from "@/components/theme-toggle";
 
 import "../styles/global.css";
 
-import { FontPicker } from "@/components/font-picker";
-import { LanguagePicker } from "@/components/language-picker";
+import { AnnouncementBar } from "@/components/announcement-bar";
+import { Navbar } from "@/components/navbar";
 
 const { fixedNavbar = false } = Astro.props;
 ---
@@ -39,42 +35,19 @@ const { fixedNavbar = false } = Astro.props;
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body>
-    <header
-      class={`
-        w-full flex items-center justify-between p-4 backdrop-blur-lg z-40
-        ${fixedNavbar ? "fixed" : "relative border-b-1"}
-      `}
-    >
-      <a href="/" class="flex items-center gap-2">
-        <Button
-          client:load
-          className="cursor-pointer h-9 w-9 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-lg"
-        >
-          🤲
-        </Button>
-      </a>
+    <AnnouncementBar
+      client:load
+      eventId="asyrul-awakhir-2025"
+      eventMessage="Perbanyak Baca Doa ini di 10 Malam Terakhir Ramadhan!"
+      eventLink="/dua/81"
+      bgColor="bg-green-600"
+      textColor="text-white"
+      className={fixedNavbar ? "fixed" : "relative"}
+    />
 
-      <!-- Desktop menu: hidden on mobile, visible on lg and up -->
-      <div class="absolute left-1/2 -translate-x-1/2 hidden lg:block">
-        <MenuBar client:load />
-      </div>
+    <Navbar client:only="react" fixedNavbar={fixedNavbar} />
 
-      <div class="flex items-center gap-1">
-        <div class="flex items-center justify-center gap-x-1.5">
-          <FontPicker client:only="react" />
-          <LanguagePicker client:load />
-          <div class="hidden md:block"><SavedDuaButton client:load /></div>
-          <ThemeToggle client:load />
-        </div>
-
-        <!-- Mobile menu: visible on mobile, hidden on md and up -->
-        <div class="lg:hidden">
-          <MobileMenu client:load />
-        </div>
-      </div>
-    </header>
-
-    <main class={`${fixedNavbar ? "pt-16" : ""}`}>
+    <main class={`${fixedNavbar ? "pt-20" : ""}`}>
       <slot />
     </main>
     <Toaster client:load />

@@ -21,7 +21,8 @@ import { AppSidebar } from "@/components/app-sidebar";
 import { useHasScrolledPastAnchor } from "@/hooks/use-has-scrolled-past-anchor";
 import { useIsMobile } from "@/hooks/use-mobile";
 
-import { languageAtom } from "@/store/store";
+import { cn } from "@/lib/utils";
+import { announcementBarAtom, languageAtom } from "@/store/store";
 import type { Dua } from "@/types/dua";
 import { slugify } from "@/utils/string";
 
@@ -39,6 +40,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
 
   const isMobile = useIsMobile();
   const language = useStore(languageAtom);
+  const eventBanner = useStore(announcementBarAtom);
 
   const hasScrolledPastAnchor = useHasScrolledPastAnchor(140);
 
@@ -66,7 +68,14 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
         isNested={isNested}
         setCurrentIndex={setCurrentIndex}
       />
-      <SidebarInset className="overflow-hidden md:h-[calc(100svh-69px)]">
+      <SidebarInset
+        className={cn(
+          "overflow-hidden",
+          eventBanner?.isBannerVisible
+            ? "md:h-[calc(100svh-69px-36px)]"
+            : "md:h-[calc(100svh-69px)]",
+        )}
+      >
         <header className="flex h-16 shrink-0 items-center gap-2 border-b">
           <div className="w-full md:w-fit flex items-center justify-between md:justify-start flex-row-reverse md:flex-row gap-2 px-4">
             <SidebarTrigger className={isMobile ? "scale-x-[-1]" : ""} />

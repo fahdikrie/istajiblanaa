@@ -39,3 +39,15 @@ export const searchFieldsAtom = persistentAtom<Array<keyof Dua>>(
     decode: JSON.parse,
   },
 );
+
+export const announcementBarAtom = persistentAtom<{
+  isBannerVisible: boolean;
+  dismissedEvents: string[];
+}>(
+  "eventBanner",
+  { isBannerVisible: true, dismissedEvents: [] },
+  {
+    encode: JSON.stringify,
+    decode: JSON.parse,
+  },
+);
