@@ -44,7 +44,7 @@ export const announcementBarAtom = persistentAtom<{
   isBannerVisible: boolean;
   dismissedEvents: string[];
 }>(
-  "eventBanner",
+  "announcementBar",
   { isBannerVisible: true, dismissedEvents: [] },
   {
     encode: JSON.stringify,

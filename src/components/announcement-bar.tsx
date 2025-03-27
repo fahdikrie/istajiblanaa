@@ -51,7 +51,7 @@ export const AnnouncementBar: React.FC<announcementBarAtom> = ({
     <div
       className={cn(
         "w-full px-4 py-2 flex items-center justify-between",
-        "text-sm font-medium relative z-50 md:h-9",
+        "text-sm font-medium relative z-50 h-12 md:h-9",
         bgColor,
         textColor,
         className,

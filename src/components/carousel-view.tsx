@@ -193,7 +193,7 @@ export const CarouselView = ({
               <p className="text-xs text-gray-500 dark:text-zinc-400 mb-1">
                 Keterangan:
               </p>
-              <p className="whitespace-pre-wrap">{}</p>
+              <p className="whitespace-pre-wrap">{note}</p>
             </div>
           ) : null}
 

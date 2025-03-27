@@ -26,7 +26,9 @@ export const Navbar: React.FC<NavbarProps> = ({ fixedNavbar = false }) => {
       className={cn(
         "w-full flex items-center justify-between p-4 backdrop-blur-lg z-40 top-0",
         fixedNavbar ? "fixed" : "relative border-b-1",
-        fixedNavbar && announcementBar?.isBannerVisible ? "top-9" : "top-0",
+        fixedNavbar && announcementBar?.isBannerVisible
+          ? "top-12 md:top-9"
+          : "top-0",
       )}
     >
       <a href="/" className="flex items-center gap-2">
