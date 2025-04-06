@@ -35,7 +35,7 @@ const { fixedNavbar = false } = Astro.props;
     {pwaInfo && <Fragment set:html={pwaInfo.webManifest.linkTag} />}
   </head>
   <body>
-    <AnnouncementBar
+    <!-- `    <AnnouncementBar
       client:load
       eventId="asyrul-awakhir-2025"
       eventMessage="Perbanyak Baca Doa ini di 10 Malam Terakhir Ramadhan!"
@@ -43,7 +43,7 @@ const { fixedNavbar = false } = Astro.props;
       bgColor="bg-green-600"
       textColor="text-white"
       className={fixedNavbar ? "fixed" : "relative"}
-    />
+    />` -->
 
     <Navbar client:only="react" fixedNavbar={fixedNavbar} />
 
