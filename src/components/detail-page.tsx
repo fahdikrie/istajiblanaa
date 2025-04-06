@@ -27,7 +27,7 @@ export interface DetailPageProps {
 const DetailPage = ({ dua }: DetailPageProps) => {
   const arabicFont = useStore(arabicFontAtom);
   const language = useStore(languageAtom);
-  const eventBanner = useStore(announcementBarAtom);
+  const announcementBar = useStore(announcementBarAtom);
   const savedDuas = useStore(savedDuasAtom);
 
   const renderCategories = (categories: string[]) => {
@@ -74,7 +74,7 @@ const DetailPage = ({ dua }: DetailPageProps) => {
       <section
         className={cn(
           "max-w-2xl mx-auto p-4 md:pt-10 md:px-10 border-x-1 shadow-xs overflow-auto flex flex-col gap-y-4 border-gray-100 dark:border-inherit bg-white dark:bg-inherit",
-          eventBanner?.isBannerVisible
+          announcementBar?.isBannerVisible
             ? "min-h-[calc(100svh-133px-36px)]"
             : "min-h-[calc(100svh-133px)]",
         )}

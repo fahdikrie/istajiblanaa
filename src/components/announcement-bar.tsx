@@ -14,6 +14,7 @@ interface announcementBarAtom {
   bgColor?: string;
   textColor?: string;
   className?: string;
+  showAnnouncementBar?: boolean;
 }
 
 export const AnnouncementBar: React.FC<announcementBarAtom> = ({
@@ -23,24 +24,33 @@ export const AnnouncementBar: React.FC<announcementBarAtom> = ({
   bgColor = "bg-orange-500",
   textColor = "text-white",
   className,
+  showAnnouncementBar = true,
 }) => {
   const isMobile = useIsMobile();
 
   const [isVisible, setIsVisible] = useState(false);
 
-  const eventBanner = useStore(announcementBarAtom);
+  const announcementBar = useStore(announcementBarAtom);
 
   useEffect(() => {
+    if (!showAnnouncementBar) {
+      announcementBarAtom.set({
+        ...announcementBar,
+        isBannerVisible: false,
+      });
+      return;
+    }
+
     // Check if this specific event has been dismissed before
-    const hasBeenDismissed = eventBanner.dismissedEvents.includes(eventId);
+    const hasBeenDismissed = announcementBar.dismissedEvents.includes(eventId);
     setIsVisible(!hasBeenDismissed);
-  }, [eventId]);
+  }, [eventId, showAnnouncementBar]);
 
   const handleClose = () => {
     // Update the store to mark this event as dismissed
     announcementBarAtom.set({
       isBannerVisible: false,
-      dismissedEvents: [...eventBanner.dismissedEvents, eventId],
+      dismissedEvents: [...announcementBar.dismissedEvents, eventId],
     });
     setIsVisible(false);
   };

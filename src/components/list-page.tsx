@@ -40,7 +40,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
 
   const isMobile = useIsMobile();
   const language = useStore(languageAtom);
-  const eventBanner = useStore(announcementBarAtom);
+  const announcementBar = useStore(announcementBarAtom);
 
   const hasScrolledPastAnchor = useHasScrolledPastAnchor(140);
 
@@ -71,7 +71,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
       <SidebarInset
         className={cn(
           "overflow-hidden",
-          eventBanner?.isBannerVisible
+          announcementBar?.isBannerVisible
             ? "md:h-[calc(100svh-69px-36px)]"
             : "md:h-[calc(100svh-69px)]",
         )}

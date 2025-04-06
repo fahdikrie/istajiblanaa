@@ -46,7 +46,7 @@ export const AppSidebar = ({
 }: AppSidebarProps) => {
   const isMobile = useIsMobile();
 
-  const eventBanner = useStore(announcementBarAtom);
+  const announcementBar = useStore(announcementBarAtom);
 
   const hasNestedItems = (item: NavItem): item is NavItemNested => {
     return (
@@ -60,7 +60,7 @@ export const AppSidebar = ({
         {...props}
         side={isMobile ? "right" : "left"}
         className={cn(
-          eventBanner?.isBannerVisible
+          announcementBar?.isBannerVisible
             ? "h-[calc(100%-68px-36px)] top-[calc(69px+36px)]"
             : "h-[calc(100%-68px)] top-[69px]",
           "z-0",
