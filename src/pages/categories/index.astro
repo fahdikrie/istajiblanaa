@@ -5,6 +5,11 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { slugify } from "@/utils/string";
 
+import {
+  featuredCategoryCards,
+  getCategoryImagePath,
+  getUnsplashImageUrl,
+} from "@/data/category-cards";
 import TOKENIZED_CATEGORIES from "data/generated/4_tokenized-categories.json";
 
 const sortedCategories = TOKENIZED_CATEGORIES.sort((a, b) => {
@@ -20,18 +25,25 @@ const sortedCategories = TOKENIZED_CATEGORIES.sort((a, b) => {
 });
 
 const cardClassname =
-  "p-2 pt-10 h-[130px] gap-1 shadow-none cursor-pointer border-gray-100 dark:border-black flex flex-col justify-end";
+  "group relative h-[150px] overflow-hidden border-gray-100 shadow-none cursor-pointer rounded-xl border p-3 flex flex-col justify-end transition-transform duration-200 hover:-translate-y-0.5";
 ---
 
 <Layout fixedNavbar>
   <section class="pt-4 md:pt-10 px-4 max-w-2xl mx-auto">
-    <a href="/list/semua-doa">
-      <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
-        <h3 class="font-bold text-sm md:text-base dark:text-gray-950">
-          Semua Doa
+    <a href={featuredCategoryCards[0].href}>
+      <Card
+        className={cn(cardClassname, "border-zinc-200")}
+        style={{
+          backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.68)), url(${getCategoryImagePath(featuredCategoryCards[0].title, featuredCategoryCards[0].cue)})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <h3 class="font-bold text-sm md:text-base text-white drop-shadow">
+          {featuredCategoryCards[0].title}
         </h3>
-        <p class="font-light text-xs text-gray-500">
-          Semua Doa Ma'tsuur. Datang dari Al-Qur'an maupun As-Sunnah.
+        <p class="font-light text-xs text-white/85 drop-shadow-sm">
+          {featuredCategoryCards[0].description}
         </p>
       </Card>
     </a>
@@ -41,78 +53,27 @@ const cardClassname =
     <h1 class="text-xl font-bold">Kategori Khusus</h1>
 
     <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
-      <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
-        <h3 class="font-bold text-sm md:text-base dark:text-green-950">
-          The Essentials 🎒
-        </h3>
-        <p class="font-light text-xs text-gray-500 dark:text-green-800">
-          Kumpulan doa-doa pilihan. Dapat dibaca di setiap waktu mustajab.
-        </p>
-      </Card>
-      <a href="/list/doa-untuk-kebaikan-kesehatan-dan-keberkahan">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Kebaikan, Kesehatan dan Keberkahan 🌤️
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Permohonan atas segala kebaikan & keberkahan di dunia.
-          </p>
-        </Card>
-      </a>
-      <a href="/">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Doa untuk Kaum Muslimin 🇵🇸
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa untuk kaum muslimin yang terzalimi di seluruh dunia.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-perlindungan-dari-hal-hal-buruk">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Perlindungan dari <br /> Hal Buruk ☔️
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Agar terhindar dari kesedihan, kesulitan, dan kesempitan.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/category/kebaikan-untuk-negeri">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Doa untuk <br /> Negeri 🇮🇩
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-dari-al-quran">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">Doa dari Al-Qur'an</h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa-doa yang disebut di dalam Al-Qur'an.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-dari-as-sunnah">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">Doa dari As-Sunnah</h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa-doa yang diajarkan oleh Rasulullah ﷺ.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-para-nabi">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">Doa para Nabi</h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa-doa yang dipanjatkan oleh para Nabi terdahulu 'Alaihimussalaam.
-          </p>
-        </Card>
-      </a>
+      {
+        featuredCategoryCards.slice(1).map((card) => (
+          <a href={card.href}>
+            <Card
+              className={cn(cardClassname)}
+              style={{
+                backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.68)), url(${getCategoryImagePath(card.title, card.cue)})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <h3 class="font-bold text-sm md:text-base text-white drop-shadow">
+                {card.title}
+              </h3>
+              <p class="font-light text-xs text-white/85 drop-shadow-sm line-clamp-3">
+                {card.description}
+              </p>
+            </Card>
+          </a>
+        ))
+      }
     </div>
   </section>
 
@@ -121,18 +82,29 @@ const cardClassname =
 
     <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
       {
-        sortedCategories.map((category) => (
-          <a href={`/list/category/${slugify(category.category_id)}`}>
-            <Card className={cn(cardClassname, "overflow-hidden")}>
-              <h3 class="text-sm font-medium line-clamp-3">
-                {category.category_id}
-              </h3>
-              <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-                ({category.count} doa)
-              </p>
-            </Card>
-          </a>
-        ))
+        sortedCategories.map((category) => {
+          const cue = `${category.category_id} islamic prayer calm`;
+
+          return (
+            <a href={`/list/category/${slugify(category.category_id)}`}>
+              <Card
+                className={cn(cardClassname)}
+                style={{
+                  backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.68)), url(${getUnsplashImageUrl(cue)})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                <h3 class="text-sm font-medium line-clamp-3 text-white drop-shadow">
+                  {category.category_id}
+                </h3>
+                <p class="font-light text-xs text-white/85 drop-shadow-sm">
+                  ({category.count} doa)
+                </p>
+              </Card>
+            </a>
+          );
+        })
       }
     </div>
   </section>

@@ -1,64 +1,39 @@
 ---
 import { cn } from "@/lib/utils";
 
+import {
+  featuredCategoryCards,
+  getCategoryImagePath,
+} from "@/data/category-cards";
+
 import { Card } from "./ui/card";
 
 const cardClassname =
-  "p-2 pt-10 h-[130px] gap-1 shadow-none cursor-pointer border-gray-100 dark:border-black flex flex-col justify-end";
+  "group relative h-[130px] overflow-hidden rounded-xl border border-gray-100 p-3 shadow-none cursor-pointer flex flex-col justify-end transition-transform duration-200 hover:-translate-y-0.5";
+
+const featuredCards = featuredCategoryCards.slice(0, 6);
 ---
 
 <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-  <a href="/" class="hidden md:flex">
-    <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
-      <h3 class="font-bold dark:text-green-950">The Essentials 🎒</h3>
-      <p class="font-light text-xs text-gray-500 dark:text-green-800">
-        Kumpulan doa pilihan. Dapat dibaca di setiap waktu mustajab.
-      </p>
-    </Card>
-  </a>
-  <a href="/list/semua-doa" class="flex md:hidden">
-    <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Semua Doa</h3>
-      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-        Doa ma'tsuur dari Al-Qur'an dan As-Sunnah.
-      </p>
-    </Card>
-  </a>
-  <a
-    href="/list/doa-untuk-kebaikan-kesehatan-dan-keberkahan"
-    class="hidden md:flex"
-  >
-    <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Kebaikan, Kesehatan dan Keberkahan 🌤️</h3>
-      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-        Permohonan atas segala kebaikan & keberkahan di dunia.
-      </p>
-    </Card>
-  </a>
-  <a href="/" class="hidden md:flex">
-    <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Doa untuk Kaum Muslimin 🇵🇸</h3>
-      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-        Doa untuk kaum muslimin yang terzalimi di seluruh dunia.
-      </p>
-    </Card>
-  </a>
-  <a href="/list/doa-perlindungan-dari-hal-hal-buruk" class="hidden md:flex">
-    <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Perlindungan dari <br /> Hal Buruk ☔️</h3>
-      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-        Agar terhindar dari kesedihan, kesulitan, dan kesempitan.
-      </p>
-    </Card>
-  </a>
-  <a href="/list/category/kebaikan-untuk-negeri" class="hidden md:flex">
-    <Card className={cn(cardClassname)}>
-      <h3 class="font-bold">Doa untuk <br /> Negeri 🇮🇩</h3>
-      <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-        Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
-      </p>
-    </Card>
-  </a>
+  {
+    featuredCards.map((card) => (
+      <a href={card.href}>
+        <Card
+          className={cn(cardClassname)}
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.68)), url(${getCategoryImagePath(card.title, card.cue)})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <h3 class="font-bold text-sm text-white drop-shadow">{card.title}</h3>
+          <p class="font-light text-xs text-white/85 drop-shadow-sm line-clamp-3">
+            {card.description}
+          </p>
+        </Card>
+      </a>
+    ))
+  }
   <a href="/categories">
     <Card className={cn(cardClassname, "md:bg-zinc-100 md:border-zinc-200")}>
       <h3 class="font-bold md:text-gray-800">Semua Kategori</h3>
