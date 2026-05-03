@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "unsplash": {
+      "type": "stdio",
+      "command": "/home/fahdikrie/Projects/Personal/unsplash-mcp/.venv/bin/fastmcp",
+      "args": [
+        "run",
+        "/home/fahdikrie/Projects/Personal/unsplash-mcp/server.py"
+      ],
+      "env": {
+        "UNSPLASH_ACCESS_KEY": "17rE10v_RY_aSwnEYaxdsHzHWQKAUfgSmX1-eW-5ehQ"
+      }
+    }
+  }
+}

@@ -7,6 +7,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "generate:category-images": "node .agents/generate-categories-image/scripts/generate-all.js",
     "prepare": "husky"
   },
   "dependencies": {
