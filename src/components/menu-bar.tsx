@@ -27,9 +27,7 @@ const MenuBar = () => {
       const categoryTitle =
         language === "id" ? category.category_id : category.category_en;
       const description =
-        language === "id"
-          ? `(${category.count} doa)`
-          : `(${category.count} dua)`;
+        language === "id" ? `${category.count} doa` : `${category.count} dua`;
 
       return {
         title: categoryTitle,

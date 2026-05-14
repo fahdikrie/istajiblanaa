@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 import { AnimatePresence, motion } from "motion/react";
-import { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 
 import {
   Breadcrumb,
@@ -35,8 +35,11 @@ export interface ListPageProps {
 }
 
 const ListPage = ({ category, duas, isNested }: ListPageProps) => {
-  // For carousel view
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<"list" | "carousel">("list");
+
+  const [activeDuaId, setActiveDuaId] = useState<string | null>(null);
+  const scrollRef = useRef<HTMLElement>(null);
 
   const isMobile = useIsMobile();
   const language = useStore(languageAtom);
@@ -61,12 +64,43 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
       .filter((dua) => !!dua);
   }, [language]);
 
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container || navItems.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const intersecting = entries.filter((e) => e.isIntersecting);
+        if (intersecting.length === 0) return;
+        const topmost = intersecting.sort(
+          (a, b) => a.boundingClientRect.top - b.boundingClientRect.top,
+        )[0];
+        setActiveDuaId(topmost.target.id);
+      },
+      { root: container, rootMargin: "0px 0px -60% 0px", threshold: 0 },
+    );
+
+    navItems.forEach((item) => {
+      const el = container.querySelector(`[id="${item.url.slice(1)}"]`);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [navItems]);
+
+  useEffect(() => {
+    if (viewMode !== "carousel") return;
+    const item = navItems[currentIndex];
+    if (item) setActiveDuaId(item.url.slice(1));
+  }, [currentIndex, viewMode, navItems]);
+
   return (
     <SidebarProvider className="min-h-[unset]">
       <AppSidebar
         navItems={navItems}
         isNested={isNested}
         setCurrentIndex={setCurrentIndex}
+        activeDuaId={activeDuaId}
       />
       <SidebarInset
         className={cn(
@@ -96,13 +130,15 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
             </Breadcrumb>
           </div>
         </header>
-        <section className="p-4 overflow-auto">
+        <section ref={scrollRef as React.RefObject<HTMLElement>} className="p-4 overflow-auto">
           <div className="max-w-2xl mx-auto">
             <SearchableList
               duas={duas}
               currentIndex={currentIndex}
               setCurrentIndex={setCurrentIndex}
               showViewToggle
+              viewMode={viewMode}
+              onViewModeChange={setViewMode}
             />
           </div>
         </section>

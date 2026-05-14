@@ -1,5 +1,6 @@
 import { useStore } from "@nanostores/react";
 import * as React from "react";
+import { useEffect, useRef } from "react";
 
 import {
   Sidebar,
@@ -36,17 +37,25 @@ export interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   navItems: NavItem[];
   isNested?: boolean;
   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+  activeDuaId?: string | null;
 }
 
 export const AppSidebar = ({
   navItems,
   isNested,
   setCurrentIndex,
+  activeDuaId,
   ...props
 }: AppSidebarProps) => {
   const isMobile = useIsMobile();
-
   const announcementBar = useStore(announcementBarAtom);
+  const itemRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+
+  useEffect(() => {
+    if (!activeDuaId) return;
+    const el = itemRefs.current.get(`#${activeDuaId}`);
+    el?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }, [activeDuaId]);
 
   const hasNestedItems = (item: NavItem): item is NavItemNested => {
     return (
@@ -69,19 +78,38 @@ export const AppSidebar = ({
         <SidebarContent>
           <SidebarGroup className="p-0">
             <SidebarMenu className="flex flex-col gap-0">
-              {navItems.map((item, index) => (
-                <a
-                  key={`${item.id}-${item.title}`}
-                  href={item.url}
-                  className="text-sm font-light flex items-center justify-center p-2 border-b-1 gap-x-1"
-                  onClick={() => setCurrentIndex(index)}
-                >
-                  <span className="w-[24px] text-center text-gray-400 text-xs">
-                    {item.id}.
-                  </span>
-                  <div className="flex-1 hover:underline">{item.title}</div>
-                </a>
-              ))}
+              {navItems.map((item, index) => {
+                const isActive = activeDuaId === item.url.slice(1);
+                return (
+                  <a
+                    key={`${item.id}-${item.title}`}
+                    href={item.url}
+                    ref={(el) => {
+                      if (el) itemRefs.current.set(item.url, el);
+                      else itemRefs.current.delete(item.url);
+                    }}
+                    className={cn(
+                      "text-sm font-light flex items-center justify-center p-2 border-b-1 gap-x-1 transition-colors duration-150",
+                      isActive
+                        ? "bg-accent border-l-2 border-l-primary pl-[7px] font-medium"
+                        : "hover:bg-accent/50",
+                    )}
+                    onClick={() => setCurrentIndex(index)}
+                  >
+                    <span
+                      className={cn(
+                        "w-[24px] text-center text-xs shrink-0",
+                        isActive ? "text-primary font-semibold" : "text-gray-400",
+                      )}
+                    >
+                      {item.id}.
+                    </span>
+                    <div className="flex-1 hover:underline line-clamp-2">
+                      {item.title}
+                    </div>
+                  </a>
+                );
+              })}
             </SidebarMenu>
           </SidebarGroup>
         </SidebarContent>

@@ -25,6 +25,8 @@ export interface SearchableListProps {
   showViewToggle?: boolean;
   currentIndex?: number;
   setCurrentIndex?: React.Dispatch<React.SetStateAction<number>>;
+  viewMode?: "list" | "carousel";
+  onViewModeChange?: (mode: "list" | "carousel") => void;
 }
 
 export const SearchableList = ({
@@ -35,11 +37,18 @@ export const SearchableList = ({
   showViewToggle,
   currentIndex,
   setCurrentIndex,
+  viewMode: controlledViewMode,
+  onViewModeChange,
 }: SearchableListProps) => {
   const shownAttributes = useStore(shownAttributesAtom);
   const language = useStore(languageAtom);
 
-  const [viewMode, setViewMode] = useState<"list" | "carousel">("list");
+  const [internalViewMode, setInternalViewMode] = useState<"list" | "carousel">("list");
+  const viewMode = controlledViewMode ?? internalViewMode;
+  const setViewMode = (mode: "list" | "carousel") => {
+    setInternalViewMode(mode);
+    onViewModeChange?.(mode);
+  };
 
   // Search functionality
   const { query, filteredItems, handleQueryChange } = useSearch(duas, language);

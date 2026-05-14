@@ -1,6 +1,5 @@
 ---
 import Layout from "@/layouts/layout.astro";
-import { Card } from "@/components/ui/card";
 
 import { cn } from "@/lib/utils";
 import { slugify } from "@/utils/string";
@@ -8,132 +7,232 @@ import { slugify } from "@/utils/string";
 import TOKENIZED_CATEGORIES from "data/generated/4_tokenized-categories.json";
 
 const sortedCategories = TOKENIZED_CATEGORIES.sort((a, b) => {
-  if (a.category_id < b.category_id) {
-    return -1;
-  }
-
-  if (a.category_id > b.category_id) {
-    return 1;
-  }
-
+  if (a.category_id < b.category_id) return -1;
+  if (a.category_id > b.category_id) return 1;
   return 0;
 });
 
-const cardClassname =
-  "p-2 pt-10 h-[130px] gap-1 shadow-none cursor-pointer border-gray-100 dark:border-black flex flex-col justify-end";
+const baseCard =
+  "relative overflow-hidden h-[150px] rounded-xl border p-4 flex flex-col justify-end gap-1 cursor-pointer transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md w-full";
+
+const specialCards = [
+  {
+    href: "/list/semua-doa",
+    emoji: "📖",
+    title: "Semua Doa",
+    desc: "Semua Doa Ma'tsuur. Datang dari Al-Qur'an maupun As-Sunnah.",
+    gradient:
+      "bg-gradient-to-br from-slate-50 to-zinc-100 border-zinc-200 dark:from-slate-900 dark:to-zinc-800 dark:border-zinc-700",
+    textTitle: "text-zinc-800 dark:text-zinc-100",
+    textDesc: "text-zinc-500 dark:text-zinc-400",
+  },
+  {
+    href: null,
+    emoji: "🎒",
+    title: "The Essentials",
+    desc: "Kumpulan doa-doa pilihan. Dapat dibaca di setiap waktu mustajab.",
+    gradient:
+      "bg-gradient-to-br from-emerald-50 to-green-100 border-green-200 dark:from-emerald-950 dark:to-green-900 dark:border-green-800",
+    textTitle: "text-green-900 dark:text-green-100",
+    textDesc: "text-green-700/70 dark:text-green-300/70",
+  },
+  {
+    href: "/list/doa-untuk-kebaikan-kesehatan-dan-keberkahan",
+    emoji: "🌤️",
+    title: "Kebaikan & Keberkahan",
+    desc: "Permohonan atas segala kebaikan & keberkahan di dunia.",
+    gradient:
+      "bg-gradient-to-br from-sky-50 to-blue-100 border-blue-200 dark:from-sky-950 dark:to-blue-900 dark:border-blue-800",
+    textTitle: "text-blue-900 dark:text-blue-100",
+    textDesc: "text-blue-700/70 dark:text-blue-300/70",
+  },
+  {
+    href: "/",
+    emoji: "🌍",
+    title: "Doa untuk Kaum Muslimin",
+    desc: "Doa untuk kaum muslimin yang terzalimi di seluruh dunia.",
+    gradient:
+      "bg-gradient-to-br from-red-50 to-rose-100 border-rose-200 dark:from-red-950 dark:to-rose-900 dark:border-rose-800",
+    textTitle: "text-rose-900 dark:text-rose-100",
+    textDesc: "text-rose-700/70 dark:text-rose-300/70",
+  },
+  {
+    href: "/list/doa-perlindungan-dari-hal-hal-buruk",
+    emoji: "🛡️",
+    title: "Perlindungan dari Hal Buruk",
+    desc: "Agar terhindar dari kesedihan, kesulitan, dan kesempitan.",
+    gradient:
+      "bg-gradient-to-br from-violet-50 to-purple-100 border-purple-200 dark:from-violet-950 dark:to-purple-900 dark:border-purple-800",
+    textTitle: "text-purple-900 dark:text-purple-100",
+    textDesc: "text-purple-700/70 dark:text-purple-300/70",
+  },
+  {
+    href: "/list/category/kebaikan-untuk-negeri",
+    emoji: "🏡",
+    title: "Doa untuk Negeri",
+    desc: "Kumpulan doa untuk kebaikan negeri & para pemimpinnya.",
+    gradient:
+      "bg-gradient-to-br from-amber-50 to-yellow-100 border-yellow-200 dark:from-amber-950 dark:to-yellow-900 dark:border-yellow-800",
+    textTitle: "text-amber-900 dark:text-amber-100",
+    textDesc: "text-amber-700/70 dark:text-amber-300/70",
+  },
+  {
+    href: "/list/doa-dari-al-quran",
+    emoji: "🕌",
+    title: "Doa dari Al-Qur'an",
+    desc: "Doa-doa yang disebut di dalam Al-Qur'an.",
+    gradient:
+      "bg-gradient-to-br from-teal-50 to-emerald-100 border-emerald-200 dark:from-teal-950 dark:to-emerald-900 dark:border-emerald-800",
+    textTitle: "text-emerald-900 dark:text-emerald-100",
+    textDesc: "text-emerald-700/70 dark:text-emerald-300/70",
+  },
+  {
+    href: "/list/doa-dari-as-sunnah",
+    emoji: "☀️",
+    title: "Doa dari As-Sunnah",
+    desc: "Doa-doa yang diajarkan oleh Rasulullah ﷺ.",
+    gradient:
+      "bg-gradient-to-br from-indigo-50 to-blue-100 border-indigo-200 dark:from-indigo-950 dark:to-blue-900 dark:border-indigo-800",
+    textTitle: "text-indigo-900 dark:text-indigo-100",
+    textDesc: "text-indigo-700/70 dark:text-indigo-300/70",
+  },
+  {
+    href: "/list/doa-para-nabi",
+    emoji: "✨",
+    title: "Doa para Nabi",
+    desc: "Doa-doa yang dipanjatkan oleh para Nabi terdahulu 'Alaihimussalaam.",
+    gradient:
+      "bg-gradient-to-br from-orange-50 to-amber-100 border-amber-200 dark:from-orange-950 dark:to-amber-900 dark:border-amber-800",
+    textTitle: "text-amber-900 dark:text-amber-100",
+    textDesc: "text-amber-700/70 dark:text-amber-300/70",
+  },
+];
 ---
 
 <Layout fixedNavbar>
   <section class="pt-4 md:pt-10 px-4 max-w-2xl mx-auto">
-    <a href="/list/semua-doa">
-      <Card className={cn(cardClassname, "bg-zinc-100 border-zinc-200")}>
-        <h3 class="font-bold text-sm md:text-base dark:text-gray-950">
-          Semua Doa
-        </h3>
-        <p class="font-light text-xs text-gray-500">
-          Semua Doa Ma'tsuur. Datang dari Al-Qur'an maupun As-Sunnah.
-        </p>
-      </Card>
-    </a>
-  </section>
-
-  <section class="mt-10 px-4 max-w-2xl mx-auto">
-    <h1 class="text-xl font-bold">Kategori Khusus</h1>
-
-    <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
-      <Card className={cn(cardClassname, "bg-green-100 border-green-200")}>
-        <h3 class="font-bold text-sm md:text-base dark:text-green-950">
-          The Essentials 🎒
-        </h3>
-        <p class="font-light text-xs text-gray-500 dark:text-green-800">
-          Kumpulan doa-doa pilihan. Dapat dibaca di setiap waktu mustajab.
-        </p>
-      </Card>
-      <a href="/list/doa-untuk-kebaikan-kesehatan-dan-keberkahan">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Kebaikan, Kesehatan dan Keberkahan 🌤️
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Permohonan atas segala kebaikan & keberkahan di dunia.
-          </p>
-        </Card>
-      </a>
-      <a href="/">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Doa untuk Kaum Muslimin 🇵🇸
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa untuk kaum muslimin yang terzalimi di seluruh dunia.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-perlindungan-dari-hal-hal-buruk">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Perlindungan dari <br /> Hal Buruk ☔️
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Agar terhindar dari kesedihan, kesulitan, dan kesempitan.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/category/kebaikan-untuk-negeri">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">
-            Doa untuk <br /> Negeri 🇮🇩
-          </h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Kumpulan doa untuk kebaikan negeri & para pemimpinnya.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-dari-al-quran">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">Doa dari Al-Qur'an</h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa-doa yang disebut di dalam Al-Qur'an.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-dari-as-sunnah">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">Doa dari As-Sunnah</h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa-doa yang diajarkan oleh Rasulullah ﷺ.
-          </p>
-        </Card>
-      </a>
-      <a href="/list/doa-para-nabi">
-        <Card className={cn(cardClassname)}>
-          <h3 class="font-bold text-sm md:text-base">Doa para Nabi</h3>
-          <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-            Doa-doa yang dipanjatkan oleh para Nabi terdahulu 'Alaihimussalaam.
-          </p>
-        </Card>
-      </a>
+    <h1 class="text-xl font-bold mb-4">Kategori Khusus</h1>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+      {
+        specialCards.map((card) =>
+          card.href ? (
+            <a href={card.href} class="block group">
+              <div class={cn(baseCard, card.gradient)}>
+                <span class="absolute top-3 right-3 text-3xl opacity-70 group-hover:scale-110 transition-transform duration-200">
+                  {card.emoji}
+                </span>
+                <h3 class={cn("font-bold text-sm", card.textTitle)}>
+                  {card.title}
+                </h3>
+                <p class={cn("text-xs leading-snug", card.textDesc)}>
+                  {card.desc}
+                </p>
+              </div>
+            </a>
+          ) : (
+            <div class="group">
+              <div
+                class={cn(baseCard, card.gradient, "opacity-60 cursor-default")}
+              >
+                <span class="absolute top-3 right-3 text-3xl opacity-70">
+                  {card.emoji}
+                </span>
+                <h3 class={cn("font-bold text-sm", card.textTitle)}>
+                  {card.title}
+                </h3>
+                <p class={cn("text-xs leading-snug", card.textDesc)}>
+                  {card.desc}
+                </p>
+              </div>
+            </div>
+          ),
+        )
+      }
     </div>
   </section>
 
   <section class="mt-10 px-4 max-w-2xl mx-auto mb-20">
-    <h1 class="text-xl font-bold">Kategori Umum</h1>
-
-    <div class="mt-4 grid grid-cols-2 md:grid-cols-3 gap-2">
+    <h1 class="text-xl font-bold mb-4">Kategori Umum</h1>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
       {
-        sortedCategories.map((category) => (
-          <a href={`/list/category/${slugify(category.category_id)}`}>
-            <Card className={cn(cardClassname, "overflow-hidden")}>
-              <h3 class="text-sm font-medium line-clamp-3">
-                {category.category_id}
-              </h3>
-              <p class="font-light text-xs text-gray-500 dark:text-zinc-50">
-                ({category.count} doa)
-              </p>
-            </Card>
-          </a>
-        ))
+        sortedCategories.map((category, i) => {
+          const colors = [
+            "#10b981",
+            "#0ea5e9",
+            "#8b5cf6",
+            "#f43f5e",
+            "#f59e0b",
+            "#6366f1",
+            "#14b8a6",
+            "#d946ef",
+          ];
+          const color = colors[i % colors.length];
+          return (
+            <a
+              href={`/list/category/${slugify(category.category_id)}`}
+              class="block group"
+            >
+              <div
+                class={cn(
+                  baseCard,
+                  "bg-gradient-to-br from-slate-50 to-zinc-100 border-zinc-200 dark:from-slate-900 dark:to-zinc-800 dark:border-zinc-700 ripple-card",
+                )}
+                data-ripple-color={color}
+              >
+                <h3 class="relative z-10 text-sm font-medium text-zinc-800 dark:text-zinc-100 line-clamp-3">
+                  {category.category_id}
+                </h3>
+                <p class="relative z-10 text-xs text-zinc-500 dark:text-zinc-400">
+                  {category.count} doa
+                </p>
+              </div>
+            </a>
+          );
+        })
       }
     </div>
   </section>
 </Layout>
+
+<style is:global>
+  @keyframes ripple-expand {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(8);
+      opacity: 0;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>(".ripple-card").forEach((card) => {
+    card.addEventListener("mouseenter", (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const color = card.dataset.rippleColor ?? "#6366f1";
+
+      const dot = document.createElement("div");
+      dot.style.cssText = `
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        left: ${x}px;
+        top: ${y}px;
+        margin-top: -40px;
+        margin-left: -40px;
+        pointer-events: none;
+        background: radial-gradient(circle, ${color}66 0%, ${color}00 70%);
+        animation: ripple-expand 0.8s ease-out forwards;
+        z-index: 1;
+      `;
+
+      card.appendChild(dot);
+      dot.addEventListener("animationend", () => dot.remove());
+    });
+  });
+</script>
