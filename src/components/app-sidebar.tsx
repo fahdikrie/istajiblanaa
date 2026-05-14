@@ -13,6 +13,7 @@ import {
   SidebarMenuSubButton,
   SidebarMenuSubItem,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
 
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -38,6 +39,7 @@ export interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
   isNested?: boolean;
   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
   activeDuaId?: string | null;
+  setActiveDuaId?: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 export const AppSidebar = ({
@@ -45,17 +47,36 @@ export const AppSidebar = ({
   isNested,
   setCurrentIndex,
   activeDuaId,
+  setActiveDuaId,
   ...props
 }: AppSidebarProps) => {
   const isMobile = useIsMobile();
   const announcementBar = useStore(announcementBarAtom);
+  const { openMobile, setOpenMobile } = useSidebar();
   const itemRefs = useRef<Map<string, HTMLAnchorElement>>(new Map());
+  const savedScrollTop = useRef(0);
 
+  // Smooth scroll as active dua changes (scroll observer / carousel navigation)
   useEffect(() => {
     if (!activeDuaId) return;
     const el = itemRefs.current.get(`#${activeDuaId}`);
-    el?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    el?.scrollIntoView({ block: "center", behavior: "smooth" });
   }, [activeDuaId]);
+
+  // Save scroll position on close, restore it on reopen
+  useEffect(() => {
+    const content = document.querySelector<HTMLElement>('[data-sidebar="content"]');
+    if (openMobile) {
+      // Content just mounted — restore scroll position next tick
+      const timer = setTimeout(() => {
+        const el = document.querySelector<HTMLElement>('[data-sidebar="content"]');
+        if (el) el.scrollTop = savedScrollTop.current;
+      }, 0);
+      return () => clearTimeout(timer);
+    } else {
+      if (content) savedScrollTop.current = content.scrollTop;
+    }
+  }, [openMobile]);
 
   const hasNestedItems = (item: NavItem): item is NavItemNested => {
     return (
@@ -94,7 +115,11 @@ export const AppSidebar = ({
                         ? "bg-accent border-l-2 border-l-primary pl-[7px] font-medium"
                         : "hover:bg-accent/50",
                     )}
-                    onClick={() => setCurrentIndex(index)}
+                    onClick={() => {
+                      setCurrentIndex(index);
+                      setActiveDuaId?.(item.url.slice(1));
+                      if (isMobile) setOpenMobile(false);
+                    }}
                   >
                     <span
                       className={cn(

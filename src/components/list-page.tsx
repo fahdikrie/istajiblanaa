@@ -101,6 +101,7 @@ const ListPage = ({ category, duas, isNested }: ListPageProps) => {
         isNested={isNested}
         setCurrentIndex={setCurrentIndex}
         activeDuaId={activeDuaId}
+        setActiveDuaId={setActiveDuaId}
       />
       <SidebarInset
         className={cn(
